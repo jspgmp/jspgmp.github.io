@@ -67,7 +67,7 @@
       <h1 class="site-title">땡땡 블로그</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">연습2</p>
+      <p class="site-subtitle" itemprop="description">너무안이쁜데 어떡하죠?</p>
   </div>
 
   <div class="site-nav-right">
@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -159,6 +159,413 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-Javascript_getItem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/06/2021-08-06-Javascript_getItem/" class="post-title-link" itemprop="url">(자바스크립트) 가격 한도 최대 비싼 아이템 추천!</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-06 20:53:53" itemprop="dateCreated datePublished" datetime="2021-08-06T20:53:53+09:00">2021-08-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>드디어 포스트다운 포스트를 써볼까 합니다.</p>
+<p>가격을 입력하면 상품 리스트에서 살수있는 가장 비싼 상품의 종류와 이름을 알려주는 스크립트입니다.</p>
+<p><strong>상품 데이터</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const data = [</span><br><span class="line">    &#123; name: &#x27;밀크초콜렛&#x27;, price: 2000 &#125;,</span><br><span class="line">    &#123; name: &#x27;초콜렛&#x27;, price: 2000 &#125;,</span><br><span class="line">    &#123; name: &#x27;다크초콜렛&#x27;, price: 2000 &#125;,</span><br><span class="line">    &#123; name: &#x27;카라멜초콜렛&#x27;, price: 2000 &#125;,</span><br><span class="line">    &#123; name: &#x27;아이스크림&#x27;, price: 1000 &#125;,</span><br><span class="line">    &#123; name: &#x27;컵라면&#x27;, price: 1600 &#125;,</span><br><span class="line">    &#123; name: &#x27;볼펜&#x27;, price: 2500 &#125;,</span><br><span class="line">    &#123; name: &#x27;연필&#x27;, price: 2500 &#125;,</span><br><span class="line">    &#123; name: &#x27;아메리카노&#x27;, price: 4000 &#125;,</span><br><span class="line">    &#123; name: &#x27;과자&#x27;, price: 3000 &#125;,</span><br><span class="line">    &#123; name: &#x27;탄산수&#x27;, price: 1200 &#125;,</span><br><span class="line">    &#123; name: &#x27;떡볶이&#x27;, price: 3500 &#125;,</span><br><span class="line">    &#123; name: &#x27;노트&#x27;, price: 1500 &#125;,</span><br><span class="line">    &#123; name: &#x27;껌&#x27;, price: 500 &#125;</span><br><span class="line">  ];</span><br></pre></td></tr></table></figure>
+
+<p>초콜렛에 집중해주세요.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">const line = prompt(&#x27;최대 금액을 입력해주세요.&#x27;);</span><br><span class="line">const amount = parseInt(line);</span><br><span class="line">const item = getItemByAmount(data, amount);</span><br><span class="line">const msg = item ? `$&#123;amount&#125;원으로 살 수 있는 가장 비싼 상품은 [$&#123;item.name&#125;]이고, 가격은 $&#123;item.price&#125;원입니다.` : &#x27;살 수 있는 상품이 없습니다.&#x27;;</span><br><span class="line">alert(msg);</span><br><span class="line"></span><br><span class="line">function getItemByAmount(data, amount) &#123;</span><br><span class="line">    if (isNaN(amount) == false) &#123; //isNsN으로 입력값이 숫자인지 판별</span><br><span class="line">        const buyable = data.filter(a=&gt; a.price &lt;= amount); //가격이 입력값 이하인것만 추리기</span><br><span class="line">        const sorted = buyable.sort(function(a,b) &#123; //추린 리스트를 가격 오름차순으로 정리하기</span><br><span class="line">        return  a.price - b.price ;</span><br><span class="line">        &#125;)</span><br><span class="line">        const samePrice = sorted.filter(a=&gt;a.price == sorted[sorted.length-1].price); </span><br><span class="line">        if (samePrice.length &gt; 1) &#123; //같은가격의 상품이 두개이상 있을때 전부 여기 집어넣는다.</span><br><span class="line">        const tempNames = []; //임시로 사용할 변수를 놓고</span><br><span class="line">        for (let i in samePrice) &#123;/samePrice리스트에서 모든 name만 뽑아 tempNames로 집어넣는다.</span><br><span class="line">            tempNames.push(samePrice[i].name);</span><br><span class="line">        &#125;</span><br><span class="line">        const finalList =&#123;name:&#x27;&#x27;, price:&#x27;&#x27;&#125;;//이름을 전부 합친 것과 가격을 담을 배열 준비</span><br><span class="line">        finalList.name = tempNames; //final List 에 name에 준비한 이름을 전부 넣는다.</span><br><span class="line">        finalList.price = sorted[sorted.length-1].price; //finalList에 가격을 하나만 넣는다.</span><br><span class="line">        return finalList;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            return sorted[sorted.length-1];</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;    </span><br><span class="line">        alert(&#x27;숫자만 입력하세요&#x27;);</span><br><span class="line">        window.alert = null;</span><br><span class="line">        window.location.reload();//여기를 지나고 최소금액 이하를 입력하면 다시 창이 열리지 않음</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>가독성이 매우 떨어지네요!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-C-basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/06/2021-08-06-C-basic/" class="post-title-link" itemprop="url">C언어 기초</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-06 20:44:35" itemprop="dateCreated datePublished" datetime="2021-08-06T20:44:35+09:00">2021-08-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>C언어는 배우고있긴 한데 이해하는데 상당히 기력을 소하더라구요. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line">C언어 다룰때 출력타입 지정 필수</span><br><span class="line">%d: 10진수(정수형)</span><br><span class="line">%f: 실수형</span><br><span class="line">%e: 지수형</span><br><span class="line">%o: 8진수</span><br><span class="line">%x: 16진수</span><br><span class="line">%u: 부호없는 10진수</span><br><span class="line">%g: 실수형 자동출력</span><br><span class="line">%p: 포인터의 주소</span><br><span class="line">%c: 하나의 문자로 출력</span><br><span class="line">%s: 문자열</span><br><span class="line">int main(void) </span><br><span class="line">&#123;	</span><br><span class="line">	int* pi; //Pointer Integer</span><br><span class="line">	pi = (int*)malloc(sizeof(int));// int 사이즈를 메모리에 할당한 다음에 </span><br><span class="line">	//int*으로 (int*)으로 형변환을 하여 반환(위치), pi변수가 해당 위치를 기억할 수 있도록 한다.</span><br><span class="line">	if (pi == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;동적 메모리 할당에 실패하였습니다.&quot;);</span><br><span class="line">		exit(1);//본 프로그램 종료의 의미</span><br><span class="line">	&#125;</span><br><span class="line">	//할당받은 메모리 사용</span><br><span class="line">	*pi = 100; </span><br><span class="line">	printf(&quot;%d\n&quot;, *pi); </span><br><span class="line">	//동적메모리 사용이 끝나면 메모리를 시스템에 반환하여 안정성 효율성 제고</span><br><span class="line">	free(pi);</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">main(void)</span><br><span class="line">&#123;</span><br><span class="line">	char* pc = NULL;</span><br><span class="line">	int i = 0;</span><br><span class="line">	pc = (char*)malloc(100 * sizeof(char));//char 100개만큼의 공간 할당(100개문자)</span><br><span class="line">	//100개만큼의 공간은 배열과도 비슷하다.</span><br><span class="line">	if (pc == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;동적 메모리 할당에 실패했습니다.\n&quot;);</span><br><span class="line">		exit(1);</span><br><span class="line">	&#125;</span><br><span class="line">	for (i = 0; i &lt; 26; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		*(pc + i) = &#x27;a&#x27; + i; //a는 ascii코드에서 97번째에 해당 a+1 은 ascii코드로 98이어서 b가됌</span><br><span class="line">	&#125; //이 안에서 마지막 i는 26이 된다.</span><br><span class="line">	*(pc + i) = 0; //null은 아스키코드에서 0을 의미</span><br><span class="line">	//문자열 배열에서 마지막 메모리 영역에 null값 넣어 종료를 인식</span><br><span class="line">	//여기까지 하나의 문자열 생성</span><br><span class="line">	printf(&quot;%s\n&quot;, pc);//문자열의 자료형식은 %s이다.</span><br><span class="line">	free(pc);//할당 해제</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">typedef struct &#123; //typpedef 쓸 경우의 예제 Student라고 호출이 가능</span><br><span class="line">	char name[20];</span><br><span class="line">	int score;</span><br><span class="line">&#125; Student;</span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">	int n, sum = 0;	</span><br><span class="line">	FILE* fp;</span><br><span class="line">	fp = fopen(&quot;input.txt&quot;, &quot;r&quot;);</span><br><span class="line">	fscanf(fp, &quot;%d&quot;, &amp;n);//fp에서 지정한 파일로부터 하나의 정수형 변수를 읽어들임</span><br><span class="line">	Student* students = (Student*)malloc(sizeof(Student) * n);</span><br><span class="line">	//students라는 포인터는 n개의 Student 형식을 가진 동적메모리 공간을 할당</span><br><span class="line">	for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">		fscanf(fp, &quot;%s %d&quot;, &amp;((students + i)-&gt;name), &amp;((students + i)-&gt;score));</span><br><span class="line">		//fp를 이용해서 students 배열의 i번째 인덱스에 접근해서 하나의 문자열과 하나의 정수형을</span><br><span class="line">		//입력받는다, name값과 score 값에 값을 할당받는다.</span><br><span class="line">		printf(&quot;이름: %s, 성적: %d&quot;,  (students + i)-&gt;name, (students + i)-&gt;score ) ;</span><br><span class="line">		//입력받은값을 문자형과 정수형대로 출력해준다.</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">전처리기 #include, 만든파일은 #include “파일명”</span><br><span class="line">상수 #define PI 3.14 매크로 #define (x) (x*x), 입력타입 #define ll longlong / ld long double</span><br><span class="line">같은 헤더파일을 여러 개 불러왔다면 #ifndef 아래에 같은이름으로 define #endif</span><br><span class="line">파일을 여러개로 분할해서 깔끔하게 작성할것</span><br><span class="line">#define _CRT_SECURE_NOWARNINGS</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">typedef struct &#123;//연결리스트 구조체 다음 노드를 가르킨다</span><br><span class="line">	int data;</span><br><span class="line">	struct Node* next;</span><br><span class="line">&#125; Node;</span><br><span class="line"></span><br><span class="line">Node* head;//node는 항상 포인트변수로 동적할당을 이용해서 필요한만큼만 메모리를 쓴다.</span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">	head = (Node*)malloc(sizeof(Node));//Node 구조체 사이즈만큼의 메모리 할당을 head에게</span><br><span class="line">	Node* node1 = (Node*)malloc(sizeof(Node)); //node1에 Node사이즈의 메모리 할당</span><br><span class="line">	node1-&gt;data = 1;</span><br><span class="line">	Node* node2 = (Node*)malloc(sizeof(Node));</span><br><span class="line">	node2-&gt;data = 2;</span><br><span class="line">	head-&gt;next = node1; // head에서 node1으로 연결</span><br><span class="line">	node1-&gt;next = node2;</span><br><span class="line">	node2-&gt;next = NULL;//항상 끝Node는 next값으로 NULL을 가지고 더이상 연결된게 없다고 알림</span><br><span class="line">	Node* cur = head-&gt;next;//head에게 next를 가르키도록 만듦</span><br><span class="line">	while (cur != NULL) &#123;</span><br><span class="line">		printf(&quot;%d&quot;, cur-&gt;data);</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">위는 다음과 동일</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">void addFront(Node* root, int data) &#123;</span><br><span class="line">	Node* node = (Node*)malloc(sizeof(Node));// 새 node를 생성해서 메모리 할당하고</span><br><span class="line">	node-&gt;data = data; //새 node의 data로는 입력받은 data를 지정하고</span><br><span class="line">	node-&gt;next = root-&gt;next; //새 node의 다음값으로는 원래 root의 다음값을 연결하고</span><br><span class="line">	root-&gt;next = node; //원래 root의 다음값을 새 node로 연결한다.</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">void removeFront(Node* root); &#123;</span><br><span class="line">	Node* front = root-&gt;next;//현재 front와 root와의 관계 설정. root의 다음값은 front</span><br><span class="line">	root-&gt;next = front-&gt;next;//root의 다음값을 front가 아닌 front의 next로 설정(건너뜀)</span><br><span class="line">	free(front);//front 메모리 해제</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">void freeAll(Node* root) &#123; //모든 연결리스트를 메모리 해제하는방법</span><br><span class="line">	Node* cur = head-&gt;next; //현재 포인트(cur)를 맨앞 head의 next에 놓고</span><br><span class="line">	while (cur != NULL) &#123; //현재 포인트값이 NULL이 아닐동안</span><br><span class="line">		Node* next = cur-&gt;next; //Node 포인트를 cur의 next값으로 조준하고</span><br><span class="line">		free(cur); //현재 cur를 메모리 해제한다음에</span><br><span class="line">		cur = next; //지정해놨던 next값을 cur현재포인터로 다시잡는다.</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void showAll(Node* root) &#123; //root노드부터 전부 표시하기</span><br><span class="line">	Node* cur = head-&gt;next; //현재 포인터를 head 다음 노드로 설정하고</span><br><span class="line">	while (cur != NULL) &#123; //마지막까지</span><br><span class="line">		printf(&quot;%d&quot;, cur-&gt;data); //현재 노드의 데이터를 출력하고 </span><br><span class="line">		cur = cur-&gt;next; //포인터를 다음으로 옮긴다.</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>자료구조 와 알고리즘</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">1.	스택 – 한쪽으로 들어가서 한쪽으로 나오는 자료구조</span><br><span class="line">메모리공간이 비효율적일 수 있음</span><br><span class="line">연결리스트를 이용해서 스택 이용가능</span><br><span class="line">2.	중위표기법 : 여러 수식을 표기하는 표기방법(7*5+3)</span><br><span class="line">3.	후위표기법 : 컴퓨터가 표기하는 방법 (7 5 * 3 +)</span><br><span class="line">4.	큐: 뒤쪽으로 들어가서 앞쪽으로 나오는 자료구조</span><br><span class="line">스케줄링, 탐색 알고리즘에서 사용, </span><br><span class="line">배열, 연결리스트 둘다 사용 가능, 난이도 낮음, </span><br><span class="line">5.	선택정렬과 삽입정렬</span><br><span class="line">선택정렬: 가장 작은것을 앞으로 보내는 정렬기법이며, 작은것 선택에 N번, 앞으로 보내는데에 N번의 연산으로 O(N^2)시간복잡도를 갖는다.</span><br><span class="line">(선택해서 앞으로보내기)</span><br><span class="line">삽입정렬: 각 숫자를 적절한 위치에 삽입하며, 들어갈 위치 선택에N번 선택하는 횟수로 N번으로 O(N^2)의 시간복잡도를 갖는다. </span><br><span class="line">(인덱스 펼쳐놓고 삽입하기)</span><br><span class="line">6.	퀵정렬 : 피벗을 기준으로 큰 값과 작은값을 서로 교체, 교체하는데 N번 엇갈린경우 교체 이후에 원소가 반으로 나뉘므로 전체 원소를 나누는데 평균 logn번이 소요되어 NlogN의 시간복잡도, 완전 이진트리와 흡사. 컴퓨터 공학에서 선호하는 형태</span><br><span class="line">편향 분할이 발생하면 복잡도가 N^2으로 높아질 수 있으므로 C언어로 구현하지 않고 C++의 알고리즘 라이브러리를 이용한다.(NlogN)보장</span><br><span class="line">(기준점놓고 계속해서 좌우로 정리하기)</span><br><span class="line">7.	계수정렬(Counting sort): 크기를 기준으로 데이터를 센다. N의 시간복잡도. </span><br><span class="line">배열을 만들어 대상과 같은 인덱스를 놓고 하나씩 추가하는데, 배열의 인덱스가 넘어가는 크기는 정렬하지 못한다. 많은 메모리를 요구하지만 빠르게 동작한다. </span><br><span class="line">8.	기수정렬 : 자릿수를 기준으로 차례대로 데이터를 정렬, 가장 큰 자릿수를 D라고 했을때 O(DN)시간복잡도를 갖는다. 0~9인덱스를 갖고 10의단위마다 인덱스에 갯수를 추가해서 1의단위 먼저 정렬하고, 10 100자리 순으로 정렬한다. 계수정렬보다 느리나 숫자가 매우 큰것도 가능</span><br><span class="line">9.	이진트리: 루트노드에서 가지를 뻗어 리프노드로 이어진다.</span><br><span class="line">길이: 거쳐야하는 가지수, 깊이: 단</span><br><span class="line">전위 순회 순서(위에서부터 아래로 갔다가 오른쪽으로)</span><br><span class="line">중위 순회 순서(맨 왼쪽에서부터 오른쪽으로)</span><br><span class="line">후위 순회 순서(밑에서부터 중간까지, 맨위는 마지막)</span><br><span class="line">10.	우선순위 큐: 우선순위를 가진 데이터를 저장하는 큐, 우선순위가 높은게 먼저나온다. 작업 스케줄링, 정렬, 네트워크 관리 등 사용.  최대 힙을 이용해 구현하며, 완전이진트리를 이용. 최대 힙: 부모노드가 자식노드보다 값이 큰 완전 이진트리 의미. = 루트가 가장 큰 값, 우선순위 삽입/삭제는logN복잡도, 정렬은 NlogN복잡</span><br><span class="line">11.	순차sequential탐색: 특정원소를 찾기위해 순차적으로 하나씩 찾기. 찾을 문자열을 찾으면 그 인덱스값을 반환한다. N복잡도. </span><br><span class="line">이진탐색: 정리되어있는 배열 내부의 값을 특정 지점부터 찾아나가며 좁혀가는 방식. O(logN)복잡도를 갖는다. </span><br><span class="line">12.	그래프의 개념과 구현</span><br><span class="line">인접행렬방식: 2차원 배열 사용</span><br><span class="line">root에서 child 1로가는건 3, child 2로가는건 7일때</span><br><span class="line">0   3   7 </span><br><span class="line">3   0  무한</span><br><span class="line">7  무한 0</span><br><span class="line"> Child 1 에서 child 2로 가는건 없으니 무한 자기자신은 0</span><br><span class="line">V^2의 공간 요구, 공간효율성 낮음, O(1)의 시간 필요</span><br><span class="line">인접리스트 방식 : 리스트 사용</span><br><span class="line">간선의 정보만 저장하여 O(E) 공간 요구, 공간효율성 높음, 연결 확인에 0(V)시간 요구</span><br><span class="line">13.	깊이 우선 탐색: 깊은것을 우선 탐색, 전체 노드를 맹목적으로 탐색하고자 할떄 사용, 스택 자료구조에 기초. 빠르게 모든 경우의 수를 탐색하고자 할때 쉽게 사용 O(N)시간 소요</span><br><span class="line">14.	너비 우선 탐색: 깊이우선과 마찬가지로 전체 노드 탐색, 큐자료구조 기초. </span><br><span class="line">고급 그래프 탐색 알고리즘에 활용. O(N)소요, 전수탐색알고리즘</span><br><span class="line">15.	이진 탐색 트리: 검색할때마다 대상이 반절씩 줄어들어 O(logN)시간복잡도</span><br><span class="line">설계시 완전 이진트리가 될수있도록 설계</span><br><span class="line">16.	AVL트리: 균형이 갖춰진 이진트리, O(logN)시간복잡도, 간단한 구현과정으로 완전 이진트리 유지. 왼쪽자식보다 오른쪽 자식높이(균형인자)와 2이상 차이날때 문제. 높이값을 변수로 가짐. 균형잡기는 노드가 삽일될 때마다 수행되며, 삽입시간복잡도는 O(logN)이다. 각트리의 균형잡기는 O(1)의 시간 복잡도를 만족해야한다.</span><br><span class="line">17.	해시 : 데이터를 최대한 빠른 속도로 관리하도록 도와주며, 메모리를 많이 소모하지만 빠르다. </span><br><span class="line">여러 데이터가 한곳에 저장되면 충돌할 수 있는데 충돌 해결:</span><br><span class="line">선형 조사법(데이터가 차있으면 다음 인덱스에 저장)</span><br><span class="line">, 이차 조사법</span><br><span class="line">충돌 발생시, 멀찍이 떨어뜨려 저장, 데이터 편중 방지</span><br><span class="line">해시 테이블 버켓에 여러 항목을 저장하는 체이닝</span><br><span class="line">해시 삽입 삭제는 O(1)의 시간 복잡도</span><br><span class="line">18.	프림알고리즘은 최소 스패닝 트리를 구하는 과정에서 O(ElogV)시간복잡도</span><br><span class="line">19.	다익스트라의 최단경로:</span><br><span class="line">자기자신의 거리는 0, 갈수있는 노드에 대해서는 거리를 기록, 갈수없는건 거리 무한 이라고 할 때 가장 이동거리가 짧은 노드를 트리에 포함한다. 그렇게 최대한 갈 수 있는 노드를 전부 포함시킨다. O(ElogV)복잡도</span><br><span class="line">20.	세그먼트 트리</span><br><span class="line">선형적으로 구간 합을 구한다면 O(N)데이터 모두 확인하여야하나.</span><br><span class="line">트리 구조로 구간 합을 구하면 O(logN)으로 구할 수 있다.</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-python_send_mail/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/06/2021-08-06-python_send_mail/" class="post-title-link" itemprop="url">(파이썬) 파이썬으로 메일보내기!</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-08-06 20:34:11 / Modified: 20:41:54" itemprop="dateCreated datePublished" datetime="2021-08-06T20:34:11+09:00">2021-08-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li>메일보내기<br>```<h1 id="Multipurpose-Internet-Mail-Extension-모듈-가져오기"><a href="#Multipurpose-Internet-Mail-Extension-모듈-가져오기" class="headerlink" title="Multipurpose Internet Mail Extension 모듈 가져오기"></a>Multipurpose Internet Mail Extension 모듈 가져오기</h1>from email.mime.text import MIMEText<br>from email.mime.multipart import MIMEMultipart</li>
+</ol>
+<p>#Simple Mail Transfer Protocel 라이브러리 가져오기<br>import smtplib</p>
+<p>#정규표현식(regular expression) 모듈 가져오기<br>import re</p>
+<p>#로그인에 사용될 변수 미리 지정<br>SMTP_SERVER = ‘smtp.gmail.com’<br>SMTP_PORT = 465<br>SMTP_USER = ‘<a href="mailto:&#109;&#109;&#114;&#x69;&#x61;&#110;&#110;&#x35;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#109;&#109;&#114;&#x69;&#x61;&#110;&#110;&#x35;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a>‘<br>SMTP_PASSWORD = ‘비밀번호’</p>
+<p>def send_mail(name, addr, subject, contents, attachment=None):<br>    #정규표현식을 사용해서 변수addr이 지정한 표현식 인지 확인<br>if not re.match(‘(^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$)’, addr):<br>                  # ^부분뒤로의 규칙이 맨 앞에 왔는지 판단, +는 여러 문자, @은 @,<br>                    .은 .으로 $으로 문자열이 종료됨을 나타내게 작성<br>        print(‘Wrong email’)<br>        return #여기서 리턴하면 아래 함수가 실행되지 않음</p>
+<h1 id="이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정"><a href="#이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정" class="headerlink" title="이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정"></a>이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정</h1><p>msg = MIMEMultipart(‘alternative’)</p>
+<h1 id="첨부파일이-있을경우-alternative-에서-mixed로-변경"><a href="#첨부파일이-있을경우-alternative-에서-mixed로-변경" class="headerlink" title="첨부파일이 있을경우 alternative 에서 mixed로 변경"></a>첨부파일이 있을경우 alternative 에서 mixed로 변경</h1><pre><code>if attachment:
+    msg = MIMEMultipart(&#39;mixed&#39;)
+
+msg[&#39;From&#39;] = SMTP_USER
+msg[&#39;To&#39;] = addr
+msg[&#39;Subject&#39;] = name + &#39;님, \n&#39; + subject + &#39;에 대해 알아보세요&#39;
+text = MIMEText(contents, _charset = &#39;utf-8&#39;)#한글로 첨부파일 쓰면 깨진다.
+msg.attach(text)
+if attachment :
+    from email.mime.base import MIMEBase #MIMEBase 는 파일 전송에 필요한 형태
+    from email import encoders #SMTP에서 요구하는 파일 전송형태로 변환
+    
+    #MIMEBase 를 사용했을때 들어갈 수 있는 파일의 타입 
+    application 과 octect-stream 은 일반 파일을 뜻함
+    file_data = MIMEBase(&#39;application&#39;, &#39;octect-stream&#39;)
+
+    #attachment를 rb(read binary)형태로 open하여 read하고 file_data안에set_payload한다. 
+    file_data.set_payload(open(attachment, &#39;rb&#39;).read())
+    encoders.encode_base64(file_data) #file_data를 base64 형태로 인코드
+    import os
+    filename = os.path.basename(attachment)
+    
+    #file_data 언급 전에header를 추가하는 함수를 사용해서 file_data에 대한 정보(메타데이터) 삽입
+    file_data.add_header(&#39;Content-Disposition&#39;, &#39;attachment; filename=&quot;&#39; + filename + &#39;&quot;&#39;)
+    
+    msg.attach(file_data)
+
+#어디에 접속해야할지 정보를 담은 클래스 변수
+smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
+#로그인 변수
+smtp.login(SMTP_USER, SMTP_PASSWORD)
+#보내는이, 받는이, 메세지.as_string()함수 적용필요
+smtp.sendmail(SMTP_USER, addr, msg.as_string())
+#로그아웃
+smtp.close()
+
+
+send_mail(이름, 수신이메일, subject, contents, attachment)
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-python_excel_io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/06/2021-08-06-python_excel_io/" class="post-title-link" itemprop="url">(파이썬) 파이썬 기초 Openpyxl이용해서 엑셀파일 입출력하기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-08-06 20:33:09 / Modified: 20:34:56" itemprop="dateCreated datePublished" datetime="2021-08-06T20:33:09+09:00">2021-08-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li><p>파이썬의 자료형</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">숫자형 = 6</span><br><span class="line">문자형 = &quot;&quot;</span><br><span class="line">리스트 = [], 리스트 수정 가능~</span><br><span class="line">튜플 = (), 튜플은 수정 불가~</span><br><span class="line">딕셔너리 = &#123;&#125;</span><br><span class="line">참거짓 = True, False</span><br></pre></td></tr></table></figure></li>
+<li><p>엑셀파일 읽어오기</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">from openpyxl import load_workbook #엑셀 저장 함수 불러오기</span><br><span class="line"></span><br><span class="line">\#엑셀 데이터를 불러오기</span><br><span class="line">wb = load_workbook(&#x27;total.xlsx&#x27;) #, read_only=True) 읽기모드로, 파일이 커도 읽기 가능</span><br><span class="line">data = wb.active \#활성화된 탭을 사용한다!</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">\#A1셀 하나만 출력하기</span><br><span class="line">print(data[&#x27;A1&#x27;].value)</span><br><span class="line"></span><br><span class="line">\#2행 데이터 출력하기</span><br><span class="line">row = data[&#x27;2&#x27;]</span><br><span class="line">for cell in row :</span><br><span class="line">  print(cell.value)</span><br><span class="line"></span><br><span class="line">\#1~2행 데이터 출력하기</span><br><span class="line">rows = data[&#x27;1:2&#x27;]</span><br><span class="line">for row in rows:</span><br><span class="line">  for cell in row:</span><br><span class="line">    print(cell.value)</span><br><span class="line"></span><br><span class="line">\#A열 데이터 출력하기</span><br><span class="line">col = data[&#x27;A&#x27;]</span><br><span class="line">for cell in col :</span><br><span class="line">  print(cell.value)</span><br><span class="line"></span><br><span class="line">\#A~B행 데이터 출력하기</span><br><span class="line">cols = data[&#x27;A:B&#x27;]</span><br><span class="line">for col in cols:</span><br><span class="line">  for cell in col:</span><br><span class="line">    print(cell.value)</span><br><span class="line"> </span><br><span class="line">\#A1 부터 E31까지의 영역 출력하기</span><br><span class="line">area = data[&#x27;A1:E31&#x27;]</span><br><span class="line">for row in area:</span><br><span class="line">  for cell in row:</span><br><span class="line">    print(cell.value)</span><br></pre></td></tr></table></figure></li>
+<li><p>엑셀파일에 쓰기</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">from openpyxl import Workbook</span><br><span class="line"></span><br><span class="line">wb = Workbook()#괄호를 여닫아 클래스 변수 생성</span><br><span class="line"></span><br><span class="line">#ws = wb.active #처음에 생성된 시트 활용</span><br><span class="line"></span><br><span class="line">#ws = wb.create_sheet(&#x27;sheet_test2&#x27;)#시트 생성 후 시트 반환</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">ws.append([&#x27;Number&#x27;, &#x27;Name&#x27;, &#x27;Score&#x27;, &#x27;feel&#x27;])# 1열은 number, 2열은 name으로 넣는다.</span><br><span class="line">for i in range(10):</span><br><span class="line">  ws.append([i, str(i) + &#x27; data&#x27;, str(i*10) + &#x27; 점&#x27;, &#x27;ㅎ&#x27;])</span><br><span class="line">  #1열에는 i를, 2열에는 i+ data, 3열에는 i*10점, 4열에는 ㅎ을 넣는다.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">\#특정 셀에 데이터 추가하려면</span><br><span class="line"></span><br><span class="line">\# ws[&#x27;A1&#x27;] = &#x27;문자입력&#x27;</span><br><span class="line"></span><br><span class="line">\# ws[&#x27;B1&#x27;] = &#x27;test&#x27;</span><br><span class="line"></span><br><span class="line">wb.save(&#x27;save_test.xlsx&#x27;) #save 내장함수 사용</span><br></pre></td></tr></table></figure></li>
+<li><p>엑셀파일 큰 파일<br>```<br>#load_workbook으로 엑셀 내용을 가져오게되면, 느리고 큰 파일은 가져오지 못할 수 있다.<br>from openpyxl import load_workbook</p>
+</li>
+</ol>
+<p>wb = load_workbook(‘total.xlsx’, read_only=True)#읽기 전용으로 읽어온다.<br>data = wb.active#활성화탭을 받아서 data삼는다.</p>
+<p>for row in data.iter_rows() : #전체 행을 받아 가로 순으로 데이터를 불러오려면 ()빼먹지않기<br>    #iter_rows() 는 read only 옵션으로 불러올때 같이 쓰는게 좋다.<br>    #iter_rows()의 인자값으로는 최소 최대 열과 행, values only : bool = … 이 있다.<br>    for cell in row :<br>        print(cell.value)</p>
+<p>#행단위로 읽는것은 읽기전용으로 잘 되나<br>#열단위로 읽는것은 읽기전용으로 안된다.<br>#정리하자면 큰 파일을 읽을때는 읽기전용으로 읽어 가로순으로 불러들어야한다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-count-more-than-ten/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/06/2021-08-06-count-more-than-ten/" class="post-title-link" itemprop="url">(자바스크립트) 10보다 큰 숫자 구하기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-06 20:22:14" itemprop="dateCreated datePublished" datetime="2021-08-06T20:22:14+09:00">2021-08-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>10보다 큰 숫자 갯수 구하기</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const count = countBiggerThanTen([1,2,3,4,5,10,20,30,40,50,60]);</span><br><span class="line"></span><br><span class="line">function countBiggerThanTen(numbers) &#123;</span><br><span class="line">    let counts = 0 ;</span><br><span class="line">    numbers.forEach(n =&gt; &#123;</span><br><span class="line">        if (n &gt; 10) &#123;</span><br><span class="line">            counts += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return counts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>삼항연산자를 쓴다면!</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function countBiggerThenTen(numbers)&#123;</span><br><span class="line">    let cnt = 0</span><br><span class="line">    numbers.forEach(n =&gt; &#123;</span><br><span class="line">		cnt += n&gt;10 ? 1 : 0 //삼항연산자, 조건문이 참이면 1 더하고 아니면 0 더함</span><br><span class="line">    &#125;)</span><br><span class="line">    return cnt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>reduce 사용한다면?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function countBiggerThenTen(numbers)&#123;</span><br><span class="line">    let cnt = numbers.reduce((accumulator, value, index, array) =&gt; &#123;</span><br><span class="line">        return accumulator += value &gt; 10 ? 1 : 0</span><br><span class="line">    &#125;, 0)</span><br><span class="line">    return cnt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/30/2021-07-30_Javascript_function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,7 +579,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/30/2021-07-30_Javascript_function/" class="post-title-link" itemprop="url">(JavaScript) 10보다 큰 숫자 개수 구하기 함수 만들기</a>
+          <a href="/2021/07/30/2021-07-30_Javascript_function/" class="post-title-link" itemprop="url">(JavaScript) 배열에 쓰이는 함수</a>
         </h2>
 
         <div class="post-meta-container">
@@ -182,10 +589,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-07-30 19:52:00 / Modified: 20:58:07" itemprop="dateCreated datePublished" datetime="2021-07-30T19:52:00+09:00">2021-07-30</time>
+      <time title="Created: 2021-07-30 19:52:00" itemprop="dateCreated datePublished" datetime="2021-07-30T19:52:00+09:00">2021-07-30</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-08-06 20:13:32" itemprop="dateModified" datetime="2021-08-06T20:13:32+09:00">2021-08-06</time>
+      </span>
 
   
 </div>
@@ -200,58 +613,50 @@
           <p>강의 2주차가 거의 끝이 났습니다. </p>
 <p>지금 진도로는 HTML, CSS, JS 기초 단계를 공부했으며, C언어도 살짝 공부하였습니다. </p>
 <p>먼저 자바스크립트 함수부터 정리를 해볼까 합니다. </p>
+<p>21.07.26 내용</p>
 <ol>
-<li>forEach 과 화살표 함수</li>
+<li><strong>forEach 과 화살표 함수</strong></li>
 </ol>
 <p>forEach는 배열에 포함된 각각의 인자에 대해서 가해줄 먼가를 정의하는 것입니다. </p>
-<p>const array = [1, 2, 3, 4, 5] </p>
-<p>array.forEach(number=&gt; {</p>
-<p>​    console.log(number);</p>
-<p>})</p>
-<p>-&gt;array 배열의 인자에 대해서 각각 number 함수를 대입하라</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const array = [1, 2, 3, 4, 5] </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">array.forEach(number=&gt; &#123;</span><br><span class="line"></span><br><span class="line">	console.log(number);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>array 배열의 인자에 대해서 각각 number 함수를 대입하라는데</p>
 <p>=&gt; 는 함수를 뜻하며 이렇게 표현합니다. </p>
-<p>number =&gt; {console.log(number)}; </p>
-<p>=</p>
-<p>function (number) {console.log(number);}</p>
-<p>function 문구가 날아가고 number를 감싸던 소괄호가 =&gt;로 바뀌었습니다.</p>
-<p>만약 array.push(1) 을 넣으면 배열 마지막에 1이 들어가게 됩니다. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">number =&gt; &#123;console.log(number)&#125;; </span><br><span class="line"></span><br><span class="line">=</span><br><span class="line"></span><br><span class="line">function (number) &#123;console.log(number);&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <ol start="2">
-<li>map 함수</li>
+<li><strong>map 함수</strong></li>
 </ol>
-<p> forEach와 map 의 차이는 ~입니다. </p>
+<p> forEach와 map 의 차이는 리턴하냐 마냐입니다. </p>
 <p>가. forEach를 사용한 경우</p>
-<p>const array = [1,2,3,4,5];</p>
-<p>const squared =[];</p>
-<p>array.forEach(n =&gt;{</p>
-<p>  spquare.push(n*n); </p>
-<p>}); </p>
-<p>console.log(squared);</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,2,3,4,5];</span><br><span class="line"></span><br><span class="line">const squared =[];</span><br><span class="line"></span><br><span class="line">array.forEach(n =&gt;&#123;</span><br><span class="line"></span><br><span class="line">  spquare.push(n*n); </span><br><span class="line"></span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">console.log(squared);</span><br></pre></td></tr></table></figure>
+
+
+
 <p>나. map을 사용한 경우</p>
-<p>const array = [1,2,3,4,5];</p>
-<p>const squared = array.map(n=&gt;n*n); //n을 받아와서 n x n을 반환한다!</p>
-<p>console.log(squared);</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,2,3,4,5];</span><br><span class="line"></span><br><span class="line">const squared = array.map(n=&gt;n*n); //n을 받아와서 n x n을 반환한다!</span><br><span class="line"></span><br><span class="line">console.log(squared);</span><br></pre></td></tr></table></figure>
+
 <p>map 대신에 그냥 forEach를 써도 될것같지만, forEach를 사용하면 undefined 로 나옵니다. </p>
-<p>map은 리턴값을 저장하지만 forEach는 저장하지 못한다고 합니다. </p>
+<p>map은 리턴값을 저장하지만 forEach는 저장하지 않아요. </p>
 <p>forEach 와 map 둘 다 배열[]에서만 사용 가능합니다. </p>
 <ol start="3">
-<li>그 외</li>
+<li><strong>기타</strong></li>
 </ol>
-<p>배열에서 사용가능한 여러 기능들이 있는데 바로</p>
-<p>가. indexOf</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const find = array.indexOf(1); //1의 위치를 찾기</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const array = [ &#123;id : 1, text : &#x27;빨래&#x27;, done: true&#125;,  </span><br><span class="line">                &#123;id: 2, text: &#x27;숙제&#x27;, done: true&#125;,  </span><br><span class="line">                &#123;id : 1, text: &#x27;개밥주기&#x27;, done: false&#125;];</span><br><span class="line">array라는 배열에서 : 전후로 있는것을 속성, :앞에것을 key, :뒤에것을 Value라고 합니다. </span><br></pre></td></tr></table></figure>
+<p>가. indexOf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const find = array.indexOf(1); //1의 위치(인덱스)를 찾기</span><br></pre></td></tr></table></figure>
+<p>나. findIndex</p>
+<p> 특정 key 값을 갖고있는 배열의 <strong>위치</strong>를 찾자마자 반환하고 종료됩니다. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const find = array.indexOf(a=&gt;a.key === 1)   </span><br></pre></td></tr></table></figure>
 
-<p>나. findIndex 특정 key 값을 갖고있는 배열의 <strong>위치</strong>를 찾자마자 반환하고 종료됩니다. </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const find = array.indexOf(a=&gt;a.key === 1)   -&gt; 0</span><br></pre></td></tr></table></figure>
-
-<p>다. filter 특정 key 값을 갖고있는 <strong>배열</strong>을 전부 새로 담아서 반환합니다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const find = array.filter(a=&gt;a.key === 1)   -&gt; </span><br><span class="line">[ &#123; id: 1, text: &#x27;빨래&#x27;, done: true &#125;,</span><br><span class="line">  &#123; id: 1, text: &#x27;개밥주기&#x27;, done: false &#125; ]</span><br></pre></td></tr></table></figure>
+<p>다. filter </p>
+<p>특정 key 값을 갖고있는 <strong>배열</strong>을 전부 새로 담아서 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const find = array.filter(a=&gt;a.key === 1)   </span><br><span class="line">[ &#123; id: 1, text: &#x27;빨래&#x27;, done: true &#125;,</span><br><span class="line">  &#123; id: 1, text: &#x27;개밥주기&#x27;, done: false &#125; ]</span><br></pre></td></tr></table></figure>
 
 <p>라. splice, shift, pop, unshift(n) </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">splice: 찾은값으로부터 뒤로 n개 삭제 후 기존 배열을 수정합니다. </span><br><span class="line">slice: 찾은값을 삭제하고 기존 배열 수정하지 않습니다. </span><br><span class="line">shift: 맨앞에있는원소를 하나씩 밖으로 꺼냄, 기존 배열을 수정합니다. </span><br><span class="line">pop: 맨뒤에있는 원소를 하나씩 밖으로 뺌, 기존 배열을 수정합니다. </span><br><span class="line">unshift(n) : 맨앞에 n원소를 추가합니다.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">push: 값을 배열에 집어넣습니다.</span><br><span class="line">splice: 찾은값으로부터 뒤로 n개 삭제 후 기존 배열을 수정합니다. </span><br><span class="line">slice: 찾은값을 삭제하고 기존 배열 수정하지 않습니다. </span><br><span class="line">shift: 맨앞에있는원소를 하나씩 밖으로 꺼냄, 기존 배열을 수정합니다. </span><br><span class="line">pop: 맨뒤에있는 원소를 하나씩 밖으로 뺌, 기존 배열을 수정합니다. </span><br><span class="line">unshift(n) : 맨앞에 n원소를 추가합니다.</span><br></pre></td></tr></table></figure>
 
 
 
