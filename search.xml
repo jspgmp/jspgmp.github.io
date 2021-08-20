@@ -367,4 +367,138 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
         <tag>KDT</tag>
       </tags>
   </entry>
+  <entry>
+    <title>(JAVA)Static 변수와 메소드</title>
+    <url>/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/</url>
+    <content><![CDATA[<p> 아직 기본 개념이 모호한데 진도를 계속 나가봅니다. </p>
+<p>Static 이라는 것은 정적이라는 뜻을 갖고있는데, 고정되어있다 이런 느낌입니다.</p>
+<p>다른 변수들이 생기고 사라지고 할 때, Static은 자리를 지키면서 프로그램이 종료될때까지 유지됩니다.</p>
+<span id="more"></span>
+
+
+
+<h2> Java 메모리</h2>
+
+<p><img src="C:\Users\Jisoo\Documents\dev\blog\source\img\image-20210820223543146.png" alt="image-20210820223543146"></p>
+<p>아래서부터 </p>
+<p>Code(Text) 에 작성한 코드가 들어간다. </p>
+<p>Static에 전역변수가 들어간다. 어디서든지 접근할 수 있다. 프로그램 종료까지 없어지지 않는다. </p>
+<p>Stack이라는것은 한쪽에서만 들락거릴수있는 메모리로, 컴파일 단계에서 이미 사이즈가 정해진다. 프로그램 운용 중 늘어날 수 없다. 함수가 들락거리면서 써졌다 지워졌다 한다. 맨 밑에는 main 함수가 있다고 한다. </p>
+<p>Heap은 프로그램 운용시 사이즈가 변한다. 컴파일 단계에서 알기 힘든 것들 예를들면 사이즈가 큰 배열 등이 할당된다.</p>
+<h2>Static 변수와 메서드의 활용</h2>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> class <span class="title">Company</span> <span class="params">()</span> </span>&#123;&#125; </span><br><span class="line">-&gt; 다른 클래스에서 생성자 호출 못하게 선점한다</span><br><span class="line">    </span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Company instance = <span class="keyword">new</span> Company();</span><br><span class="line">-&gt;정적변수로 instance를 설정한다.</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Company <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>( intance == <span class="keyword">null</span> ) &#123;</span><br><span class="line">instance == <span class="keyword">new</span> Company&#125;; <span class="keyword">return</span> instance</span><br><span class="line">-&gt;다른클래스에서 생성자를 getInstance로 호출할 수 있도록 설정한다. </span><br></pre></td></tr></table></figure>
+
+<p>위와같이 세팅 후 Company 생성자를이용하여 다른 이름으로 인스턴스를 만들어도 똑같은 인스턴스 주소를 가리킨다. </p>
+<h2> 예제: Singleton 패턴을 활용한 자동차공장</h2>
+
+<p>1개만 존재하는 CarFactory 에서 createCar 메서드를 이용해 Car객체를 만드는데 Car객체가 만들어질때마다 그 변수의 carNum값이 10001부터 1씩 증가하도록 하라 </p>
+<figure class="highlight java"><figcaption><span>: CarFactoryTest.java</span></figcaption><table><tr><td class="code"><pre><span class="line">Public <span class="class"><span class="keyword">class</span> <span class="title">CarFactoryTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    	CarFactory factory = CarFactory.getInstance();</span><br><span class="line">    	Car sonata1 = factory.createCar();</span><br><span class="line">    	Car sonata2 = factory.createCar();</span><br><span class="line">    	System.out.println(sonata1.getCarNum());</span><br><span class="line">	System.out.println(sonata2.getCarNum());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">풀이: 단 한개만 존재해야하는 객체가 필요한 경우 싱글톤 패턴을 사용한다. 이 문제의 경우 CarFactory가 하나만 존재하고 CarCar는 여러 개 존재할 수 있어야 한다. CarFactory는 모든 객체가 변수명만 다르게 공유할 수 있는 클래스 변수가 되고 Car 변수는 인스턴스 변수가 된다. </span><br><span class="line"></span><br><span class="line">CarFactoryTest.java 파일로부터 알 수 있는 정보는 </span><br><span class="line"></span><br><span class="line">1.  1개만 존재해야하는 CarFactory와, CarFactory를 getInstance함수로 불러온다는 것</span><br><span class="line"></span><br><span class="line">2.  createCar함수로 Car 객체를 생성한다</span><br><span class="line"></span><br><span class="line">3.  createCar함수는 CarFactory안에 있어야 한다. </span><br><span class="line"></span><br><span class="line">4.  객체.getCarNum 함수는 Car 객체의 번호를 리턴한다.</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><figcaption><span>: CarFactory.java</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//CarFactory를 클래스 변수로 사용하기 위한 부분</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//instance라는 객체를 static에 생성하고 생성자를 private으로 막아서 다른곳에서 함수 호출을 못하게 막아놓는다. new를 쓰지 못하고 .getInstance를 사용해서 접근할 수밖에 없게 만든다. </span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> CarFactory instance = <span class="keyword">new</span> CarFactory();</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">CarFactory</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"><span class="comment">//getInstance()를 사용하면, CarFactory타입의 instance객체가 반환된다. </span></span><br><span class="line"><span class="comment">//즉, CarFactoryTest.java에서 factory는 instance의 다른 이름이다.</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CarFactory <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">        instance == <span class="keyword">new</span> CarFactory();</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment">//함수 createCar를 정의하는 부분</span></span><br><span class="line"><span class="comment">//노출되지 않는 serialNum 을 별도 생성하여 새로운 Car 변수에 대입하도록 한다. </span></span><br><span class="line"><span class="comment">//serialNum 은 createCar변수만 참조할수 있어야하므로 private하여 createCar외에 요소가 serialNum을 바꿀 수 없도록 만든다. </span></span><br><span class="line"><span class="comment">//CarFactory프로그램 운용중 항시 있으며 번호를 줘야하므로 static</span></span><br><span class="line"><span class="comment">//그러나 본 코드에서 Static 이 붙지 않아도 실행이 가능하므로 주의한다. </span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> serialNum = <span class="number">10000</span>;</span><br><span class="line"><span class="comment">//Car클래스를 리턴하는 createCar 메소드 이므로 Car가 붙는다.</span></span><br><span class="line"><span class="comment">//이게 메소드인지 생성자인지 헷갈린다. 생성자는 클래스명이랑 같다고 했는데</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Car <span class="title">createCar</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">// 새 Car클래스 생성자(serialNum 에 1을 먼저 더하고 대입한다.)를 이용해 Car 클래스 targetCar 를 생성한다. </span></span><br><span class="line">    	Car targetCar = <span class="keyword">new</span> Car(++ serialNum);</span><br><span class="line">    <span class="keyword">return</span> targetCar;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>: car.java</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//다음이 없다면 Car a = new Car(3030);를 입력할 수 있어 carNum을 임의로 입력할 수 있게 된다. 하지만 있어도 생성이 되는 것이 문제, 그렇다면 이걸 왜 입력해야하는지?</span></span><br><span class="line"><span class="comment">// =&gt; 두 개의 생성자가 다른 매개변수를 갖고 선언되면 생성자 오버로딩</span></span><br><span class="line"><span class="comment">// =&gt; 초기화되지 않은 필드는 오류를 일으키는 원인</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Car</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//carNum 도 다른곳에서 볼필요없으므로 private</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> carNum;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Car생성자에 대한 정의이다. 생성자는 메소드와 비슷한 모양이나, 리턴 타입이 없고, 생성자 이름은 클래스 이름과 동일해야한다. 매개변수는 생략되어도 되고 생성자는 오버로딩이 가능하여 여러 개를 만들 수도 있다. </span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> serialNum)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">this</span>.carNum = serialNum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCarNum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="keyword">this</span>.carNum;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>KDT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-08-20-JAVA-기초</title>
+    <url>/2021/08/20/2021-08-20-JAVA-%EA%B8%B0%EC%B4%88/</url>
+    <content><![CDATA[<p> Java를 공부한 내용을 앞으로 블로그에 가능한 매일 업로드할 예정입니다. </p>
+<p>워크시트라는것을 워드로 작성했었는데, 차라리 md로 작성하는것이 훨씬 나을것 같다고 생각이 됩니다.</p>
+<span id="more"></span>
+
+<h2> Java의 메서드</h2>
+
+<p>메서드는 클래스 내부에 구현되는 함수, 멤버함수라고도 한다. </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123; -&gt;Student의 속성들</span><br><span class="line"><span class="keyword">int</span> studentNumber; -&gt; 멤버변수</span><br><span class="line">String studentName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>함수정의: 이름, 매개변수, 반환값, 함수몸체</p>
+<p>매개변수는 자료형과 함께 써야한다. </p>
+<p>반환값에 따라 함수의 자료형 결정, 반환값이 없으면 void가 들어간다. </p>
+<p>스택: 함수가 호출되면 지역 변수들이 사용하는 메모리</p>
+<p>​          (함수에서 사용하는 메모리 공간이며, 지역 변수들이 자리를 잡는다.)</p>
+<p>인스턴스(instance): new 키워드를 이용해 객체(인스턴스) 생성, 동적 메모리(heap)에 할당된다. 사용이 끝난 동적 메모리는 자바에서 자동으로 수거한다. 이때 스택에 있는 객체 이름을 참조변수라고 하며 메모리의 주소를 참조값(레퍼런스 벨류)라고 한다.</p>
+<h2>생성자</h2>
+
+<p>생성자는 무엇인가?</p>
+<p> =&gt; 클래스와 동일한 명칭으로 인스턴스를 생성하기 위한 것(Constructor)</p>
+<p>생성자의 특징은 무엇인가?</p>
+<p> =&gt; 모든 클래스는 생성자를 가지고 있다. </p>
+<p> =&gt; 메소드와 비슷한 모양이나 메소드가 아니다.</p>
+<p> =&gt; 클래스에 생성자를 만들지 않으면, 자동으로 만들어줘서 new 키워드로 호출할 수 있다. </p>
+<p> =&gt; 오버로딩: 이름은 똑같고 매개변수만 다르게 정의할 수 있다.</p>
+<p>생성자를 써야하는 이유는 무엇인가?</p>
+<p> =&gt; 인스턴스를 생성하여 초기값을 부여해준다. </p>
+ <h2>접근제어지시자</h2>
+
+<p>종류: public, private, protected, none</p>
+<p>private: 동 클래스 내부에서만 접근 가능, 외부, 상속클래스 접근불가</p>
+<p>default: 같은 패키지 내부에서 (상속이라도 패키지 다르면 접근불가)</p>
+<p>protected: 같은 패키지나 상속관계에서 접근 가능</p>
+<p>public: 클래스 어디서나 접근 가능</p>
+<h2>캡슐화</h2>
+
+<p> 필요한 정보와 기능만 외부에 노출한다.</p>
+<p> 대부분 멤버 변수와 메서드를 감추고 외부엔 통합 인터페이스만 제공하여 오류를 최소화 한다. </p>
+<h2>배열</h2>
+
+<h3>
+    배열의 특징
+</h3>
+
+<p>배열은 동일한 자료형만 담을 수 있다. </p>
+<p>물리적 위치와 논리적 위치가 동일하다.</p>
+<p>ArrayList를 활용한다.</p>
+<p>배열 크기는 바꿀 수 없다.</p>
+<p>배열의 길이와 요소는 동일하지 않다.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//주의: 배열 요소간의 곱을 구하는경우 빈 0 때문에 0이 나올수 있기 때문에</span></span><br><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">1.1</span> ; count++</span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">2.1</span> ; count++</span><br><span class="line"><span class="comment">//이렇게 count변수를 활용하는 것이 좋다. </span></span><br></pre></td></tr></table></figure>
+
+
+
+ <h3>배열 초기화(initializing)</h3>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="comment">//배열에 1부터 10까지 집어넣는다면:</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, num = <span class="number">1</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">	arr[i] = num ++ ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//배열에 담긴 1부터 10까지를 모두 합한다면:</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num: arr) &#123;</span><br><span class="line">	total += num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위는 배열 내 모든 요소에 적용할 방법!</p>
+<h3>
+    얕은복사와 깊은복사
+</h3>
+
+<p>얕은복사는 데이터의 주소만 복사하고</p>
+<p>깊은복사는 데이터를 전체 복사해온다. </p>
+<h4>
+    얕은복사
+</h4>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.arraycopy(library, <span class="number">0</span>, copyLibrary, <span class="number">0</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">//library 로부터 copyLibrary로 5자리의 배열을 복사한다. </span></span><br></pre></td></tr></table></figure>
+
+<h4>
+    깊은복사
+</h4>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//배열을 일일히 초기화 해준다음에</span></span><br><span class="line">copyLibrary[<span class="number">0</span>] = <span class="keyword">new</span> Book_Array();</span><br><span class="line">copyLibrary[<span class="number">1</span>] = <span class="keyword">new</span> Book_Array();</span><br><span class="line">copyLibrary[<span class="number">2</span>] = <span class="keyword">new</span> Book_Array();</span><br><span class="line">copyLibrary[<span class="number">3</span>] = <span class="keyword">new</span> Book_Array();</span><br><span class="line">copyLibrary[<span class="number">4</span>] = <span class="keyword">new</span> Book_Array();</span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i&lt;library.length; i++) &#123;</span><br><span class="line">	copyLibrary[i].setAuthor(library[i].getAuthor());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//library로부터 for문으로 하나씩 대입하여 copyLibrary에 복사해넣는다. </span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>KDT</tag>
+      </tags>
+  </entry>
 </search>
