@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="개발블로그">
 <meta property="og:type" content="website">
 <meta property="og:title" content="땡땡 블로그">
@@ -75,6 +75,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -87,11 +88,37 @@
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -180,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/27/2021-07-23-github-manual/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-count-more-than-ten/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -193,7 +220,454 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/27/2021-07-23-github-manual/" class="post-title-link" itemprop="url">Github 사용하기</a>
+          <a href="/2021/08/06/2021-08-06-count-more-than-ten/" class="post-title-link" itemprop="url">(자바스크립트) 10보다 큰 숫자 구하기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-06 20:22:14" itemprop="dateCreated datePublished" datetime="2021-08-06T20:22:14+09:00">2021-08-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-08-20 19:36:20" itemprop="dateModified" datetime="2021-08-20T19:36:20+09:00">2021-08-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/08/06/2021-08-06-count-more-than-ten/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-count-more-than-ten/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>10보다 큰 숫자 갯수 구하기</p>
+<h1> 조건</h1>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const count = countBiggerThanTen([1,2,3,4,5,10,20,30,40,50,60]);</span><br><span class="line"></span><br><span class="line">function countBiggerThanTen(numbers) &#123;</span><br><span class="line">    let counts = 0 ;</span><br><span class="line">    numbers.forEach(n =&gt; &#123;</span><br><span class="line">        if (n &gt; 10) &#123;</span><br><span class="line">            counts += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return counts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>삼항연산자를 쓴다면!</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function countBiggerThenTen(numbers)&#123;</span><br><span class="line">    let cnt = 0</span><br><span class="line">    numbers.forEach(n =&gt; &#123;</span><br><span class="line">		cnt += n&gt;10 ? 1 : 0 //삼항연산자, 조건문이 참이면 1 더하고 아니면 0 더함</span><br><span class="line">    &#125;)</span><br><span class="line">    return cnt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>reduce 사용한다면?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function countBiggerThenTen(numbers)&#123;</span><br><span class="line">    let cnt = numbers.reduce((accumulator, value, index, array) =&gt; &#123;</span><br><span class="line">        return accumulator += value &gt; 10 ? 1 : 0</span><br><span class="line">    &#125;, 0)</span><br><span class="line">    return cnt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/30/2021-07-30_Javascript_function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/07/30/2021-07-30_Javascript_function/" class="post-title-link" itemprop="url">(JavaScript) 배열에 쓰이는 함수</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-07-30 19:52:00" itemprop="dateCreated datePublished" datetime="2021-07-30T19:52:00+09:00">2021-07-30</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-08-20 19:32:40" itemprop="dateModified" datetime="2021-08-20T19:32:40+09:00">2021-08-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/30/2021-07-30_Javascript_function/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/30/2021-07-30_Javascript_function/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>강의 2주차가 거의 끝이 났습니다. </p>
+<p>지금 진도로는 HTML, CSS, JS 기초 단계를 공부했으며, C언어도 살짝 공부하였습니다. </p>
+<p>먼저 자바스크립트 함수부터 정리를 해볼까 합니다. </p>
+<p>21.07.26 내용</p>
+<ol>
+<li><strong>forEach 과 화살표 함수</strong></li>
+</ol>
+<p>forEach는 배열에 포함된 각각의 인자에 대해서 가해줄 먼가를 정의하는 것입니다. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const array = [1, 2, 3, 4, 5] </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">array.forEach(number=&gt; &#123;</span><br><span class="line"></span><br><span class="line">	console.log(number);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>array 배열의 인자에 대해서 각각 number 함수를 대입하라는데</p>
+<p>=&gt; 는 함수를 뜻하며 이렇게 표현합니다. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">number =&gt; &#123;console.log(number)&#125;; </span><br><span class="line"></span><br><span class="line">=</span><br><span class="line"></span><br><span class="line">function (number) &#123;console.log(number);&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li><strong>map 함수</strong></li>
+</ol>
+<p> forEach와 map 의 차이는 리턴하냐 마냐입니다. </p>
+<p>가. forEach를 사용한 경우</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,2,3,4,5];</span><br><span class="line"></span><br><span class="line">const squared =[];</span><br><span class="line"></span><br><span class="line">array.forEach(n =&gt;&#123;</span><br><span class="line"></span><br><span class="line">  spquare.push(n*n); </span><br><span class="line"></span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">console.log(squared);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>나. map을 사용한 경우</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,2,3,4,5];</span><br><span class="line"></span><br><span class="line">const squared = array.map(n=&gt;n*n); //n을 받아와서 n x n을 반환한다!</span><br><span class="line"></span><br><span class="line">console.log(squared);</span><br></pre></td></tr></table></figure>
+
+<p>map 대신에 그냥 forEach를 써도 될것같지만, forEach를 사용하면 undefined 로 나옵니다. </p>
+<p>map은 리턴값을 저장하지만 forEach는 저장하지 않아요. </p>
+<p>forEach 와 map 둘 다 배열[]에서만 사용 가능합니다. </p>
+<ol start="3">
+<li><strong>기타</strong></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const array = [ &#123;id : 1, text : &#x27;빨래&#x27;, done: true&#125;,  </span><br><span class="line">                &#123;id: 2, text: &#x27;숙제&#x27;, done: true&#125;,  </span><br><span class="line">                &#123;id : 1, text: &#x27;개밥주기&#x27;, done: false&#125;];</span><br><span class="line">array라는 배열에서 : 전후로 있는것을 속성, :앞에것을 key, :뒤에것을 Value라고 합니다. </span><br></pre></td></tr></table></figure>
+<p>가. indexOf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const find = array.indexOf(1); //1의 위치(인덱스)를 찾기</span><br></pre></td></tr></table></figure>
+<p>나. findIndex</p>
+<p> 특정 key 값을 갖고있는 배열의 <strong>위치</strong>를 찾자마자 반환하고 종료됩니다. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const find = array.indexOf(a=&gt;a.key === 1)   </span><br></pre></td></tr></table></figure>
+
+<p>다. filter </p>
+<p>특정 key 값을 갖고있는 <strong>배열</strong>을 전부 새로 담아서 반환합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const find = array.filter(a=&gt;a.key === 1)   </span><br><span class="line">[ &#123; id: 1, text: &#x27;빨래&#x27;, done: true &#125;,</span><br><span class="line">  &#123; id: 1, text: &#x27;개밥주기&#x27;, done: false &#125; ]</span><br></pre></td></tr></table></figure>
+
+<p>라. splice, shift, pop, unshift(n) </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">push: 값을 배열에 집어넣습니다.</span><br><span class="line">splice: 찾은값으로부터 뒤로 n개 삭제 후 기존 배열을 수정합니다. </span><br><span class="line">slice: 찾은값을 삭제하고 기존 배열 수정하지 않습니다. </span><br><span class="line">shift: 맨앞에있는원소를 하나씩 밖으로 꺼냄, 기존 배열을 수정합니다. </span><br><span class="line">pop: 맨뒤에있는 원소를 하나씩 밖으로 뺌, 기존 배열을 수정합니다. </span><br><span class="line">unshift(n) : 맨앞에 n원소를 추가합니다.</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/27/my-first-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/07/27/my-first-post/" class="post-title-link" itemprop="url">my first post</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-07-27 16:11:04" itemprop="dateCreated datePublished" datetime="2021-07-27T16:11:04+09:00">2021-07-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-08-20 19:33:08" itemprop="dateModified" datetime="2021-08-20T19:33:08+09:00">2021-08-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Test/" itemprop="url" rel="index"><span itemprop="name">Test</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/27/my-first-post/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/my-first-post/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>hello!</p>
+<p>This is my new dev blog!</p>
+<p>excited!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/27/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/07/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-07-27 15:50:51" itemprop="dateCreated datePublished" datetime="2021-07-27T15:50:51+09:00">2021-07-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-07-30 19:47:42" itemprop="dateModified" datetime="2021-07-30T19:47:42+09:00">2021-07-30</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/27/hello-world/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/hello-world/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>블로그 글쓰기 순서</p>
+<p>md 작성</p>
+<p>blog/source/_posts 저장</p>
+<p>$ hexo generate</p>
+<p>$ hexo server</p>
+<p>$ hexo deploy</p>
+<p>끝..</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/27/2021-07-23-htmlfirst/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/07/27/2021-07-23-htmlfirst/" class="post-title-link" itemprop="url">첫 HTML 조우</a>
         </h2>
 
         <div class="post-meta-container">
@@ -211,8 +685,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-23 20:24:05" itemprop="dateModified" datetime="2021-07-23T20:24:05+09:00">2021-07-23</time>
+        <time title="Modified: 2021-08-20 19:32:49" itemprop="dateModified" datetime="2021-08-20T19:32:49+09:00">2021-08-20</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
+        </span>
+    </span>
 
   
   
@@ -223,8 +706,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/07/27/2021-07-23-github-manual/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/2021-07-23-github-manual/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/07/27/2021-07-23-htmlfirst/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/2021-07-23-htmlfirst/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -238,49 +721,284 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>이번 내용은 깃허브 사용과 블로그 준비에 관한 내용입니다. </p>
-<p>저는 이번에 깃허브라는것을 처음 사용해봤는데요, git-bash를 이용해서 하는게 일반 블로그보다 까다롭게 느껴지지만 익숙해지기 위해서 계속 사용하려고 해요~</p>
-<h1 id="사용-준비하기"><a href="#사용-준비하기" class="headerlink" title="사용 준비하기"></a>사용 준비하기</h1><ol>
-<li>가입 및 설치하기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Github.com 에 가입</span><br><span class="line">git-scm.com 에서 다운로드 및 설치</span><br><span class="line">git help -a 와 git config로 각종 명령어 확인</span><br></pre></td></tr></table></figure></li>
-<li>git bash 초기 세팅<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;닉네임&quot;</span><br><span class="line">git config --global user.email &quot;abc@abc.com&quot;</span><br><span class="line">git config --global core.editor &quot;vim&quot;</span><br><span class="line">git config --global core.pager &quot;cat&quot;</span><br><span class="line">git config --global init.defaultbranch &quot;main&quot;</span><br></pre></td></tr></table></figure></li>
-<li>cmd 기본 명령어(git bash에서 사용)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">help 로 각종 명령어 확인 가능</span><br><span class="line">touch 파일명.확장자 = 파일 생성</span><br><span class="line">ls = 현재 폴더에 있는 파일 확인</span><br><span class="line">mv 파일명.확장자 폴더명 = 파일 옮기기</span><br><span class="line">cd 디렉토리 변경</span><br><span class="line">- cd ../ = 상위 폴더로 변경</span><br><span class="line">- cd = 최상위 폴더로 변경</span><br><span class="line">- cd 주소 = 주소 폴더로 변경</span><br><span class="line">rm 파일명.확장자 = 파일 지우기</span><br><span class="line">* = asterisk</span><br><span class="line">예) rm **.md = md 파일 다 지우기</span><br></pre></td></tr></table></figure></li>
-<li>vim 기본 명령어<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi 파일명.확장자 사용하여 진입</span><br><span class="line">Normal mode: 텍스트 편집 시 또는 ESC를 눌렀을 때</span><br><span class="line">Input mode: Normal mode에서 a, i, o등을 눌렀을 때, 텍스트 입력 가능</span><br><span class="line">Command mode: 저장 또는 나가기 등을 선택, 쉬프트+:으로 진입</span><br><span class="line"> - :w 저장, :wq 저장 후 종료</span><br><span class="line"> - :q! 저장하지 않고 강제종료</span><br></pre></td></tr></table></figure></li>
-<li>git 연결하기 (Local과 remote 연결)</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">github에서 원하는 repo 생성 후 code 란에서 url을 복사한다.</span><br><span class="line">git-bash를 이용해 원하는 디렉토리에 위치 후 </span><br><span class="line">git clone url 을 입력하여 연결시킨다.</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="사용하기"><a href="#사용하기" class="headerlink" title="사용하기"></a>사용하기</h1><p>편하자고 아무데나 수정한 파일을 갖다붙이면 버전관리가 참으로 힘들겠습니다. </p>
-<p>버전관리 공간은 크게 </p>
-<p>Local - Remote 두곳으로 나뉘어집니다. </p>
-<p>Local 에서 Branch를 갈라 수정하고 git에 올리고 그에대한 설명인 commit을 완료하고나면</p>
-<p>온라인 Github로 Push 하는 것입니다. </p>
-<ol>
-<li>Branch  생성 및 전환</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">다른사람에게 코드 리뷰를 요청할 계획이라면 이 단계를 거쳐야 합니다.</span><br><span class="line">git-bash에서 </span><br><span class="line">git branch 로 현재 branch를 확인해주신 뒤에</span><br><span class="line">git branch &lt;새로운 branch이름&gt; 으로 하나더 만들어주시고</span><br><span class="line">git checkout &lt;새로운 branch이름&gt; 해주시면</span><br><span class="line">branch 가 바뀌게 됩니다.</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>수정 내용 적용하기</li>
-</ol>
-<p>변경한 사항은 <strong>BLOB</strong></p>
-<p>변경사항에 대한 정보는 <strong>TREE</strong></p>
-<p>스냅샷을 찍는순간 생성되는것 <strong>COMMIT</strong></p>
-<p>이라고 하는데 제가 이해하기로는 <strong>COMMIT</strong>은 수정사항에 대한 설명같아요!</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">올리기</span><br><span class="line">1. Working directory: 작성한 코드를 저장</span><br><span class="line">&lt;파일 열기 및 수정은 vi 파일명.확장자 통해서 가능!!&gt;</span><br><span class="line"> ↓+git add 파일명.확장자 (또는 새로운 버전으로 교체)</span><br><span class="line"> </span><br><span class="line">2. Staging area: 작성 또는 변경상태가 저장</span><br><span class="line"> ↓+git commit (수정에 대한 설명)</span><br><span class="line"> </span><br><span class="line">3. Local repo: 변경한 건에 대한 commit을 달아 저장된 상태</span><br><span class="line"> ↓+git push </span><br><span class="line"> </span><br><span class="line">4. Remote repo: github로 업로드된 상태</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>repo 가져오기</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin main + git merge FETCH_HEAD</span><br><span class="line">또는 git pull origin main</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>Branch 에서 변경한 내용 코드리뷰 요청하기</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repo 에서 상대방 초대</span><br><span class="line">pull request 하기</span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>Branch 내용 main 에 합치기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main = main으로 변경</span><br><span class="line">git merge secondary = secondary 브랜치를 main으로 합병</span><br></pre></td></tr></table></figure></li>
-</ol>
+          <h1 id="HTML-CSS-처음-접하기"><a href="#HTML-CSS-처음-접하기" class="headerlink" title="HTML CSS 처음 접하기"></a>HTML CSS 처음 접하기</h1><p>현재 블로그 꼴이 조금 흉측하지만 다듬어나갈 예정입니다~</p>
+<p>글 목록도 좀 만들고요~</p>
+<p>HTML과 CSS에 대한 첫 내용은 샘플을 통해 정리를 해봤습니다~</p>
+<table>
+<thead>
+<tr>
+<th>&lt;!–/<!DOCTYPE html> /가장 먼저 시작하는부분, !하고 탭을 하면 양식이 자동으로 채워집니다.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/<html lang="ko">  /언어를 설정하는부분, 이건 ko로 바꾸긴 했지만 차이가 느껴지지 않아요~</td>
+</tr>
+<tr>
+<td>/<head> /헤드, 화면에 보여지지 않는 html에 대한 정보를 담는 부분이에요</td>
+</tr>
+<tr>
+<td>/<meta charset="UTF-8"> /문자 인코딩 정보</td>
+</tr>
+<tr>
+<td>/<title>GitHub:Where the world builds software</title> /탭에 나오는 이름</td>
+</tr>
+<tr>
+<td>/<link rel="stylesheet" href="./main.css"> /html에 css효과를 넣기위한 링크방식 연결</td>
+</tr>
+<tr>
+<td>/</head></td>
+</tr>
+<tr>
+<td>/<body>  /화면에 나타나는 부분</td>
+</tr>
+<tr>
+<td>/<div class="header"></td>
+</tr>
+<tr>
+<td>/<div class="container"></td>
+</tr>
+<tr>
+<td>/<div class="container-left clearfix"></td>
+</tr>
+<tr>
+<td>/<div class="logo">/ 이미지와여러가지 클래스 작성</td>
+</tr>
+<tr>
+<td>/<img src="https://heropcode.github.io/GitHub-Responsive/img/logo.svg" alt="GitHub Logo"></td>
+</tr>
+<tr>
+<td>/</div></td>
+</tr>
+<tr>
+<td>/<div class="container-menu1">Why GitHub?</div></td>
+</tr>
+<tr>
+<td>/<div class="container-menu1">Team</div></td>
+</tr>
+<tr>
+<td>/<div class="container-menu1">Enterprise</div></td>
+</tr>
+<tr>
+<td>/<div class="container-menu1">Explore</div></td>
+</tr>
+<tr>
+<td>/<div class="container-menu1">Marketplace</div></td>
+</tr>
+<tr>
+<td>/<div class="container-menu1">Pricing</div></td>
+</tr>
+<tr>
+<td>/<div class="container-signup">Sign up</div></td>
+</tr>
+<tr>
+<td>/<div class="container-menu2">Sign in</div></td>
+</tr>
+<tr>
+<td>/<label class="input-menu"></td>
+</tr>
+<tr>
+<td>/<input type="text" class="input" value placeholder="Search GitHub"></td>
+</tr>
+<tr>
+<td>/</div></td>
+</tr>
+<tr>
+<td>/</div></td>
+</tr>
+<tr>
+<td>/</div></td>
+</tr>
+<tr>
+<td>/</div></td>
+</tr>
+<tr>
+<td>/</body></td>
+</tr>
+<tr>
+<td>/</html>–!&gt;</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>.header {</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>padding: 8px 0px; 안쪽 공간 설정</td>
+</tr>
+<tr>
+<td>background-color: #040d21; 배경색 설정</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>.container {</td>
+</tr>
+<tr>
+<td>width: 1192px;/너비</td>
+</tr>
+<tr>
+<td>height: 56px;/높이</td>
+</tr>
+<tr>
+<td>margin: auto; /외부 간격 설정</td>
+</tr>
+<tr>
+<td>color: white;</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>.logo img {</td>
+</tr>
+<tr>
+<td>float: left;  /대상을 붕띄워서 왼쪽으로 정렬</td>
+</tr>
+<tr>
+<td>margin-right: 20px;</td>
+</tr>
+<tr>
+<td>margin-top: 10px;</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>.container-menu1 {</td>
+</tr>
+<tr>
+<td>padding-top: 16px;</td>
+</tr>
+<tr>
+<td>padding-bottom: 16px;</td>
+</tr>
+<tr>
+<td>padding-right: 20px;</td>
+</tr>
+<tr>
+<td>float: left;</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>.container-menu2 {</td>
+</tr>
+<tr>
+<td>padding: 16px 20px;</td>
+</tr>
+<tr>
+<td>float: right;</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>.input-menu {</td>
+</tr>
+<tr>
+<td>margin-top: 12px;</td>
+</tr>
+<tr>
+<td>padding-top: 4px;</td>
+</tr>
+<tr>
+<td>padding-bottom: 4px;</td>
+</tr>
+<tr>
+<td>display: block; /잘모르겠음!!</td>
+</tr>
+<tr>
+<td>float: right;</td>
+</tr>
+<tr>
+<td>border: 1px solid; /외곽 선 설정</td>
+</tr>
+<tr>
+<td>box-shadow: none;</td>
+</tr>
+<tr>
+<td>border-radius: 6px;</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>.container-signup {</td>
+</tr>
+<tr>
+<td>margin-top: 12px;</td>
+</tr>
+<tr>
+<td>padding-top: 4px;</td>
+</tr>
+<tr>
+<td>padding-bottom: 4px;</td>
+</tr>
+<tr>
+<td>padding-left: 8px;</td>
+</tr>
+<tr>
+<td>float: right;</td>
+</tr>
+<tr>
+<td>border: 1px solid;</td>
+</tr>
+<tr>
+<td>border-color: white;</td>
+</tr>
+<tr>
+<td>border-radius: 6px;</td>
+</tr>
+<tr>
+<td>padding-right: 8px;</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>.clearfix::after { /추가적인 공부가 필요한부분!</td>
+</tr>
+<tr>
+<td>content: “”;</td>
+</tr>
+<tr>
+<td>display: block;</td>
+</tr>
+<tr>
+<td>clear: both;</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -300,7 +1018,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
@@ -329,6 +1047,7 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
