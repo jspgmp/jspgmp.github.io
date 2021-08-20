@@ -287,7 +287,7 @@
 </ol>
 <p>#Simple Mail Transfer Protocel 라이브러리 가져오기<br>import smtplib</p>
 <p>#정규표현식(regular expression) 모듈 가져오기<br>import re</p>
-<p>#로그인에 사용될 변수 미리 지정<br>SMTP_SERVER = ‘smtp.gmail.com’<br>SMTP_PORT = 465<br>SMTP_USER = ‘<a href="mailto:&#109;&#x6d;&#114;&#x69;&#97;&#x6e;&#x6e;&#53;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#109;&#x6d;&#114;&#x69;&#97;&#x6e;&#x6e;&#53;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a>‘<br>SMTP_PASSWORD = ‘비밀번호’</p>
+<p>#로그인에 사용될 변수 미리 지정<br>SMTP_SERVER = ‘smtp.gmail.com’<br>SMTP_PORT = 465<br>SMTP_USER = ‘<a href="mailto:&#x6d;&#109;&#x72;&#105;&#x61;&#110;&#110;&#53;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x6d;&#109;&#x72;&#105;&#x61;&#110;&#110;&#53;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>‘<br>SMTP_PASSWORD = ‘비밀번호’</p>
 <p>def send_mail(name, addr, subject, contents, attachment=None):<br>    #정규표현식을 사용해서 변수addr이 지정한 표현식 인지 확인<br>if not re.match(‘(^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$)’, addr):<br>                  # ^부분뒤로의 규칙이 맨 앞에 왔는지 판단, +는 여러 문자, @은 @,<br>                    .은 .으로 $으로 문자열이 종료됨을 나타내게 작성<br>        print(‘Wrong email’)<br>        return #여기서 리턴하면 아래 함수가 실행되지 않음</p>
 <h1 id="이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정"><a href="#이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정" class="headerlink" title="이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정"></a>이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정</h1><p>msg = MIMEMultipart(‘alternative’)</p>
 <h1 id="첨부파일이-있을경우-alternative-에서-mixed로-변경"><a href="#첨부파일이-있을경우-alternative-에서-mixed로-변경" class="headerlink" title="첨부파일이 있을경우 alternative 에서 mixed로 변경"></a>첨부파일이 있을경우 alternative 에서 mixed로 변경</h1><pre><code>if attachment:
