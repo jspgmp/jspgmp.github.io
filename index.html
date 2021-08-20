@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="개발블로그">
 <meta property="og:type" content="website">
 <meta property="og:title" content="땡땡 블로그">
@@ -57,6 +57,9 @@
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -78,6 +81,12 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
 
 
 
@@ -119,9 +128,19 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -159,6 +178,94 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/20/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/20/test/" class="post-title-link" itemprop="url">test</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-08-20 17:52:06 / Modified: 17:53:11" itemprop="dateCreated datePublished" datetime="2021-08-20T17:52:06+09:00">2021-08-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/08/20/test/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/20/test/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ㄴ냠냠</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-Javascript_getItem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -186,6 +293,20 @@
       <time title="Created: 2021-08-06 20:53:53" itemprop="dateCreated datePublished" datetime="2021-08-06T20:53:53+09:00">2021-08-06</time>
     </span>
 
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/08/06/2021-08-06-Javascript_getItem/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-Javascript_getItem/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 </div>
 
@@ -261,6 +382,20 @@
     </span>
 
   
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/08/06/2021-08-06-C-basic/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-C-basic/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
         </div>
@@ -335,6 +470,20 @@
     </span>
 
   
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/08/06/2021-08-06-python_send_mail/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-python_send_mail/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
         </div>
@@ -349,7 +498,7 @@
 </ol>
 <p>#Simple Mail Transfer Protocel 라이브러리 가져오기<br>import smtplib</p>
 <p>#정규표현식(regular expression) 모듈 가져오기<br>import re</p>
-<p>#로그인에 사용될 변수 미리 지정<br>SMTP_SERVER = ‘smtp.gmail.com’<br>SMTP_PORT = 465<br>SMTP_USER = ‘<a href="mailto:&#109;&#109;&#114;&#x69;&#x61;&#110;&#110;&#x35;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#109;&#109;&#114;&#x69;&#x61;&#110;&#110;&#x35;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a>‘<br>SMTP_PASSWORD = ‘비밀번호’</p>
+<p>#로그인에 사용될 변수 미리 지정<br>SMTP_SERVER = ‘smtp.gmail.com’<br>SMTP_PORT = 465<br>SMTP_USER = ‘<a href="mailto:&#109;&#109;&#x72;&#x69;&#x61;&#x6e;&#110;&#x35;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#109;&#109;&#x72;&#x69;&#x61;&#x6e;&#110;&#x35;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>‘<br>SMTP_PASSWORD = ‘비밀번호’</p>
 <p>def send_mail(name, addr, subject, contents, attachment=None):<br>    #정규표현식을 사용해서 변수addr이 지정한 표현식 인지 확인<br>if not re.match(‘(^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$)’, addr):<br>                  # ^부분뒤로의 규칙이 맨 앞에 왔는지 판단, +는 여러 문자, @은 @,<br>                    .은 .으로 $으로 문자열이 종료됨을 나타내게 작성<br>        print(‘Wrong email’)<br>        return #여기서 리턴하면 아래 함수가 실행되지 않음</p>
 <h1 id="이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정"><a href="#이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정" class="headerlink" title="이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정"></a>이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정</h1><p>msg = MIMEMultipart(‘alternative’)</p>
 <h1 id="첨부파일이-있을경우-alternative-에서-mixed로-변경"><a href="#첨부파일이-있을경우-alternative-에서-mixed로-변경" class="headerlink" title="첨부파일이 있을경우 alternative 에서 mixed로 변경"></a>첨부파일이 있을경우 alternative 에서 mixed로 변경</h1><pre><code>if attachment:
@@ -446,6 +595,20 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
     </span>
 
   
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/08/06/2021-08-06-python_excel_io/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-python_excel_io/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
         </div>
@@ -521,6 +684,20 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
       <time title="Created: 2021-08-06 20:22:14" itemprop="dateCreated datePublished" datetime="2021-08-06T20:22:14+09:00">2021-08-06</time>
     </span>
 
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/08/06/2021-08-06-count-more-than-ten/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-count-more-than-ten/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 </div>
 
@@ -600,6 +777,20 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
         <time title="Modified: 2021-08-06 20:13:32" itemprop="dateModified" datetime="2021-08-06T20:13:32+09:00">2021-08-06</time>
       </span>
 
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/30/2021-07-30_Javascript_function/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/30/2021-07-30_Javascript_function/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 </div>
 
@@ -715,6 +906,20 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
     </span>
 
   
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/27/my-first-post/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/my-first-post/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
         </div>
@@ -787,6 +992,20 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
         <time title="Modified: 2021-07-30 19:47:42" itemprop="dateModified" datetime="2021-07-30T19:47:42+09:00">2021-07-30</time>
       </span>
 
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/27/hello-world/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/hello-world/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 </div>
 
@@ -877,6 +1096,20 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
         <time title="Modified: 2021-07-23 21:21:18" itemprop="dateModified" datetime="2021-07-23T21:21:18+09:00">2021-07-23</time>
       </span>
 
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/27/2021-07-23-htmlfirst/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/2021-07-23-htmlfirst/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 </div>
 
@@ -1183,119 +1416,9 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/27/2021-07-23-github-manual/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jspgmp">
-      <meta itemprop="description" content="개발블로그">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="땡땡 블로그">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/27/2021-07-23-github-manual/" class="post-title-link" itemprop="url">Github 사용하기</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-07-27 14:39:58" itemprop="dateCreated datePublished" datetime="2021-07-27T14:39:58+09:00">2021-07-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-23 20:24:05" itemprop="dateModified" datetime="2021-07-23T20:24:05+09:00">2021-07-23</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>이번 내용은 깃허브 사용과 블로그 준비에 관한 내용입니다. </p>
-<p>저는 이번에 깃허브라는것을 처음 사용해봤는데요, git-bash를 이용해서 하는게 일반 블로그보다 까다롭게 느껴지지만 익숙해지기 위해서 계속 사용하려고 해요~</p>
-<h1 id="사용-준비하기"><a href="#사용-준비하기" class="headerlink" title="사용 준비하기"></a>사용 준비하기</h1><ol>
-<li>가입 및 설치하기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Github.com 에 가입</span><br><span class="line">git-scm.com 에서 다운로드 및 설치</span><br><span class="line">git help -a 와 git config로 각종 명령어 확인</span><br></pre></td></tr></table></figure></li>
-<li>git bash 초기 세팅<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;닉네임&quot;</span><br><span class="line">git config --global user.email &quot;abc@abc.com&quot;</span><br><span class="line">git config --global core.editor &quot;vim&quot;</span><br><span class="line">git config --global core.pager &quot;cat&quot;</span><br><span class="line">git config --global init.defaultbranch &quot;main&quot;</span><br></pre></td></tr></table></figure></li>
-<li>cmd 기본 명령어(git bash에서 사용)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">help 로 각종 명령어 확인 가능</span><br><span class="line">touch 파일명.확장자 = 파일 생성</span><br><span class="line">ls = 현재 폴더에 있는 파일 확인</span><br><span class="line">mv 파일명.확장자 폴더명 = 파일 옮기기</span><br><span class="line">cd 디렉토리 변경</span><br><span class="line">- cd ../ = 상위 폴더로 변경</span><br><span class="line">- cd = 최상위 폴더로 변경</span><br><span class="line">- cd 주소 = 주소 폴더로 변경</span><br><span class="line">rm 파일명.확장자 = 파일 지우기</span><br><span class="line">* = asterisk</span><br><span class="line">예) rm **.md = md 파일 다 지우기</span><br></pre></td></tr></table></figure></li>
-<li>vim 기본 명령어<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi 파일명.확장자 사용하여 진입</span><br><span class="line">Normal mode: 텍스트 편집 시 또는 ESC를 눌렀을 때</span><br><span class="line">Input mode: Normal mode에서 a, i, o등을 눌렀을 때, 텍스트 입력 가능</span><br><span class="line">Command mode: 저장 또는 나가기 등을 선택, 쉬프트+:으로 진입</span><br><span class="line"> - :w 저장, :wq 저장 후 종료</span><br><span class="line"> - :q! 저장하지 않고 강제종료</span><br></pre></td></tr></table></figure></li>
-<li>git 연결하기 (Local과 remote 연결)</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">github에서 원하는 repo 생성 후 code 란에서 url을 복사한다.</span><br><span class="line">git-bash를 이용해 원하는 디렉토리에 위치 후 </span><br><span class="line">git clone url 을 입력하여 연결시킨다.</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="사용하기"><a href="#사용하기" class="headerlink" title="사용하기"></a>사용하기</h1><p>편하자고 아무데나 수정한 파일을 갖다붙이면 버전관리가 참으로 힘들겠습니다. </p>
-<p>버전관리 공간은 크게 </p>
-<p>Local - Remote 두곳으로 나뉘어집니다. </p>
-<p>Local 에서 Branch를 갈라 수정하고 git에 올리고 그에대한 설명인 commit을 완료하고나면</p>
-<p>온라인 Github로 Push 하는 것입니다. </p>
-<ol>
-<li>Branch  생성 및 전환</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">다른사람에게 코드 리뷰를 요청할 계획이라면 이 단계를 거쳐야 합니다.</span><br><span class="line">git-bash에서 </span><br><span class="line">git branch 로 현재 branch를 확인해주신 뒤에</span><br><span class="line">git branch &lt;새로운 branch이름&gt; 으로 하나더 만들어주시고</span><br><span class="line">git checkout &lt;새로운 branch이름&gt; 해주시면</span><br><span class="line">branch 가 바뀌게 됩니다.</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>수정 내용 적용하기</li>
-</ol>
-<p>변경한 사항은 <strong>BLOB</strong></p>
-<p>변경사항에 대한 정보는 <strong>TREE</strong></p>
-<p>스냅샷을 찍는순간 생성되는것 <strong>COMMIT</strong></p>
-<p>이라고 하는데 제가 이해하기로는 <strong>COMMIT</strong>은 수정사항에 대한 설명같아요!</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">올리기</span><br><span class="line">1. Working directory: 작성한 코드를 저장</span><br><span class="line">&lt;파일 열기 및 수정은 vi 파일명.확장자 통해서 가능!!&gt;</span><br><span class="line"> ↓+git add 파일명.확장자 (또는 새로운 버전으로 교체)</span><br><span class="line"> </span><br><span class="line">2. Staging area: 작성 또는 변경상태가 저장</span><br><span class="line"> ↓+git commit (수정에 대한 설명)</span><br><span class="line"> </span><br><span class="line">3. Local repo: 변경한 건에 대한 commit을 달아 저장된 상태</span><br><span class="line"> ↓+git push </span><br><span class="line"> </span><br><span class="line">4. Remote repo: github로 업로드된 상태</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>repo 가져오기</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin main + git merge FETCH_HEAD</span><br><span class="line">또는 git pull origin main</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>Branch 에서 변경한 내용 코드리뷰 요청하기</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repo 에서 상대방 초대</span><br><span class="line">pull request 하기</span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>Branch 내용 main 에 합치기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main = main으로 변경</span><br><span class="line">git merge secondary = secondary 브랜치를 main으로 합병</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 </div>
   </main>
@@ -1332,6 +1455,8 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
 
 
 
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"jspgmp blog","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>
