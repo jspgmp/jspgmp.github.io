@@ -416,7 +416,7 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
       </tags>
   </entry>
   <entry>
-    <title>2021-08-20-JAVA-기초</title>
+    <title>(JAVA)기초</title>
     <url>/2021/08/20/2021-08-20-JAVA-%EA%B8%B0%EC%B4%88/</url>
     <content><![CDATA[<p> Java를 공부한 내용을 앞으로 블로그에 가능한 매일 업로드할 예정입니다. </p>
 <p>워크시트라는것을 워드로 작성했었는데, 차라리 md로 작성하는것이 훨씬 나을것 같다고 생각이 됩니다.</p>
