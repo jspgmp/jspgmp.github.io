@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="10보다 큰 숫자 갯수 구하기  조건  1234567891011const count &#x3D; countBiggerThanTen([1,2,3,4,5,10,20,30,40,50,60]);function countBiggerThanTen(numbers) &amp;#123;    let counts &#x3D; 0 ;    numbers.forEach(n &#x3D;&gt; &amp;#123;">
+<meta name="description" content="10보다 큰 숫자 갯수 구하기">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(자바스크립트) 10보다 큰 숫자 구하기">
 <meta property="og:url" content="http://jspgmp.github.io/2021/08/06/2021-08-06-count-more-than-ten/index.html">
 <meta property="og:site_name" content="땡땡 블로그">
-<meta property="og:description" content="10보다 큰 숫자 갯수 구하기  조건  1234567891011const count &#x3D; countBiggerThanTen([1,2,3,4,5,10,20,30,40,50,60]);function countBiggerThanTen(numbers) &amp;#123;    let counts &#x3D; 0 ;    numbers.forEach(n &#x3D;&gt; &amp;#123;">
+<meta property="og:description" content="10보다 큰 숫자 갯수 구하기">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-06T11:22:14.120Z">
-<meta property="article:modified_time" content="2021-08-20T10:36:20.639Z">
+<meta property="article:modified_time" content="2021-08-20T12:16:54.395Z">
 <meta property="article:author" content="jspgmp">
 <meta property="article:tag" content="KDT">
 <meta name="twitter:card" content="summary">
@@ -243,7 +243,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-20 19:36:20" itemprop="dateModified" datetime="2021-08-20T19:36:20+09:00">2021-08-20</time>
+        <time title="Modified: 2021-08-20 21:16:54" itemprop="dateModified" datetime="2021-08-20T21:16:54+09:00">2021-08-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -280,6 +280,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>10보다 큰 숫자 갯수 구하기</p>
+<span id="more"></span>
+
 <h1> 조건</h1>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const count = countBiggerThanTen([1,2,3,4,5,10,20,30,40,50,60]);</span><br><span class="line"></span><br><span class="line">function countBiggerThanTen(numbers) &#123;</span><br><span class="line">    let counts = 0 ;</span><br><span class="line">    numbers.forEach(n =&gt; &#123;</span><br><span class="line">        if (n &gt; 10) &#123;</span><br><span class="line">            counts += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return counts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

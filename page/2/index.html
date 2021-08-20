@@ -238,7 +238,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-07-23 20:24:05" itemprop="dateModified" datetime="2021-07-23T20:24:05+09:00">2021-07-23</time>
+        <time title="Modified: 2021-08-20 21:16:43" itemprop="dateModified" datetime="2021-08-20T21:16:43+09:00">2021-08-20</time>
       </span>
 
   
@@ -267,48 +267,14 @@
     <div class="post-body" itemprop="articleBody">
           <p>이번 내용은 깃허브 사용과 블로그 준비에 관한 내용입니다. </p>
 <p>저는 이번에 깃허브라는것을 처음 사용해봤는데요, git-bash를 이용해서 하는게 일반 블로그보다 까다롭게 느껴지지만 익숙해지기 위해서 계속 사용하려고 해요~</p>
-<h1 id="사용-준비하기"><a href="#사용-준비하기" class="headerlink" title="사용 준비하기"></a>사용 준비하기</h1><ol>
-<li>가입 및 설치하기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Github.com 에 가입</span><br><span class="line">git-scm.com 에서 다운로드 및 설치</span><br><span class="line">git help -a 와 git config로 각종 명령어 확인</span><br></pre></td></tr></table></figure></li>
-<li>git bash 초기 세팅<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;닉네임&quot;</span><br><span class="line">git config --global user.email &quot;abc@abc.com&quot;</span><br><span class="line">git config --global core.editor &quot;vim&quot;</span><br><span class="line">git config --global core.pager &quot;cat&quot;</span><br><span class="line">git config --global init.defaultbranch &quot;main&quot;</span><br></pre></td></tr></table></figure></li>
-<li>cmd 기본 명령어(git bash에서 사용)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">help 로 각종 명령어 확인 가능</span><br><span class="line">touch 파일명.확장자 = 파일 생성</span><br><span class="line">ls = 현재 폴더에 있는 파일 확인</span><br><span class="line">mv 파일명.확장자 폴더명 = 파일 옮기기</span><br><span class="line">cd 디렉토리 변경</span><br><span class="line">- cd ../ = 상위 폴더로 변경</span><br><span class="line">- cd = 최상위 폴더로 변경</span><br><span class="line">- cd 주소 = 주소 폴더로 변경</span><br><span class="line">rm 파일명.확장자 = 파일 지우기</span><br><span class="line">* = asterisk</span><br><span class="line">예) rm **.md = md 파일 다 지우기</span><br></pre></td></tr></table></figure></li>
-<li>vim 기본 명령어<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi 파일명.확장자 사용하여 진입</span><br><span class="line">Normal mode: 텍스트 편집 시 또는 ESC를 눌렀을 때</span><br><span class="line">Input mode: Normal mode에서 a, i, o등을 눌렀을 때, 텍스트 입력 가능</span><br><span class="line">Command mode: 저장 또는 나가기 등을 선택, 쉬프트+:으로 진입</span><br><span class="line"> - :w 저장, :wq 저장 후 종료</span><br><span class="line"> - :q! 저장하지 않고 강제종료</span><br></pre></td></tr></table></figure></li>
-<li>git 연결하기 (Local과 remote 연결)</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">github에서 원하는 repo 생성 후 code 란에서 url을 복사한다.</span><br><span class="line">git-bash를 이용해 원하는 디렉토리에 위치 후 </span><br><span class="line">git clone url 을 입력하여 연결시킨다.</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="사용하기"><a href="#사용하기" class="headerlink" title="사용하기"></a>사용하기</h1><p>편하자고 아무데나 수정한 파일을 갖다붙이면 버전관리가 참으로 힘들겠습니다. </p>
-<p>버전관리 공간은 크게 </p>
-<p>Local - Remote 두곳으로 나뉘어집니다. </p>
-<p>Local 에서 Branch를 갈라 수정하고 git에 올리고 그에대한 설명인 commit을 완료하고나면</p>
-<p>온라인 Github로 Push 하는 것입니다. </p>
-<ol>
-<li>Branch  생성 및 전환</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">다른사람에게 코드 리뷰를 요청할 계획이라면 이 단계를 거쳐야 합니다.</span><br><span class="line">git-bash에서 </span><br><span class="line">git branch 로 현재 branch를 확인해주신 뒤에</span><br><span class="line">git branch &lt;새로운 branch이름&gt; 으로 하나더 만들어주시고</span><br><span class="line">git checkout &lt;새로운 branch이름&gt; 해주시면</span><br><span class="line">branch 가 바뀌게 됩니다.</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>수정 내용 적용하기</li>
-</ol>
-<p>변경한 사항은 <strong>BLOB</strong></p>
-<p>변경사항에 대한 정보는 <strong>TREE</strong></p>
-<p>스냅샷을 찍는순간 생성되는것 <strong>COMMIT</strong></p>
-<p>이라고 하는데 제가 이해하기로는 <strong>COMMIT</strong>은 수정사항에 대한 설명같아요!</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">올리기</span><br><span class="line">1. Working directory: 작성한 코드를 저장</span><br><span class="line">&lt;파일 열기 및 수정은 vi 파일명.확장자 통해서 가능!!&gt;</span><br><span class="line"> ↓+git add 파일명.확장자 (또는 새로운 버전으로 교체)</span><br><span class="line"> </span><br><span class="line">2. Staging area: 작성 또는 변경상태가 저장</span><br><span class="line"> ↓+git commit (수정에 대한 설명)</span><br><span class="line"> </span><br><span class="line">3. Local repo: 변경한 건에 대한 commit을 달아 저장된 상태</span><br><span class="line"> ↓+git push </span><br><span class="line"> </span><br><span class="line">4. Remote repo: github로 업로드된 상태</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>repo 가져오기</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin main + git merge FETCH_HEAD</span><br><span class="line">또는 git pull origin main</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>Branch 에서 변경한 내용 코드리뷰 요청하기</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repo 에서 상대방 초대</span><br><span class="line">pull request 하기</span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>Branch 내용 main 에 합치기<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main = main으로 변경</span><br><span class="line">git merge secondary = secondary 브랜치를 main으로 합병</span><br></pre></td></tr></table></figure></li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/27/2021-07-23-github-manual/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
