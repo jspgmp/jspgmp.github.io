@@ -446,7 +446,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-20 21:16:50" itemprop="dateModified" datetime="2021-08-20T21:16:50+09:00">2021-08-20</time>
+        <time title="Modified: 2021-08-20 21:21:47" itemprop="dateModified" datetime="2021-08-20T21:21:47+09:00">2021-08-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -547,7 +547,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-20 21:17:06" itemprop="dateModified" datetime="2021-08-20T21:17:06+09:00">2021-08-20</time>
+        <time title="Modified: 2021-08-20 21:19:47" itemprop="dateModified" datetime="2021-08-20T21:19:47+09:00">2021-08-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -583,56 +583,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<ol>
-<li>메일보내기<br>```<h1 id="Multipurpose-Internet-Mail-Extension-모듈-가져오기"><a href="#Multipurpose-Internet-Mail-Extension-모듈-가져오기" class="headerlink" title="Multipurpose Internet Mail Extension 모듈 가져오기"></a>Multipurpose Internet Mail Extension 모듈 가져오기</h1>from email.mime.text import MIMEText<br>from email.mime.multipart import MIMEMultipart</li>
-</ol>
-<p>#Simple Mail Transfer Protocel 라이브러리 가져오기<br>import smtplib</p>
-<p>#정규표현식(regular expression) 모듈 가져오기<br>import re</p>
-<p>#로그인에 사용될 변수 미리 지정<br>SMTP_SERVER = ‘smtp.gmail.com’<br>SMTP_PORT = 465<br>SMTP_USER = ‘<a href="mailto:&#109;&#109;&#114;&#x69;&#x61;&#110;&#x6e;&#x35;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#109;&#109;&#114;&#x69;&#x61;&#110;&#x6e;&#x35;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>‘<br>SMTP_PASSWORD = ‘비밀번호’</p>
-<p>def send_mail(name, addr, subject, contents, attachment=None):<br>    #정규표현식을 사용해서 변수addr이 지정한 표현식 인지 확인<br>if not re.match(‘(^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$)’, addr):<br>                  # ^부분뒤로의 규칙이 맨 앞에 왔는지 판단, +는 여러 문자, @은 @,<br>                    .은 .으로 $으로 문자열이 종료됨을 나타내게 작성<br>        print(‘Wrong email’)<br>        return #여기서 리턴하면 아래 함수가 실행되지 않음</p>
-<h1 id="이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정"><a href="#이메일에-탑재할-msg리스트를-MIMEMultipart-‘alternative’-로-지정" class="headerlink" title="이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정"></a>이메일에 탑재할 msg리스트를 MIMEMultipart(‘alternative’)로 지정</h1><p>msg = MIMEMultipart(‘alternative’)</p>
-<h1 id="첨부파일이-있을경우-alternative-에서-mixed로-변경"><a href="#첨부파일이-있을경우-alternative-에서-mixed로-변경" class="headerlink" title="첨부파일이 있을경우 alternative 에서 mixed로 변경"></a>첨부파일이 있을경우 alternative 에서 mixed로 변경</h1><pre><code>if attachment:
-    msg = MIMEMultipart(&#39;mixed&#39;)
-
-msg[&#39;From&#39;] = SMTP_USER
-msg[&#39;To&#39;] = addr
-msg[&#39;Subject&#39;] = name + &#39;님, \n&#39; + subject + &#39;에 대해 알아보세요&#39;
-text = MIMEText(contents, _charset = &#39;utf-8&#39;)#한글로 첨부파일 쓰면 깨진다.
-msg.attach(text)
-if attachment :
-    from email.mime.base import MIMEBase #MIMEBase 는 파일 전송에 필요한 형태
-    from email import encoders #SMTP에서 요구하는 파일 전송형태로 변환
-    
-    #MIMEBase 를 사용했을때 들어갈 수 있는 파일의 타입 
-    application 과 octect-stream 은 일반 파일을 뜻함
-    file_data = MIMEBase(&#39;application&#39;, &#39;octect-stream&#39;)
-
-    #attachment를 rb(read binary)형태로 open하여 read하고 file_data안에set_payload한다. 
-    file_data.set_payload(open(attachment, &#39;rb&#39;).read())
-    encoders.encode_base64(file_data) #file_data를 base64 형태로 인코드
-    import os
-    filename = os.path.basename(attachment)
-    
-    #file_data 언급 전에header를 추가하는 함수를 사용해서 file_data에 대한 정보(메타데이터) 삽입
-    file_data.add_header(&#39;Content-Disposition&#39;, &#39;attachment; filename=&quot;&#39; + filename + &#39;&quot;&#39;)
-    
-    msg.attach(file_data)
-
-#어디에 접속해야할지 정보를 담은 클래스 변수
-smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
-#로그인 변수
-smtp.login(SMTP_USER, SMTP_PASSWORD)
-#보내는이, 받는이, 메세지.as_string()함수 적용필요
-smtp.sendmail(SMTP_USER, addr, msg.as_string())
-#로그아웃
-smtp.close()
-
-
-send_mail(이름, 수신이메일, subject, contents, attachment)
-</code></pre>
-
+          <p> 파이썬을 이용해서 메일을 보내는 코드입니다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/06/2021-08-06-python_send_mail/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -689,7 +648,7 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-20 21:17:00" itemprop="dateModified" datetime="2021-08-20T21:17:00+09:00">2021-08-20</time>
+        <time title="Modified: 2021-08-20 21:20:48" itemprop="dateModified" datetime="2021-08-20T21:20:48+09:00">2021-08-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -725,22 +684,15 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<ol>
-<li><p>파이썬의 자료형</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">숫자형 = 6</span><br><span class="line">문자형 = &quot;&quot;</span><br><span class="line">리스트 = [], 리스트 수정 가능~</span><br><span class="line">튜플 = (), 튜플은 수정 불가~</span><br><span class="line">딕셔너리 = &#123;&#125;</span><br><span class="line">참거짓 = True, False</span><br></pre></td></tr></table></figure></li>
-<li><p>엑셀파일 읽어오기</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">from openpyxl import load_workbook #엑셀 저장 함수 불러오기</span><br><span class="line"></span><br><span class="line">\#엑셀 데이터를 불러오기</span><br><span class="line">wb = load_workbook(&#x27;total.xlsx&#x27;) #, read_only=True) 읽기모드로, 파일이 커도 읽기 가능</span><br><span class="line">data = wb.active \#활성화된 탭을 사용한다!</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">\#A1셀 하나만 출력하기</span><br><span class="line">print(data[&#x27;A1&#x27;].value)</span><br><span class="line"></span><br><span class="line">\#2행 데이터 출력하기</span><br><span class="line">row = data[&#x27;2&#x27;]</span><br><span class="line">for cell in row :</span><br><span class="line">  print(cell.value)</span><br><span class="line"></span><br><span class="line">\#1~2행 데이터 출력하기</span><br><span class="line">rows = data[&#x27;1:2&#x27;]</span><br><span class="line">for row in rows:</span><br><span class="line">  for cell in row:</span><br><span class="line">    print(cell.value)</span><br><span class="line"></span><br><span class="line">\#A열 데이터 출력하기</span><br><span class="line">col = data[&#x27;A&#x27;]</span><br><span class="line">for cell in col :</span><br><span class="line">  print(cell.value)</span><br><span class="line"></span><br><span class="line">\#A~B행 데이터 출력하기</span><br><span class="line">cols = data[&#x27;A:B&#x27;]</span><br><span class="line">for col in cols:</span><br><span class="line">  for cell in col:</span><br><span class="line">    print(cell.value)</span><br><span class="line"> </span><br><span class="line">\#A1 부터 E31까지의 영역 출력하기</span><br><span class="line">area = data[&#x27;A1:E31&#x27;]</span><br><span class="line">for row in area:</span><br><span class="line">  for cell in row:</span><br><span class="line">    print(cell.value)</span><br></pre></td></tr></table></figure></li>
-<li><p>엑셀파일에 쓰기</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">from openpyxl import Workbook</span><br><span class="line"></span><br><span class="line">wb = Workbook()#괄호를 여닫아 클래스 변수 생성</span><br><span class="line"></span><br><span class="line">#ws = wb.active #처음에 생성된 시트 활용</span><br><span class="line"></span><br><span class="line">#ws = wb.create_sheet(&#x27;sheet_test2&#x27;)#시트 생성 후 시트 반환</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">ws.append([&#x27;Number&#x27;, &#x27;Name&#x27;, &#x27;Score&#x27;, &#x27;feel&#x27;])# 1열은 number, 2열은 name으로 넣는다.</span><br><span class="line">for i in range(10):</span><br><span class="line">  ws.append([i, str(i) + &#x27; data&#x27;, str(i*10) + &#x27; 점&#x27;, &#x27;ㅎ&#x27;])</span><br><span class="line">  #1열에는 i를, 2열에는 i+ data, 3열에는 i*10점, 4열에는 ㅎ을 넣는다.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">\#특정 셀에 데이터 추가하려면</span><br><span class="line"></span><br><span class="line">\# ws[&#x27;A1&#x27;] = &#x27;문자입력&#x27;</span><br><span class="line"></span><br><span class="line">\# ws[&#x27;B1&#x27;] = &#x27;test&#x27;</span><br><span class="line"></span><br><span class="line">wb.save(&#x27;save_test.xlsx&#x27;) #save 내장함수 사용</span><br></pre></td></tr></table></figure></li>
-<li><p>엑셀파일 큰 파일<br>```<br>#load_workbook으로 엑셀 내용을 가져오게되면, 느리고 큰 파일은 가져오지 못할 수 있다.<br>from openpyxl import load_workbook</p>
-</li>
-</ol>
-<p>wb = load_workbook(‘total.xlsx’, read_only=True)#읽기 전용으로 읽어온다.<br>data = wb.active#활성화탭을 받아서 data삼는다.</p>
-<p>for row in data.iter_rows() : #전체 행을 받아 가로 순으로 데이터를 불러오려면 ()빼먹지않기<br>    #iter_rows() 는 read only 옵션으로 불러올때 같이 쓰는게 좋다.<br>    #iter_rows()의 인자값으로는 최소 최대 열과 행, values only : bool = … 이 있다.<br>    for cell in row :<br>        print(cell.value)</p>
-<p>#행단위로 읽는것은 읽기전용으로 잘 되나<br>#열단위로 읽는것은 읽기전용으로 안된다.<br>#정리하자면 큰 파일을 읽을때는 읽기전용으로 읽어 가로순으로 불러들어야한다.</p>
-
+          <p>   파이썬을 이용해 크롤링한 자료를 엑셀로 저장하는 코드입니다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/06/2021-08-06-python_excel_io/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -797,7 +749,7 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-20 21:16:54" itemprop="dateModified" datetime="2021-08-20T21:16:54+09:00">2021-08-20</time>
+        <time title="Modified: 2021-08-20 21:21:24" itemprop="dateModified" datetime="2021-08-20T21:21:24+09:00">2021-08-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -898,7 +850,7 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-20 21:16:48" itemprop="dateModified" datetime="2021-08-20T21:16:48+09:00">2021-08-20</time>
+        <time title="Modified: 2021-08-20 21:22:29" itemprop="dateModified" datetime="2021-08-20T21:22:29+09:00">2021-08-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1201,7 +1153,7 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-20 21:16:45" itemprop="dateModified" datetime="2021-08-20T21:16:45+09:00">2021-08-20</time>
+        <time title="Modified: 2021-08-20 21:26:26" itemprop="dateModified" datetime="2021-08-20T21:26:26+09:00">2021-08-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
