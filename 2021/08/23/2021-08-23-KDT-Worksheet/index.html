@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="땡땡 블로그">
 <meta property="og:description" content="기간: 21.08.23~21.08.26 범위: java 객체지향 프로그래밍 - 객체지향 핵심 01~">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/Users/Jisoo/Documents/dev/blog/source/img/image-20210824165640020.png">
-<meta property="og:image" content="c:/Users/Jisoo/Documents/dev/blog/source/img/image-20210825200350213.png">
+<meta property="og:image" content="http://jspgmp.github.io/img/image-20210824165640020.png">
+<meta property="og:image" content="http://jspgmp.github.io/img/image-20210825200350213.png">
 <meta property="og:image" content="https://cdn.journaldev.com/wp-content/uploads/2013/07/diamond-problem-multiple-inheritance.png">
-<meta property="og:image" content="c:/Users/Jisoo/Documents/dev/blog/source/img/image-20210826174407877.png">
+<meta property="og:image" content="http://jspgmp.github.io/img/image-20210826174407877.png">
 <meta property="article:published_time" content="2021-08-23T04:13:21.000Z">
-<meta property="article:modified_time" content="2021-08-26T12:38:09.063Z">
+<meta property="article:modified_time" content="2021-08-26T13:46:21.059Z">
 <meta property="article:author" content="jspgmp">
 <meta property="article:tag" content="KDT_WORKSHEET">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/Jisoo/Documents/dev/blog/source/img/image-20210824165640020.png">
+<meta name="twitter:image" content="http://jspgmp.github.io/img/image-20210824165640020.png">
 
 
 <link rel="canonical" href="http://jspgmp.github.io/2021/08/23/2021-08-23-KDT-Worksheet/">
@@ -248,7 +248,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-26 21:38:09" itemprop="dateModified" datetime="2021-08-26T21:38:09+09:00">2021-08-26</time>
+        <time title="Modified: 2021-08-26 22:46:21" itemprop="dateModified" datetime="2021-08-26T22:46:21+09:00">2021-08-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -395,7 +395,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Customer choi = new VipCustomer();</span><br><span class="line">이 경우 choi의 타입은 Customer이나 인스턴스 타입은 VipCustomer이다. </span><br><span class="line">choi가 calPrice메서드를 호출하는경우 오버라이드된 calPrice가 호출된다. </span><br><span class="line">??? 자료형은 Customer인데 왜 VipCustomer의 calPrice가 호출되는가?</span><br></pre></td></tr></table></figure>
 
 <p><strong>=&gt; 메서드는 인스턴스에 따라 결정된다 =&gt; 가상메서드</strong></p>
-<h3 id="가상메서드"><a href="#가상메서드" class="headerlink" title="가상메서드"></a>가상메서드</h3><p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20210824165640020.png" alt="image-20210824165640020"></p>
+<h3 id="가상메서드"><a href="#가상메서드" class="headerlink" title="가상메서드"></a>가상메서드</h3><p><img src="/img/image-20210824165640020.png" alt="image-20210824165640020"></p>
 <p>형변환된 객체가 메서드를 호출하는경우 인스턴스에 따라 메서드가 호출된다. </p>
 <h2 id="다형성"><a href="#다형성" class="headerlink" title="다형성"></a>다형성</h2><p>하나의 코드가 여러 자료형으로 구현되어 실행</p>
 <p>같은 코드에서 다른 실행결과</p>
@@ -472,7 +472,7 @@
 <p>클래스 상속과 달리 구현 코드가 없으므로 여러 인터페이스를 구현할 수 있음</p>
 <p> -&gt; 클래스는 extends를 사용하는데, 인터페이스는 implements를 사용한다. 여러개가 와도 가능하다.</p>
 <p><strong>형변환되는 경우 인터페이스에 선언된 메서드만 사용가능함</strong></p>
-<p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20210825200350213.png" alt="image-20210825200350213"></p>
+<p><img src="/img/image-20210825200350213.png" alt="image-20210825200350213"></p>
 <h3 id="추상-메서드의-디폴드-메서드"><a href="#추상-메서드의-디폴드-메서드" class="headerlink" title="추상 메서드의 디폴드 메서드"></a>추상 메서드의 디폴드 메서드</h3><p>인터페이스를 implements 하는 클래스에서 한 메서드를 중복해서 구현해야하는 경우가 발생하여</p>
 <p>자바8 이후부터는 디폴트 메서드라는 것을 제공한다.(구현코드)</p>
 <h4 id="디폴트메서드"><a href="#디폴트메서드" class="headerlink" title="디폴트메서드"></a>디폴트메서드</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//defalut 키워드 사용</span></span><br><span class="line"><span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">description</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;디폴트메서드&quot;</span>);</span><br><span class="line">	myMethod();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -506,7 +506,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">M</span> <span class="keyword">implements</span> <span class="title">C</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>A와 B와 C의 메서드를 모두 구현하여야 한다. </p>
-<h3 id="클래스-상속과-인터페이스-구현-함께-쓰기"><a href="#클래스-상속과-인터페이스-구현-함께-쓰기" class="headerlink" title="클래스 상속과 인터페이스 구현 함께 쓰기"></a>클래스 상속과 인터페이스 구현 함께 쓰기</h3><p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20210826174407877.png" alt="image-20210826174407877"></p>
+<h3 id="클래스-상속과-인터페이스-구현-함께-쓰기"><a href="#클래스-상속과-인터페이스-구현-함께-쓰기" class="headerlink" title="클래스 상속과 인터페이스 구현 함께 쓰기"></a>클래스 상속과 인터페이스 구현 함께 쓰기</h3><p><img src="/img/image-20210826174407877.png" alt="image-20210826174407877"></p>
 <p> 책장 Shelf는 Array를 제공하고 책이 몇권 있는지를 알려줄 수 있도록 한다. </p>
 <p>Queue기능은 책을 맨 뒤로 넣고, 맨 앞에서 뺄 수 있도록 한다. </p>
 <p>Shelf모양과 Queue기능을 갖춘 BookShelf 인 num1shelf에 책을 넣고 어떤책이 몇권있는지 구현한다.</p>
