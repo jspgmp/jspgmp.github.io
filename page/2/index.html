@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/26/20210826-JAVA-abstract-example/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/" class="post-title-link" itemprop="url">(JAVA)Static 변수와 메소드</a>
+          <a href="/2021/08/26/20210826-JAVA-abstract-example/" class="post-title-link" itemprop="url">(JAVA)추상 클래스를 활용한 예제 (gamelevel)</a>
         </h2>
 
         <div class="post-meta-container">
@@ -232,16 +232,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-08-20 21:53:57 / Modified: 23:25:06" itemprop="dateCreated datePublished" datetime="2021-08-20T21:53:57+09:00">2021-08-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
-        </span>
+      <time title="Created: 2021-08-26 21:27:02 / Modified: 21:30:27" itemprop="dateCreated datePublished" datetime="2021-08-26T21:27:02+09:00">2021-08-26</time>
     </span>
 
   
@@ -253,8 +244,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/20/2021-08-20-JAVA-Static변수와 Singleton패턴/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/26/20210826-JAVA-abstract-example/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/26/20210826-JAVA-abstract-example/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,17 +259,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p> 아직 기본 개념이 모호한데 진도를 계속 나가봅니다. </p>
-<p>Static 이라는 것은 정적이라는 뜻을 갖고있는데, 고정되어있다 이런 느낌입니다.</p>
-<p>다른 변수들이 생기고 사라지고 할 때, Static은 자리를 지키면서 프로그램이 종료될때까지 유지됩니다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h2 id="추상-클래스를-활용-예제-gamelevel"><a href="#추상-클래스를-활용-예제-gamelevel" class="headerlink" title="추상 클래스를 활용 예제: gamelevel"></a>추상 클래스를 활용 예제: gamelevel</h2><p>복습: 추상 클래스와 템플릿 메서드</p>
+<p>Player가 있다. Player는 GameLevel 속성을 갖는다. 각 GameLevel 마다 run, jum, turn 세 가지 기능이 업그레이드 된다. </p>
+<p>초보자: 천천히 달린다. =&gt; run만 가능</p>
+<p>중급자: 빠르게 달리고, 점프할 수 있다. =&gt;run, jump가능</p>
+<p>고급자: run jum turn 가능</p>
+<p>play중 go 하면 run 하고 count 횟수만큼 jump하고 turn 한다. </p>
+
       
     </div>
 
@@ -297,7 +284,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
