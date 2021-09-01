@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/24/20210824-javaclasswon/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/" class="post-title-link" itemprop="url">(JAVA)Static 변수와 메소드</a>
+          <a href="/2021/08/24/20210824-javaclasswon/" class="post-title-link" itemprop="url">20210824-javaclasswon</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,16 +230,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-08-20 21:53:57" itemprop="dateCreated datePublished" datetime="2021-08-20T21:53:57+09:00">2021-08-20</time>
+      <time title="Created: 2021-08-24 19:03:01 / Modified: 20:30:33" itemprop="dateCreated datePublished" datetime="2021-08-24T19:03:01+09:00">2021-08-24</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-23 20:14:19" itemprop="dateModified" datetime="2021-08-23T20:14:19+09:00">2021-08-23</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -259,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/20/2021-08-20-JAVA-Static변수와 Singleton패턴/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/24/20210824-javaclasswon/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/24/20210824-javaclasswon/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,17 +268,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p> 아직 기본 개념이 모호한데 진도를 계속 나가봅니다. </p>
-<p>Static 이라는 것은 정적이라는 뜻을 갖고있는데, 고정되어있다 이런 느낌입니다.</p>
-<p>다른 변수들이 생기고 사라지고 할 때, Static은 자리를 지키면서 프로그램이 종료될때까지 유지됩니다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>jvm 메모리 이해</p>
+<p>함수형 프로그램</p>
+<p>코틀린?</p>
+<p>metaspace</p>
+<p>perm gen</p>
+<p>static 메서드와 일반 메서드 호출의 차이</p>
+<p>Static 메서드는 인스턴스 생성과 상관없이 호출할 수 있고 </p>
+<p>일반 메서드는 인스턴스 초기화 후 호출할 수 있다. </p>
+<p>멤버변수는 함수가 호출될 때 생성되고 함수가 끝나면 소멸한다. F  소멸하는건 지역변수</p>
+<p>클래스 내부에서 사용하고 private이 아니면 참조변수로 다른 클래스에서 사용가능한 변수 유형은 static변수이다. f -&gt;인스턴스 변수</p>
+<p>멤버 변수는 힙 영역에 생성된다. t</p>
+<table>
+<thead>
+<tr>
+<th align="center">변수명</th>
+<th align="center">생성장소</th>
+<th align="center">생성시기</th>
+<th align="center">메모리</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">클래스 변수 <br /> (Static 변수)</td>
+<td align="center">클래스 내부</td>
+<td align="center">프로그램 실행시</td>
+<td align="center">스택</td>
+</tr>
+<tr>
+<td align="center">인스턴스 변수</td>
+<td align="center">클래스 내부</td>
+<td align="center">인스턴스 생성 시</td>
+<td align="center">힙</td>
+</tr>
+<tr>
+<td align="center">지역변수</td>
+<td align="center">메소드 내부</td>
+<td align="center">변수 선언 시</td>
+<td align="center">힙</td>
+</tr>
+</tbody></table>
+<p>equals()로 동일여부를 체크하면 주소값을 체크한다.</p>
+<p>불변객체 가변객체</p>
+
       
     </div>
 
@@ -303,7 +328,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

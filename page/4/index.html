@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/23/2021-08-23-KDT-Worksheet/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/26/20210826-JAVA-interface-example/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/23/2021-08-23-KDT-Worksheet/" class="post-title-link" itemprop="url">2021-08-23-KDT-Worksheet</a>
+          <a href="/2021/08/26/20210826-JAVA-interface-example/" class="post-title-link" itemprop="url">(JAVA) 인터페이스 활용 예제</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,16 +230,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-08-23 13:13:21" itemprop="dateCreated datePublished" datetime="2021-08-23T13:13:21+09:00">2021-08-23</time>
+      <time title="Created: 2021-08-26 21:29:10 / Modified: 22:44:55" itemprop="dateCreated datePublished" datetime="2021-08-26T21:29:10+09:00">2021-08-26</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-08-26 22:46:21" itemprop="dateModified" datetime="2021-08-26T22:46:21+09:00">2021-08-26</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -259,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/23/2021-08-23-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/23/2021-08-23-KDT-Worksheet/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/26/20210826-JAVA-interface-example/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/26/20210826-JAVA-interface-example/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,16 +268,45 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>기간: 21.08.23~21.08.26</p>
-<p>범위: java 객체지향 프로그래밍 - 객체지향 핵심 01~</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/23/2021-08-23-KDT-Worksheet/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h2 id="인터페이스-활용-예제-Scheduler"><a href="#인터페이스-활용-예제-Scheduler" class="headerlink" title="인터페이스 활용 예제: Scheduler"></a>인터페이스 활용 예제: Scheduler</h2><p>고객센터에 전화상담을 상단원에게 전화가 오면 대기열에 저장되고 각 상담원에게 배분된다.</p>
+<p>배분 정책은 다음 세가지:</p>
+<pre><code>1. 상담원 순서대로
+ 2. 통화 수가 적은 상담원부터
+ 3. 고객 등급이 높은 고객부터 대기열에서 빼서 업무능력이 우수한 상담원에게
+</code></pre>
+<p><img src="/img/image-20210826220801595.png" alt="image-20210826220801595"></p>
+<p>풀이: 여기 사진에 implements라고 써있으니 인터페이스를 활용해야하고, 정책은 클래스라는것을 알았지만, </p>
+<p>상위와 하위 구조를 어떻게 구성할것인가에 대한 수련이 훨씬 많이 필요하다. 많은 예제가 있었으면 좋겠다.</p>
+<p>정책은 그냥 텍스트로 출력하도록 하면 되는데 괜히 고객등급이나 대기열 queue 등 로직을 짜려해서 어려웠다.</p>
+<p>인터페이스 Scheduler에는 getNextCall과 sendToAgent 이렇게 기능이 두개가 있다. </p>
+<ul>
+<li>getNextCall의 경우</li>
+</ul>
+<p>R과 L의 경우에 순서대로 가져온다고 텍스트 출력을 하고</p>
+<p>P는 고객등급순으로 가져온다고 텍스트 출력을 하면된다.</p>
+<p> = &gt; 디폴트 메서드로 설정해주고, P 경우만 재정의 한다.</p>
+<ul>
+<li>sendToAgent의 경우</li>
+</ul>
+<p>R L P 셋이 텍스트 출력이 다르다. (밑 참조)</p>
+<p> = &gt; 전부 재정의 한다.</p>
+<figure class="highlight java"><figcaption><span>: SchedulerTest.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ch15_Interface_Casting_review2_callcenter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SchedulerTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;전화 상담원 할당 방식을 선택하세요&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;R : 한명씩 차례대로&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;L : 대기가 적은 상담원 우선&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;P : 우선순위가 높은 고객우선 숙련도 높은 상담원&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ch = System.in.read();</span><br><span class="line">        Scheduler scheduler = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ( ch == <span class="string">&#x27;R&#x27;</span> || ch ==<span class="string">&#x27;r&#x27;</span>) &#123;</span><br><span class="line">            scheduler = <span class="keyword">new</span> RoundRobin();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ( ch == <span class="string">&#x27;L&#x27;</span> || ch ==<span class="string">&#x27;l&#x27;</span>) &#123;</span><br><span class="line">            scheduler = <span class="keyword">new</span> LeastJob();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ( ch == <span class="string">&#x27;P&#x27;</span> || ch ==<span class="string">&#x27;p&#x27;</span>) &#123;</span><br><span class="line">            scheduler = <span class="keyword">new</span> PriorityAllocation();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;지원되지 않는 기능입니다.&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        scheduler.getNextCall();</span><br><span class="line">        scheduler.sendCallToAgent();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">출력:</span><br><span class="line">전화 상담원 할당 방식을 선택하세요</span><br><span class="line">R : 한명씩 차례대로</span><br><span class="line">L : 대기가 적은 상담원 우선</span><br><span class="line">P : 우선순위가 높은 고객우선 숙련도 높은 상담원</span><br><span class="line"> </span><br><span class="line">=&gt; R or r</span><br><span class="line">상담 전화를 한명씩 차례대로 대기열에서 가져옵니다.</span><br><span class="line">다음 순서의 상담원에게 배분합니다.</span><br><span class="line"></span><br><span class="line">=&gt; L or l</span><br><span class="line">상담 전화를 한명씩 차례대로 대기열에서 가져옵니다.</span><br><span class="line">대기가 적은상담원에게 배분합니다.</span><br><span class="line"></span><br><span class="line">=&gt; P or p</span><br><span class="line">상담전화를 고객 등급이 높은 순으로 대기열에서 갸져옵니다.</span><br><span class="line">업무능력이 우수한 상담원 순으로 배분합니다.</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><figcaption><span>: Scheduler</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ch15_Interface_Casting_review2_callcenter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Scheduler</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">getNextCall</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;상담 전화를 한명씩 차례대로 대기열에서 가져옵니다.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sendCallToAgent</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>: RoundRobin.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ch15_Interface_Casting_review2_callcenter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RoundRobin</span> <span class="keyword">implements</span> <span class="title">Scheduler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendCallToAgent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;다음 순서의 상담원에게 배분합니다.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>: LeastJob.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ch15_Interface_Casting_review2_callcenter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeastJob</span> <span class="keyword">implements</span> <span class="title">Scheduler</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendCallToAgent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;대기가 적은상담원에게 배분합니다.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>: PriorityAllocation.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ch15_Interface_Casting_review2_callcenter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PriorityAllocation</span> <span class="keyword">implements</span> <span class="title">Scheduler</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getNextCall</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;상담전화를 고객 등급이 높은 순으로 대기열에서 갸져옵니다.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendCallToAgent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;업무능력이 우수한 상담원 순으로 배분합니다.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -302,7 +325,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

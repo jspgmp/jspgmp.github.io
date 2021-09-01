@@ -23,7 +23,7 @@
 <meta name="description" content="개발블로그">
 <meta property="og:type" content="website">
 <meta property="og:title" content="땡땡 블로그">
-<meta property="og:url" content="http://jspgmp.github.io/page/3/index.html">
+<meta property="og:url" content="http://jspgmp.github.io/page/18/index.html">
 <meta property="og:site_name" content="땡땡 블로그">
 <meta property="og:description" content="개발블로그">
 <meta property="og:locale" content="en_US">
@@ -31,11 +31,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://jspgmp.github.io/page/3/">
+<link rel="canonical" href="http://jspgmp.github.io/page/18/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/18/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>땡땡 블로그</title>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/27/20210827-JAVACLASSSTREAM/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/07/27/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/27/20210827-JAVACLASSSTREAM/" class="post-title-link" itemprop="url">20210827-JAVACLASSSTREAM</a>
+          <a href="/2021/07/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,19 +230,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-08-27 13:29:42 / Modified: 17:40:27" itemprop="dateCreated datePublished" datetime="2021-08-27T13:29:42+09:00">2021-08-27</time>
+      <time title="Created: 2021-07-27 15:50:51" itemprop="dateCreated datePublished" datetime="2021-07-27T15:50:51+09:00">2021-07-27</time>
     </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
         </span>
-    </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-07-30 19:47:42" itemprop="dateModified" datetime="2021-07-30T19:47:42+09:00">2021-07-30</time>
+      </span>
 
   
   
@@ -253,8 +250,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/27/20210827-JAVACLASSSTREAM/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/27/20210827-JAVACLASSSTREAM/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/07/27/hello-world/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/27/hello-world/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,59 +265,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>클래스 업/다운캐스팅 왜쓰는가?</p>
-<p>다형성을 쓰는 이유</p>
-<p>다형성: polymorphism 폴리모프</p>
-<p>오버라이딩 vs 오버로딩</p>
-<p>다형성의 예시</p>
-<p>인터페이스 항상 public</p>
-<p>인터페이스는 왜 쓰는가? - 디커필링과 다형성을위해</p>
-<p>디커플링을 최소화하는이유</p>
-<p>결합도를 낮추는 이유</p>
-<p>-&gt; 확장성을 높이기 위해서</p>
-<p>추상클래스를 상속받은 명령어들</p>
-<p>AbstractMap ?clonable treemap</p>
-<p>추상 메서드나 </p>
-<p>훅 메서드 abstractMap 클래스의 get()메서드</p>
-<p>HashMap클래스의 get()메서드</p>
-<p>Treemap 클래스의 get()메서드</p>
-<p>추상메서드 인터페이스 차이</p>
-<p>공통: 구현부가 있는 메서드와 업는 메서드 모두 가질 수 있음  </p>
-<table>
-<thead>
-<tr>
-<th>추상클래스</th>
-<th>인터페이스</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>생성자를 갖는다.</td>
-<td>생성자를 가질 수 없음</td>
-</tr>
-<tr>
-<td>다중상속 불가</td>
-<td>다중 상속 가능</td>
-</tr>
-<tr>
-<td>여러 접근제어자</td>
-<td>항상 public</td>
-</tr>
-<tr>
-<td>is a kind of</td>
-<td>be able to</td>
-</tr>
-<tr>
-<td>Chickenn is a kind of Bird</td>
-<td>Chicken is able to fly</td>
-</tr>
-<tr>
-<td>Owl is a kind of Bird</td>
-<td>Owl is able to fly</td>
-</tr>
-</tbody></table>
-<p>object클래스</p>
-<p>@Override의 기능, 종류</p>
-<p>collections &amp; collecti</p>
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>블로그 글쓰기 순서</p>
+<p>md 작성</p>
+<p>blog/source/_posts 저장</p>
+<p>$ hexo generate</p>
+<p>$ hexo server</p>
+<p>$ hexo deploy</p>
+<p>끝..</p>
 
       
     </div>
@@ -340,7 +304,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
