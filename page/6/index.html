@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/24/20210824-javaclasswon/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/27/20210827-JAVACLASSSTREAM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/24/20210824-javaclasswon/" class="post-title-link" itemprop="url">20210824-javaclasswon</a>
+          <a href="/2021/08/27/20210827-JAVACLASSSTREAM/" class="post-title-link" itemprop="url">20210827-JAVACLASSSTREAM</a>
         </h2>
 
         <div class="post-meta-container">
@@ -232,7 +232,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-08-24 19:03:01 / Modified: 20:30:33" itemprop="dateCreated datePublished" datetime="2021-08-24T19:03:01+09:00">2021-08-24</time>
+      <time title="Created: 2021-08-27 13:29:42 / Modified: 17:40:27" itemprop="dateCreated datePublished" datetime="2021-08-27T13:29:42+09:00">2021-08-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -253,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/24/20210824-javaclasswon/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/24/20210824-javaclasswon/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/27/20210827-JAVACLASSSTREAM/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/27/20210827-JAVACLASSSTREAM/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,47 +268,59 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>jvm 메모리 이해</p>
-<p>함수형 프로그램</p>
-<p>코틀린?</p>
-<p>metaspace</p>
-<p>perm gen</p>
-<p>static 메서드와 일반 메서드 호출의 차이</p>
-<p>Static 메서드는 인스턴스 생성과 상관없이 호출할 수 있고 </p>
-<p>일반 메서드는 인스턴스 초기화 후 호출할 수 있다. </p>
-<p>멤버변수는 함수가 호출될 때 생성되고 함수가 끝나면 소멸한다. F  소멸하는건 지역변수</p>
-<p>클래스 내부에서 사용하고 private이 아니면 참조변수로 다른 클래스에서 사용가능한 변수 유형은 static변수이다. f -&gt;인스턴스 변수</p>
-<p>멤버 변수는 힙 영역에 생성된다. t</p>
+          <p>클래스 업/다운캐스팅 왜쓰는가?</p>
+<p>다형성을 쓰는 이유</p>
+<p>다형성: polymorphism 폴리모프</p>
+<p>오버라이딩 vs 오버로딩</p>
+<p>다형성의 예시</p>
+<p>인터페이스 항상 public</p>
+<p>인터페이스는 왜 쓰는가? - 디커필링과 다형성을위해</p>
+<p>디커플링을 최소화하는이유</p>
+<p>결합도를 낮추는 이유</p>
+<p>-&gt; 확장성을 높이기 위해서</p>
+<p>추상클래스를 상속받은 명령어들</p>
+<p>AbstractMap ?clonable treemap</p>
+<p>추상 메서드나 </p>
+<p>훅 메서드 abstractMap 클래스의 get()메서드</p>
+<p>HashMap클래스의 get()메서드</p>
+<p>Treemap 클래스의 get()메서드</p>
+<p>추상메서드 인터페이스 차이</p>
+<p>공통: 구현부가 있는 메서드와 업는 메서드 모두 가질 수 있음  </p>
 <table>
 <thead>
 <tr>
-<th align="center">변수명</th>
-<th align="center">생성장소</th>
-<th align="center">생성시기</th>
-<th align="center">메모리</th>
+<th>추상클래스</th>
+<th>인터페이스</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">클래스 변수 <br /> (Static 변수)</td>
-<td align="center">클래스 내부</td>
-<td align="center">프로그램 실행시</td>
-<td align="center">스택</td>
+<td>생성자를 갖는다.</td>
+<td>생성자를 가질 수 없음</td>
 </tr>
 <tr>
-<td align="center">인스턴스 변수</td>
-<td align="center">클래스 내부</td>
-<td align="center">인스턴스 생성 시</td>
-<td align="center">힙</td>
+<td>다중상속 불가</td>
+<td>다중 상속 가능</td>
 </tr>
 <tr>
-<td align="center">지역변수</td>
-<td align="center">메소드 내부</td>
-<td align="center">변수 선언 시</td>
-<td align="center">힙</td>
+<td>여러 접근제어자</td>
+<td>항상 public</td>
+</tr>
+<tr>
+<td>is a kind of</td>
+<td>be able to</td>
+</tr>
+<tr>
+<td>Chickenn is a kind of Bird</td>
+<td>Chicken is able to fly</td>
+</tr>
+<tr>
+<td>Owl is a kind of Bird</td>
+<td>Owl is able to fly</td>
 </tr>
 </tbody></table>
-<p>equals()로 동일여부를 체크하면 주소값을 체크한다.</p>
-<p>불변객체 가변객체</p>
+<p>object클래스</p>
+<p>@Override의 기능, 종류</p>
+<p>collections &amp; collecti</p>
 
       
     </div>
@@ -328,7 +340,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
