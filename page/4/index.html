@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/09/02/20210902-KDT-Worksheet2/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/09/06/20210906-KDT-WORKSHEET/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/02/20210902-KDT-Worksheet2/" class="post-title-link" itemprop="url">20210902-KDT-Worksheet2</a>
+          <a href="/2021/09/06/20210906-KDT-WORKSHEET/" class="post-title-link" itemprop="url">20210906-KDT-WORKSHEET</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,14 +231,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-09-02 21:19:49" itemprop="dateCreated datePublished" datetime="2021-09-02T21:19:49+09:00">2021-09-02</time>
+      <time title="Created: 2021-09-06 15:23:06" itemprop="dateCreated datePublished" datetime="2021-09-06T15:23:06+09:00">2021-09-06</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-06 15:39:06" itemprop="dateModified" datetime="2021-09-06T15:39:06+09:00">2021-09-06</time>
+        <time title="Modified: 2021-09-08 16:17:00" itemprop="dateModified" datetime="2021-09-08T16:17:00+09:00">2021-09-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -259,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/09/02/20210902-KDT-Worksheet2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/02/20210902-KDT-Worksheet2/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/09/06/20210906-KDT-WORKSHEET/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/06/20210906-KDT-WORKSHEET/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -276,107 +276,213 @@
     <div class="post-body" itemprop="articleBody">
           <span id="more"></span>
 
-<h1 id="자바의-다양한-기능"><a href="#자바의-다양한-기능" class="headerlink" title="자바의 다양한 기능"></a>자바의 다양한 기능</h1><h2 id="01-익명-내부클래스-중첩클래스"><a href="#01-익명-내부클래스-중첩클래스" class="headerlink" title="01. 익명 내부클래스(중첩클래스)"></a>01. 익명 내부클래스(중첩클래스)</h2><ul>
-<li>클래스 내부에 선언한 클래스 </li>
-<li>다른 외부클래스에서 사용할 일이 거의 없는경우 내부에 사용한다.</li>
-<li>종류: 인스턴스 내부 클래스, 정적 내부 클래스, 지역 내부 클래스, 익명내부클래스</li>
+<h2 id="스트림"><a href="#스트림" class="headerlink" title="스트림"></a>스트림</h2><ul>
+<li><strong>배열과 컬렉션을 대상</strong> 限, 자료의 대상과 관계없이 동일한 연산을 수행한다.</li>
+<li>한번 생성하고 사용한 스트림은 재사용 불가(연산 수행시 스트림 소모)</li>
+<li>연산 결과는 새로운 메모리 공간에 저장(기존자료 변경하지 않음)</li>
+<li>구분 : 최종연산이 호출되어야 중간연산 수행 및 결과 도출<ul>
+<li>중간연산 (지연연산)<ul>
+<li>여러 개의 연산 적용 가능</li>
+<li>연산중에 결과를 알 수 없다. (지연연산)</li>
 </ul>
-<h3 id="인스턴스-내부-클래스"><a href="#인스턴스-내부-클래스" class="headerlink" title="인스턴스 내부 클래스"></a>인스턴스 내부 클래스</h3><ul>
-<li>인스턴스 변수와 선언위치나 생성방법이 유사하다.</li>
-<li>내부적으로 사용할 클래스(Private 권장)</li>
-<li>외부 클래스가 생성된 후 생성되니, Static 변수는 내부에 둘 수 없다. </li>
-<li>private가 아닌 내부 클래스는 다른 외부 클래스에서 생성할 수 있다. </li>
-</ul>
-<h3 id="정적-내부-클래스"><a href="#정적-내부-클래스" class="headerlink" title="정적 내부 클래스"></a>정적 내부 클래스</h3><ul>
-<li>외부 클래스 생성과 무관하게 사용(Static)</li>
-<li>정적 변수, 정적 메서드 사용 가능</li>
-<li>외부 인스턴스 변수를 쓸수가 없다. </li>
-<li>내부 클래스의 내부 메서드는 내부 인스턴스 변수를 쓸 수 없다. </li>
-</ul>
-<h3 id="지역-내부-클래스"><a href="#지역-내부-클래스" class="headerlink" title="지역 내부 클래스"></a>지역 내부 클래스</h3><ul>
-<li>내부에서 정의하여 사용</li>
-<li>메서드 호출이 끝나면 지역변수 유효 만료</li>
-<li>메서드 호출 이후에도 사용해야하는 경우를 대비해 지역 내부 클래스 안의 메서드의 변수는 final선언<ul>
-<li>내부클래스 안에서 바깥 변수를 사용하는경우 변수가 상수화되어 final 로 컴파일되어 Stack메모리에 로드되므로 내부클래스 안에서 변경할 수 없다. </li>
+</li>
+<li>최종연산<ul>
+<li>마지막 한 번만 적용</li>
 </ul>
 </li>
 </ul>
-<h3 id="익명-내부-클래스"><a href="#익명-내부-클래스" class="headerlink" title="익명 내부 클래스"></a>익명 내부 클래스</h3><ul>
-<li>내부에서만 쓰는 클래스의 경우 이름을 쓸 일이 없으므로 class이름을 싹 지워버리고 return 값도 앞으로 가져와놓는다.</li>
+</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class A implements B &#123;</span><br><span class="line">    </span><br><span class="line">&#125; <span class="keyword">return</span> <span class="keyword">new</span> A();</span><br></pre></td></tr></table></figure>
+<h4 id="스트림-생성-및-사용"><a href="#스트림-생성-및-사용" class="headerlink" title="스트림 생성 및 사용"></a>스트림 생성 및 사용</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num : arr )  &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br><span class="line">==</span><br><span class="line">Arrays.stream(arr).forEach(n-&gt;System.out.println(n))</span><br></pre></td></tr></table></figure>
 
-<p>↓</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> B () &#123;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="02-함수형-프로그래밍"><a href="#02-함수형-프로그래밍" class="headerlink" title="02. 함수형 프로그래밍"></a>02. 함수형 프로그래밍</h2><ul>
-<li>함수형 프로그래밍 방식 = 람다식</li>
-<li>함수의 구현과 호출만으로 프로그래밍 수행</li>
-<li>매개변수만 사용하여 순수함수를 구현하고 호출함으로써 외부 자료에 부수적인 영향을 주지 않도록 구현하는 방식으로 함수 외부에 있는 변수를 사용하지 않아 함수가 수행되더라도 외부에 영향이 없다. </li>
-<li>외부에 영향을 주지 않아 여러 자료가 동시에 수행되는 병렬처리가 가능하다. </li>
-<li>함수 기능이 자료로부터 독립적</li>
-<li>동일한 자료에 대해 동일한 결과 </li>
-<li>다양한 자료에 대해 같은 기능 수행</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>↓</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span> x, <span class="keyword">int</span> y) -&gt; &#123;<span class="keyword">return</span> x+y;&#125;</span><br><span class="line">(x, y) -&gt; x+y;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntArrayTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> sumVal = Arrays.stream(arr).sum();</span><br><span class="line">        <span class="keyword">long</span> count = Arrays.stream(arr).count();</span><br><span class="line"></span><br><span class="line">        System.out.println(sumVal);</span><br><span class="line">        System.out.println(count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>피해야할경우 : 간결하게 한다고 했는데 오히려 가독성이 떨어지는경우</li>
+<li>마치 선물세트같은 느낌이다.</li>
 </ul>
-<h3 id="함수형-인터페이스"><a href="#함수형-인터페이스" class="headerlink" title="함수형 인터페이스"></a>함수형 인터페이스</h3><ul>
-<li><p>람다식을 선언하기위한 인터페이스</p>
-</li>
-<li><p>익명 함수와 매개변수 만으로 구현되므로 인터페이스는 하나의 메서드만 선언</p>
-</li>
-<li><p>@FunctionalInterface 애노테이션(annotation)</p>
-<p>함수형 인터페이스라는 의미이며, 내부에 여러개의 메서드를 선언하면 에러 발생</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyNumber</span>  </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getMax</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span></span>;</span><br><span class="line">	<span class="comment">//int add(int x, int y); 하나 지워야됌</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<p>예: IntStream 등등</p>
+<h4 id="중간연산과-최종연산"><a href="#중간연산과-최종연산" class="headerlink" title="중간연산과 최종연산"></a>중간연산과 최종연산</h4><ul>
+<li>중간연산: filter(), map(), sorted() 등<ul>
+<li>조건에 맞는 요소를 추출(filter)하거나 반환(map)한다.</li>
 </ul>
-<p>구현</p>
-<ul>
-<li><p>```java<br>public class TestMyNumber {</p>
-<pre><code>public static void main(String[] args) &#123;
-    MyNumber max = (x, y)-&gt;(x&gt;= y)? x:y; // 람다식을 인터페이스 자료형 max 변수에 대입
-    System.out.println(max.getMax(10, 20));// 인터페이스 자료형 변수로 함수 호출
-&#125;
-</code></pre>
-<p>}</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 객체 지향 프로그래밍 vs 람다식</span><br><span class="line"></span><br><span class="line">- 객체지향을 사용하는경우</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">public class ObjectOriented &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String s1 = &quot;Hello&quot;;</span><br><span class="line">        String s2 = &quot;World&quot;;</span><br><span class="line">        StringConCatImpl concat1 = new StringConCatImpl();</span><br><span class="line">        concat1.makeStringObject(s1, s2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface StringConcatObject &#123;</span><br><span class="line">    public void makeStringObject(String s1, String s2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class StringConCatImpl implements StringConcatObject &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void makeStringObject(String s1, String s2) &#123;</span><br><span class="line">        System.out.println(s1+&quot;, &quot;+s2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>람다식을 사용하는 경우</p>
 </li>
+<li>**예: **</li>
+<li><strong>문자열 리스트에서 문자열의 길이가 5 이상인 요소만 출력하기</strong></li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">lamdaTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s1 = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">        String s2 = <span class="string">&quot;World&quot;</span>;</span><br><span class="line">        StringConcat concat2 = (s, v)-&gt; System.out.println(s+<span class="string">&quot;, &quot;</span>+v);</span><br><span class="line">        concat2.makeString(s1, s2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">StringConcat</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">makeString</span><span class="params">(String s1, String s2)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sList.stream().filter(s-&gt;s.length() &gt;= <span class="number">5</span>).forEach(s-&gt;System.out.println(s));</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><ul>
-<li>클래스를 만들 필요 없이 </li>
-<li>클래스 객체를 선언, 초기화 할 필요 없이</li>
-<li>인터페이스를 앞에 붙이고 바로 수식을 직접 나타낸다. </li>
+<li>filter()는 중간연산이고, forEach()는 최종연산이다</li>
 </ul>
 </li>
-<li><p>인터페이스형 변수에 람다식 대입하기</p>
+<li><strong>고객 클래스 배열에서 고객 이름만 가져오기</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">customerList.stream().map(c-&gt;c.getName()).forEach(s-&gt;System.out.println(s));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ul>
+<li>map()중간연산, forEach()최종연산</li>
+</ul>
+</li>
+<li>중간연산과 최종연산에 대한 구현은 람다식 활용</li>
+<li>최종연산: forEach(), count(), sum()등</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; sList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        sList.add(<span class="string">&quot;Tomas&quot;</span>);</span><br><span class="line">        sList.add(<span class="string">&quot;Edward&quot;</span>);</span><br><span class="line">        sList.add(<span class="string">&quot;Jack&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>sList를 정렬하고 출력하기</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sList.stream().sorted().forEach(s-&gt; System.out.print(s + <span class="string">&quot;\t&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>sList의 단어 글자 수 출력</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sList.stream().map(s-&gt;s.length()).forEach(n-&gt; System.out.print(n + <span class="string">&quot;\t&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>sList 요소 중 글자 수가 5개 이상인것만 출력</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sList.stream().filter(s-&gt;s.length() &gt;=<span class="number">5</span> ).forEach(s-&gt; System.out.println(s));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="reduce-연산"><a href="#reduce-연산" class="headerlink" title="reduce()연산"></a>reduce()연산</h2><ul>
+<li>정의된 연산이 아닌 프로그래머가 직접 구현한 연산 적용</li>
+<li> 구조</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">T <span class="title">reduce</span><span class="params">(T identify, BinaryOperator&lt;T&gt; accumulator)</span></span>;</span><br><span class="line">Arrays.stream(arr).reduce(<span class="number">0</span>, (a,b) -&gt; a+b );</span><br><span class="line">arr로 stream 호출하여 reduce 연산을 적용하는데, 자료를 다 소모 할 때까지a,b 인자를 받으면 더한값을 초기값 <span class="number">0</span>에 대입</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="스트림을-활용한-패키지-여행비용-계산하기"><a href="#스트림을-활용한-패키지-여행비용-계산하기" class="headerlink" title="스트림을 활용한 패키지 여행비용 계산하기"></a>스트림을 활용한 패키지 여행비용 계산하기</h3><p>여행사에 패키지 상품이 있습니다. </p>
+<ul>
+<li><p>여행비용 </p>
+<ul>
+<li>15세 이상 : 100만원</li>
+<li>15세 미만 : 50만원</li>
+</ul>
+</li>
+<li><p>고객 세 명이 패키지 여행을 떠난다고 했을 때 비용 계산과 고객 명단 검색 등에대한 연산을 스트림 활용 구현</p>
+</li>
+<li><p>고객 클래스를 만들고 ArrayList로 고객을 관리한다.</p>
+</li>
+<li><p>고객정보</p>
+<ul>
+<li>customerLee<ul>
+<li>이름: 이순신</li>
+<li>나이: 40</li>
+<li>비용: 100</li>
+</ul>
+</li>
+<li>customerKim<ul>
+<li>이름: 김유신</li>
+<li>나이: 20</li>
+<li>비용: 50</li>
+</ul>
+</li>
+<li>customerHong<ul>
+<li>이름: 홍길동</li>
+<li>나이: 13</li>
+<li>비용: 50</li>
+</ul>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">PrintString</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">showString</span><span class="params">(String str)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrintString lambdaStr = s-&gt;System.out.println(s);</span><br><span class="line">lambdaStr.showString(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>위에 사용된 PrintString 형 인터페이스 lambdaStr를 아래 매개변수로 전달</li>
+</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">showMyString(lambdaStr);</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showMyString</span><span class="params">(PrintString p)</span> </span>&#123;</span><br><span class="line">    p.showString(<span class="string">&quot;hello lambda_2&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TourCustomerTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TourCustomer customerLee = <span class="keyword">new</span> TourCustomer(<span class="string">&quot;이순신&quot;</span>, <span class="number">40</span>, <span class="number">100</span>);</span><br><span class="line">        TourCustomer customerKim = <span class="keyword">new</span> TourCustomer(<span class="string">&quot;김유신&quot;</span>, <span class="number">20</span>, <span class="number">50</span>);</span><br><span class="line">        TourCustomer customerHong = <span class="keyword">new</span> TourCustomer(<span class="string">&quot;홍길동&quot;</span>, <span class="number">13</span>, <span class="number">13</span>);</span><br><span class="line"></span><br><span class="line">        List&lt;TourCustomer&gt; customerList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        customerList.add(customerLee);</span><br><span class="line">        customerList.add(customerKim);</span><br><span class="line">        customerList.add(customerHong);</span><br><span class="line"></span><br><span class="line">        customerList.stream().forEach(s-&gt; System.out.println(s));</span><br><span class="line">        System.out.println(<span class="string">&quot;고객 명단&quot;</span>);</span><br><span class="line">        customerList.stream().map(s-&gt;s.getName()).forEach(s-&gt; System.out.println(s));</span><br><span class="line">        System.out.println(<span class="string">&quot;여행 비용&quot;</span>);</span><br><span class="line">        System.out.println(customerList.stream().mapToInt(s-&gt;s.getCost()).sum());</span><br><span class="line">        System.out.println(<span class="string">&quot;20세 이상 고객 명단&quot;</span>);</span><br><span class="line">        customerList.stream().filter(c-&gt;c.getAge() &gt;= <span class="number">20</span>).map(c-&gt;c.getName()).sorted().forEach(s-&gt; System.out.println(s));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TourCustomer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> cost;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TourCustomer</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TourCustomer</span><span class="params">(String name, <span class="keyword">int</span> age, <span class="keyword">int</span> cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.cost = cost;    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cost;    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCost</span><span class="params">(<span class="keyword">int</span> cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cost = cost;    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;TourCustomer&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, cost=&quot;</span> + cost +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="예외처리"><a href="#예외처리" class="headerlink" title="예외처리"></a>예외처리</h2><h4 id="오류"><a href="#오류" class="headerlink" title="오류"></a>오류</h4><ul>
+<li><p>컴파일 오류(compile)</p>
+<p>프로그램 코드 작성 문법적 오류</p>
+<p>최근 개발 환경에서 대부분 detection 가능</p>
+</li>
+<li><p>실행오류 (runtime)</p>
+<p>프로그램 실행 중 bug발생으로 인한 프로그램 중지 </p>
+<p>이 경우 시스템 장애 유발 가능</p>
+</li>
+<li><p>자바는 안정성이 중요한 언어로 대부분 프로그램에서 발생하는 오류에 대해 문법적으로 예외처리 필요</p>
 <ul>
-<li>반환값으로 사용하기</li>
+<li>Error, Exception =&gt; Throwable</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PrintString <span class="title">returnString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s-&gt;System.out.println(s+<span class="string">&quot;world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">PrintString reStr = returnString();</span><br><span class="line">reStr.showString(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>오류가 나서 비정상 종료가 되느냐, 예외처리가 되어 계속 돌아가느냐의 차이</p>
+</li>
+<li><p>예외를 발생시키는 코드를 사용할 때 당장 예외처리를 하고싶지 않다면 메서드 선언부에 throws선언한다.</p>
+</li>
+</ul>
+<h4 id="try-catch문"><a href="#try-catch문" class="headerlink" title="try-catch문"></a>try-catch문</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    예외가 발생할 수 있는 코드 부분</span><br><span class="line">&#125;<span class="keyword">catch</span>(처리할 예외 타입 e) &#123;</span><br><span class="line">    <span class="keyword">try</span>블록 안에서 예외가 발생했을 때 예외를 처리하는 부분;</span><br><span class="line">    ex) 로그를 남긴다던지 등등;</span><br><span class="line">    System.out.println(e.getMessage()); <span class="comment">// 오류의 메세지 출력</span></span><br><span class="line">    System.out.println(e.toString());<span class="comment">// 오류 종류와 메세지 출력</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>※ 인터페이스 개념을 잘 생각하면서 볼것</p>
+<h4 id="try-catchfinally문"><a href="#try-catchfinally문" class="headerlink" title="try-catchfinally문"></a>try-catchfinally문</h4><ul>
+<li>finally 블럭에서 파일이나 네트웍을 닫거나 리소스 해제 구현</li>
+<li>try블럭이 수행되면 finally블럭은 항상 수행 된다.</li>
+<li>예외 블럭이 여러개라면 finally 블럭에서 해제하도록 구현한다.</li>
+</ul>
+<h4 id="try-with-resources문"><a href="#try-with-resources문" class="headerlink" title="try-with-resources문"></a>try-with-resources문</h4><ul>
+<li>리소스를 try() 내부에서 선언하고, close()하지 않아도 자동 해제</li>
+<li>해당 리소스 클래스가 Autocloseable인터페이스를 구현해야한다.</li>
+<li>자바 9부터 리소스는 try()외부에서 선언하고 변수만 try(obj)와 같이 사용 가능하다.</li>
+</ul>
+<h4 id="여러개-예외-발생하는-경우"><a href="#여러개-예외-발생하는-경우" class="headerlink" title="여러개 예외 발생하는 경우"></a>여러개 예외 발생하는 경우</h4><ul>
+<li>try-catch 1개만 쓰고, catch ()안에 |로 분류하여 여러개 넣기</li>
+<li>catch를 여러개 쓰기</li>
+<li>Exception 블록은 맨 뒤에 위치</li>
+</ul>
+<h3 id="패스워드에-대한-예외-처리-하기"><a href="#패스워드에-대한-예외-처리-하기" class="headerlink" title="패스워드에 대한 예외 처리 하기"></a>패스워드에 대한 예외 처리 하기</h3><p>패스워드 입력 시 다음과 같은 오류처리를 해보자</p>
+<ul>
+<li>비밀번호는 null일 수 없다.</li>
+<li>비밀번호 길이는 5 이상이다.</li>
+<li>비밀번호는 문자로만 이루어져서는 안되고, 하나이상의 숫자나 특수문자를 포함하여야 한다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PasswordTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> <span class="keyword">throws</span> PasswordException</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (password == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> PasswordException(<span class="string">&quot;비밀번호는 null이 될 수 없습니다.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(password.length() &lt;<span class="number">5</span> ) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> PasswordException(<span class="string">&quot;비밀번호를 5글자 이상으로 설정해주세요&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(password.matches(<span class="string">&quot;[a-zA-z]+&quot;</span>)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> PasswordException(<span class="string">&quot;비밀번호에 숫자 또는 특수문자를 포함해주세요&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">            PasswordTest test01 = <span class="keyword">new</span> PasswordTest();</span><br><span class="line">            System.out.println(<span class="string">&quot;설정할 비밀번호를 입력해주세요&quot;</span>);</span><br><span class="line">            Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            String password = scanner.next();</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                test01.setPassword(password);</span><br><span class="line">                System.out.println(<span class="string">&quot;비밀번호 정상 세팅&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (PasswordException e) &#123;</span><br><span class="line">                System.out.println(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>-&gt; 비밀번호를 세팅한다.</p>
+<p>-&gt; 예외가 발생하면 비밀번호 세팅을 반복한다.</p>
+<p>-&gt; 정상 세팅이 되면 종료한다.</p>
+<h3 id="logging"><a href="#logging" class="headerlink" title="logging"></a>logging</h3><ul>
+<li>시스템 운영 기록이며, 오류 발생시 기록을 남겨 디버깅 용이</li>
+<li>어느정도까지 로그? 적으면 상황파악 곤란, 많으면 파일 I/O빈도 과다 백업 곤란 등</li>
+</ul>
+<h4 id="java-util-logging"><a href="#java-util-logging" class="headerlink" title="java.util.logging"></a>java.util.logging</h4><ul>
+<li>로그 레벨: severe, warning, info, config, fine, finer, finest</li>
+<li>오픈소스로 log4j 많이 사용</li>
+</ul>
+<h3 id="Logger-만들기"><a href="#Logger-만들기" class="headerlink" title="Logger 만들기"></a>Logger 만들기</h3><ul>
+<li><p>시나리오</p>
+<p>학생 정보 시스템에 로그 기록</p>
+<ul>
+<li>학생의 이름에 오류가 있는 경우 예외처리를 하고 예외상황 로그 남기기</li>
+<li>학생의 이름이 null이거나 중간에 space가 3개 이상인 경우 오류 발생 </li>
+</ul>
+</li>
+<li><p>구현하기</p>
+<ul>
+<li>Logger 인스턴스 생성</li>
+<li>FileHandler 생성</li>
+<li>FileHandler의 level 지정</li>
+<li>Logger에 생성된 addHandler()메서드로 FileHandler 추가</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><figcaption><span>: MyLogger.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.FileHandler;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.Level;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.Logger;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.SimpleFormatter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyLogger</span> </span>&#123;</span><br><span class="line">    Logger logger = Logger.getLogger(<span class="string">&quot;mylogger&quot;</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MyLogger instance = <span class="keyword">new</span> MyLogger();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String infoLog = <span class="string">&quot;log.txt&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String warningLog = <span class="string">&quot;warning.txt&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String finestLog = <span class="string">&quot;fine.txt&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> FileHandler infoLogFileHandler = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> FileHandler warningFileHandler = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> FileHandler finestFileHandler = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MyLogger</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            infoLogFileHandler = <span class="keyword">new</span> FileHandler(infoLog, <span class="keyword">true</span>);</span><br><span class="line">            warningFileHandler = <span class="keyword">new</span> FileHandler(warningLog, <span class="keyword">true</span>);</span><br><span class="line">            finestFileHandler = <span class="keyword">new</span> FileHandler(finestLog, <span class="keyword">true</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SecurityException e) &#123; <span class="comment">//보안을 이유로 메서드를 수행할 수 없을 때</span></span><br><span class="line">            e.printStackTrace();<span class="comment">//에러 메세지의 발생 근원지를 찾아 단계별로 에러를 출력한다.</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace(); <span class="comment">//입출력과 관련된 예외</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//로그를 기록할 포멧을 정의한다.</span></span><br><span class="line">        <span class="comment">//SimpleFormatter()는 String.format(format, date, source, logger, level, message, thrown)으로 구성된다.</span></span><br><span class="line">        infoLogFileHandler.setFormatter(<span class="keyword">new</span> SimpleFormatter());</span><br><span class="line">        warningFileHandler.setFormatter(<span class="keyword">new</span> SimpleFormatter());</span><br><span class="line">        finestFileHandler.setFormatter(<span class="keyword">new</span> SimpleFormatter());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//MyLog 클래스 logger에서 캐치할 이벤트를 설정한다. info 부터 기록하므로 info부터 캐치하게 설정한다.</span></span><br><span class="line">        logger.setLevel(Level.INFO);</span><br><span class="line">        <span class="comment">//infoLogFileHandler가 캐치할이벤트 = INFO 이하</span></span><br><span class="line">        infoLogFileHandler.setLevel(Level.INFO);</span><br><span class="line">        <span class="comment">//warningFileHandler가 캐치할이벤트 = WARNING 이하</span></span><br><span class="line">        warningFileHandler.setLevel(Level.WARNING);</span><br><span class="line">        <span class="comment">//fineFileHandler가 캐치할이벤트 = FINE 이하</span></span><br><span class="line">        finestFileHandler.setLevel(Level.FINEST);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//logger에 각각의 핸드러를 붙인다.</span></span><br><span class="line">        logger.addHandler(infoLogFileHandler);</span><br><span class="line">        logger.addHandler(warningFileHandler);</span><br><span class="line">        logger.addHandler(finestFileHandler);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//MyLogger를 호출하는 메서드</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MyLogger <span class="title">getLogger</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        logger.finest(msg);</span><br><span class="line">        logger.fine(msg);</span><br><span class="line">        logger.config(msg);</span><br><span class="line">        logger.info(msg);</span><br><span class="line">        logger.warning(msg);</span><br><span class="line">        logger.severe(msg);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fine</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        logger.fine(msg);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">warning</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        logger.warning(msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>: LoggerTest.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoggerTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        MyLogger myLogger = MyLogger.getLogger();</span><br><span class="line"></span><br><span class="line">        myLogger.log(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>LoggerTest를 실행하면 상위 폴더에 fine.txt, log.txt, warning.txt 가 생성된 후</p>
+<p>각 레벨에 맞는 log가 기록된다. </p>
+<p>콘솔에서는 설정에 따라 출력되는 값이 다를 수 있다. </p>
+<h2 id="번외"><a href="#번외" class="headerlink" title="번외"></a>번외</h2><p> 랜덤 생성된 문자 char 형을 n개 단위로 m개 출력하기</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// List 활용</span></span><br><span class="line">List&lt;String[]&gt; arr = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j ++ ) &#123;</span><br><span class="line">    String[] charArray = <span class="keyword">new</span> String[<span class="number">50</span>];</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; charArray.length; i ++ ) &#123;</span><br><span class="line">        <span class="keyword">char</span> tempchar = (<span class="keyword">char</span>) (<span class="keyword">int</span>) ((Math.random()*<span class="number">58</span>)+<span class="number">65</span>);</span><br><span class="line">        charArray[i] = String.valueOf(tempchar);</span><br><span class="line">    &#125;</span><br><span class="line">    arr.add(charArray);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Iterator&lt;String[]&gt; iter = arr.iterator();</span><br><span class="line"><span class="keyword">while</span>(iter.hasNext()) &#123;</span><br><span class="line">    String str = Arrays.deepToString(iter.next());</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2차 배열 활용</span></span><br><span class="line">String[][] array = <span class="keyword">new</span> String[<span class="number">10</span>][<span class="number">5</span>] ;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;<span class="number">10</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">char</span> tempchar = (<span class="keyword">char</span>)(<span class="keyword">int</span>)((Math.random()*<span class="number">58</span>)+<span class="number">65</span>);</span><br><span class="line">        array[j][i] = String.valueOf(tempchar);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Iterator&lt;String[]&gt; iter = Arrays.stream(array).iterator();</span><br><span class="line"><span class="keyword">while</span>(iter.hasNext()) &#123;</span><br><span class="line">    String str = Arrays.deepToString(iter.next());</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>둘 다 iterator를 활용한다.</p>
+<p>한번 이상 들어간 배열은 출력시 주소값만 출력하게되므로 </p>
+<p>**deepToString()**을 사용하면 정상적으로 출력이 가능하다.</p>
 
       
     </div>
@@ -396,7 +502,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
