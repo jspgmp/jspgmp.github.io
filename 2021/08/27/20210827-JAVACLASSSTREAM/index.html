@@ -22,15 +22,15 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="클래스 업&#x2F;다운캐스팅 왜쓰는가? 다형성을 쓰는 이유 다형성: polymorphism 폴리모프 오버라이딩 vs 오버로딩 다형성의 예시 인터페이스 항상 public 인터페이스는 왜 쓰는가? - 디커필링과 다형성을위해 디커플링을 최소화하는이유 결합도를 낮추는 이유 -&gt; 확장성을 높이기 위해서 추상클래스를 상속받은 명령어들 AbstractMap ?clonab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20210827-JAVACLASSSTREAM">
+<meta property="og:title" content="자바 강의노트 2">
 <meta property="og:url" content="http://jspgmp.github.io/2021/08/27/20210827-JAVACLASSSTREAM/index.html">
 <meta property="og:site_name" content="땡땡 블로그">
 <meta property="og:description" content="클래스 업&#x2F;다운캐스팅 왜쓰는가? 다형성을 쓰는 이유 다형성: polymorphism 폴리모프 오버라이딩 vs 오버로딩 다형성의 예시 인터페이스 항상 public 인터페이스는 왜 쓰는가? - 디커필링과 다형성을위해 디커플링을 최소화하는이유 결합도를 낮추는 이유 -&gt; 확장성을 높이기 위해서 추상클래스를 상속받은 명령어들 AbstractMap ?clonab">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-27T04:29:42.000Z">
-<meta property="article:modified_time" content="2021-08-27T08:40:27.786Z">
+<meta property="article:modified_time" content="2021-09-17T04:35:17.097Z">
 <meta property="article:author" content="jspgmp">
-<meta property="article:tag" content="KDT Stream Class">
+<meta property="article:tag" content="KDT_Class">
 <meta name="twitter:card" content="summary">
 
 
@@ -38,10 +38,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://jspgmp.github.io/2021/08/27/20210827-JAVACLASSSTREAM/","path":"2021/08/27/20210827-JAVACLASSSTREAM/","title":"20210827-JAVACLASSSTREAM"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://jspgmp.github.io/2021/08/27/20210827-JAVACLASSSTREAM/","path":"2021/08/27/20210827-JAVACLASSSTREAM/","title":"자바 강의노트 2"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>20210827-JAVACLASSSTREAM | 땡땡 블로그</title>
+<title>자바 강의노트 2 | 땡땡 블로그</title>
   
 
 
@@ -160,13 +160,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -224,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          20210827-JAVACLASSSTREAM
+          자바 강의노트 2
         </h1>
 
         <div class="post-meta-container">
@@ -234,10 +234,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-08-27 13:29:42 / Modified: 17:40:27" itemprop="dateCreated datePublished" datetime="2021-08-27T13:29:42+09:00">2021-08-27</time>
+      <time title="Created: 2021-08-27 13:29:42" itemprop="dateCreated datePublished" datetime="2021-08-27T13:29:42+09:00">2021-08-27</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-09-17 13:35:17" itemprop="dateModified" datetime="2021-09-17T13:35:17+09:00">2021-09-17</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -334,20 +340,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/KDT-Stream-Class/" rel="tag"># KDT Stream Class</a>
+              <a href="/tags/KDT-Class/" rel="tag"># KDT_Class</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/08/26/20210826-JAVA-interface-example/" rel="prev" title="(JAVA) 인터페이스 활용 예제">
-                  <i class="fa fa-chevron-left"></i> (JAVA) 인터페이스 활용 예제
+                <a href="/2021/08/26/20210826-JAVA-interface-example/" rel="prev" title="JAVA 인터페이스 활용 예제">
+                  <i class="fa fa-chevron-left"></i> JAVA 인터페이스 활용 예제
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/08/27/20210827-JAVA-absClassInterface-example/" rel="next" title="자바 추상클래스와 인터페이스 예제">
-                  자바 추상클래스와 인터페이스 예제 <i class="fa fa-chevron-right"></i>
+                <a href="/2021/08/27/20210827-JAVA-absClassInterface-example/" rel="next" title="JAVA 추상클래스와 인터페이스 예제">
+                  JAVA 추상클래스와 인터페이스 예제 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="기간: 20210917 컴퓨터공학 5H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS 운영체제 입문 2 스케줄러 &#x2F; 인터럽트 &#x2F; 프로세스">
+<meta property="og:url" content="http://jspgmp.github.io/2021/09/17/20210917-KDT-WORKSHEET/index.html">
+<meta property="og:site_name" content="땡땡 블로그">
+<meta property="og:description" content="기간: 20210917 컴퓨터공학 5H">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://jspgmp.github.io/img/image-20210917145002820.png">
+<meta property="article:published_time" content="2021-09-17T04:38:01.000Z">
+<meta property="article:modified_time" content="2021-09-17T05:50:32.801Z">
+<meta property="article:author" content="jspgmp">
+<meta property="article:tag" content="KDT_WORKSHEET">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jspgmp.github.io/img/image-20210917145002820.png">
+
+
+<link rel="canonical" href="http://jspgmp.github.io/2021/09/17/20210917-KDT-WORKSHEET/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://jspgmp.github.io/2021/09/17/20210917-KDT-WORKSHEET/","path":"2021/09/17/20210917-KDT-WORKSHEET/","title":"CS 운영체제 입문 2 스케줄러 / 인터럽트 / 프로세스"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CS 운영체제 입문 2 스케줄러 / 인터럽트 / 프로세스 | 땡땡 블로그</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">땡땡 블로그</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">너무안이쁜데 어떡하죠?</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%84%A0%EC%A0%90%ED%98%95-%EB%B9%84%EC%84%A0%EC%A0%90%ED%98%95-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC"><span class="nav-number">1.</span> <span class="nav-text">선점형 &#x2F; 비선점형 스케줄러</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B0%9C%EB%85%90"><span class="nav-number">1.1.</span> <span class="nav-text">개념</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%84%A0%EC%A0%90%ED%98%95-Preemptive"><span class="nav-number">1.1.1.</span> <span class="nav-text">선점형(Preemptive)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EB%B9%84%EC%84%A0%EC%A0%90%ED%98%95-Non-Preaemtive"><span class="nav-number">1.1.2.</span> <span class="nav-text">비선점형(Non-Preaemtive)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC"><span class="nav-number">1.1.3.</span> <span class="nav-text">스케줄러</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC-%EC%A2%85%EB%A5%98"><span class="nav-number">1.2.</span> <span class="nav-text">스케줄러 종류</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8"><span class="nav-number">2.</span> <span class="nav-text">인터럽트</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8-%EA%B0%9C%EB%85%90"><span class="nav-number">2.1.</span> <span class="nav-text">인터럽트 개념</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0"><span class="nav-number">2.2.</span> <span class="nav-text">인터럽트가 필요한 이유</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8-%EC%A2%85%EB%A5%98"><span class="nav-number">2.3.</span> <span class="nav-text">인터럽트 종류</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8-IDT-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%BD%9C"><span class="nav-number">2.4.</span> <span class="nav-text">인터럽트+IDT+시스템 콜</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%BD%9C-%ED%98%B8%EC%B6%9C"><span class="nav-number">2.4.1.</span> <span class="nav-text">시스템 콜(호출)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%BD%9C%EC%9D%98-%EC%9C%A0%ED%98%95"><span class="nav-number">2.4.2.</span> <span class="nav-text">시스템 콜의 유형</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-IPC"><span class="nav-number">3.</span> <span class="nav-text">프로세스와 IPC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4"><span class="nav-number">3.1.</span> <span class="nav-text">프로세스</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EA%B5%AC%EC%A1%B0"><span class="nav-number">3.2.</span> <span class="nav-text">프로세스 구조</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPC-InterProcess-Communication-%EA%B8%B0%EB%B2%95"><span class="nav-number">3.3.</span> <span class="nav-text">IPC (InterProcess Communication) 기법</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IPC-%EC%A2%85%EB%A5%98"><span class="nav-number">3.3.1.</span> <span class="nav-text">IPC 종류</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jspgmp</p>
+  <div class="site-description" itemprop="description">개발블로그</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/09/17/20210917-KDT-WORKSHEET/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jspgmp">
+      <meta itemprop="description" content="개발블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="땡땡 블로그">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS 운영체제 입문 2 스케줄러 / 인터럽트 / 프로세스
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-09-17 13:38:01 / Modified: 14:50:32" itemprop="dateCreated datePublished" datetime="2021-09-17T13:38:01+09:00">2021-09-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/COMPUTER-SCIENCE/" itemprop="url" rel="index"><span itemprop="name">COMPUTER SCIENCE</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/09/17/20210917-KDT-WORKSHEET/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/17/20210917-KDT-WORKSHEET/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p> 기간: 20210917 컴퓨터공학 5H</p>
+<span id="more"></span>
+
+<h2 id="선점형-비선점형-스케줄러"><a href="#선점형-비선점형-스케줄러" class="headerlink" title="선점형 / 비선점형 스케줄러"></a>선점형 / 비선점형 스케줄러</h2><h3 id="개념"><a href="#개념" class="headerlink" title="개념"></a>개념</h3><h4 id="선점형-Preemptive"><a href="#선점형-Preemptive" class="headerlink" title="선점형(Preemptive)"></a>선점형(Preemptive)</h4><p>Preemptive는 선제적이라는 뜻이다.</p>
+<p>선점형이라는 것은 다른것보다 먼저 CPU를 차지한다는 뜻</p>
+<h4 id="비선점형-Non-Preaemtive"><a href="#비선점형-Non-Preaemtive" class="headerlink" title="비선점형(Non-Preaemtive)"></a>비선점형(Non-Preaemtive)</h4><p>선점하지 않기 때문에 CPU 새치기를 할 수 없다. </p>
+<p>한 프로세스가 끝나거나 스스로 block 되어야 뒷 프로세서가 실행된다. </p>
+<h4 id="스케줄러"><a href="#스케줄러" class="headerlink" title="스케줄러"></a>스케줄러</h4><p>프로세스 진행 순서를 결정하는 정책이다</p>
+<h3 id="스케줄러-종류"><a href="#스케줄러-종류" class="headerlink" title="스케줄러 종류"></a>스케줄러 종류</h3><ol>
+<li>FIFO ( First In First Out) = FCFS (First Come First Serve)<ul>
+<li>먼저 들어온것 먼저 처리한다는 뜻</li>
+</ul>
+</li>
+<li>SJF (Shortest Job First)<ul>
+<li>Service Time 이 짧은 것 먼저 처리한다. 비선점형</li>
+</ul>
+</li>
+<li>Priority-based = 우선순위 스케줄링<ul>
+<li>중요한것먼저 처리</li>
+<li>운선순위는 어떻게? - 중요도, 자원 유형, 비용, 선호도 등등 고려</li>
+</ul>
+</li>
+<li>RoundRobin<ul>
+<li>할당된 단위시간만큼 만 처리하고 다음 프로세스 실행</li>
+<li>시분할 시스템을 위한 알고리즘이다.</li>
+</ul>
+</li>
+</ol>
+<h2 id="인터럽트"><a href="#인터럽트" class="headerlink" title="인터럽트"></a>인터럽트</h2><h3 id="인터럽트-개념"><a href="#인터럽트-개념" class="headerlink" title="인터럽트 개념"></a>인터럽트 개념</h3><ul>
+<li>CPU 사용 중 예외 상황이 발생하여 처리가 필요한경우 CPU에 알려 처리해야 한다.</li>
+</ul>
+<h3 id="인터럽트가-필요한-이유"><a href="#인터럽트가-필요한-이유" class="headerlink" title="인터럽트가 필요한 이유"></a>인터럽트가 필요한 이유</h3><ol>
+<li>선점형 스케줄러 구현(프로세스 새치기)</li>
+<li>IO Device Communication (입력하거나 출력하거나)</li>
+<li>프로그램에서 잘못된 명령/데이터 사용시</li>
+</ol>
+<h3 id="인터럽트-종류"><a href="#인터럽트-종류" class="headerlink" title="인터럽트 종류"></a>인터럽트 종류</h3><ul>
+<li>내부 인터럽트<ol>
+<li>0으로 나누기</li>
+<li>권한 오류</li>
+<li>Overflow/Underflow</li>
+</ol>
+</li>
+<li>외부 인터럽트<ol>
+<li>전원 이상</li>
+<li>기계 문제</li>
+<li>I/O Event</li>
+<li>Timer Event</li>
+</ol>
+</li>
+</ul>
+<h3 id="인터럽트-IDT-시스템-콜"><a href="#인터럽트-IDT-시스템-콜" class="headerlink" title="인터럽트+IDT+시스템 콜"></a>인터럽트+IDT+시스템 콜</h3><p>IDT ? : Interrupt Descriptor Table </p>
+<p>부팅시 운영체제가 이벤트 발생시 실행할 코드를 기록한 테이블</p>
+<h4 id="시스템-콜-호출"><a href="#시스템-콜-호출" class="headerlink" title="시스템 콜(호출)"></a>시스템 콜(호출)</h4><p>-&gt; 프로그래밍 언어에서는 직접 시스템 호출을 사용할 수 없다.</p>
+<p>프로그래밍 언어 레벨에서는 CPU 권한이 사용자 공간에서 작동하도록 되어있어 응용 프로그램이 여러 상황에서 커널에 의존하여 어쩌구 저쩌구</p>
+<p>-&gt; 응용프로그램은 많은 경우 커널의 서비스를 이용해야 한다.</p>
+<p>커널? </p>
+<p>-&gt; 응용 프로그램과 하드웨어를 연결하는 운영체제의 핵심 부분</p>
+<h4 id="시스템-콜의-유형"><a href="#시스템-콜의-유형" class="headerlink" title="시스템 콜의 유형"></a>시스템 콜의 유형</h4><ol>
+<li>프로세스 제어</li>
+<li>파일 조작</li>
+<li>장치 관리</li>
+<li>정보 유지 (?)</li>
+<li>통신</li>
+</ol>
+<p>**응용 프로그램 실행 중 **</p>
+<p>**이벤트가 발생할 경우 **</p>
+<p>**IDT에 따라 시스템 콜을 하여 해결하고 **</p>
+<p><strong>다음 순서로 넘어간다</strong></p>
+<h2 id="프로세스와-IPC"><a href="#프로세스와-IPC" class="headerlink" title="프로세스와 IPC"></a>프로세스와 IPC</h2><h3 id="프로세스"><a href="#프로세스" class="headerlink" title="프로세스"></a>프로세스</h3><p>저장된 실행 코드(프로그램)를 실행 중인 프로그램으로, 프로그램 실행 시 메모리에 적재되어 프로세스 형태로 실행</p>
+<h3 id="프로세스-구조"><a href="#프로세스-구조" class="headerlink" title="프로세스 구조"></a>프로세스 구조</h3><p><img src="/img/image-20210917145002820.png" alt="image-20210917145002820"></p>
+<ul>
+<li><p>text(CODE)</p>
+<ul>
+<li>실행할 프로그램의 코드 저장</li>
+</ul>
+</li>
+<li><p>data</p>
+<ul>
+<li><strong>프로그램 시작</strong>과 함께 할당, 종료시 소멸</li>
+<li>전역 변수와 Static 변수 저장</li>
+</ul>
+</li>
+<li><p>stack</p>
+<ul>
+<li><p><strong>함수</strong> 호출과 함께 할당, 호출 완료시 소멸</p>
+</li>
+<li><p>로컬 변수 등 저장</p>
+<ul>
+<li><p>스택 프레임: 함수 호출 과정에서 할당되는 메모리 블록</p>
+<ul>
+<li><p>PC(Program Counter): 코드 한 줄을 가르키는 주소 레지스터</p>
+</li>
+<li><p>SP(Stack Pointer): 스택 최상단 주소 레지스터</p>
+<ul>
+<li>PC+SP는 PCB(Process Control Block)에 저장(운영체제 따라 다름)</li>
+</ul>
+</li>
+<li><p>ESP(Extended Stack Pointer Register): 유동적, 현재 스택의 최상단 주소값 저장하는 레지스터</p>
+</li>
+<li><p>EBP(Extended Base Pointer Register): 고정적, 현재 스택 프레임의 베이스 주소를 담는 레지스터</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>heap</p>
+<ul>
+<li>사용자가 직접 관리할 수 있는 메모리 영역</li>
+<li>코드에서 동적으로 만들어지는 데이터 저장</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>함수실행 - 리턴 주소 저장(Stack) - 함수 지역변수 저장(Stack) - 함수실행 완료 후 차례로 삭제, 마지막 주소로 이동</p>
+<h3 id="IPC-InterProcess-Communication-기법"><a href="#IPC-InterProcess-Communication-기법" class="headerlink" title="IPC (InterProcess Communication) 기법"></a>IPC (InterProcess Communication) 기법</h3><ul>
+<li>프로세스는 다른 프로세스의 공간에 접근할 수 없다.</li>
+<li>성능을 높이기 위해 여러 프로세스를 만들어 병렬 처리</li>
+<li>병렬 처리를 위한 프로세스간 통신 필요</li>
+</ul>
+<h4 id="IPC-종류"><a href="#IPC-종류" class="headerlink" title="IPC 종류"></a>IPC 종류</h4><ol>
+<li><p>file 사용</p>
+<p>↓ 커널 사용</p>
+</li>
+<li><p>Message Queue </p>
+<ul>
+<li>First In First Out 정책 활용하여 데이터 전송, 양방향</li>
+</ul>
+</li>
+<li><p>Shared Memory </p>
+<ul>
+<li>커널에 메모리를 만들어 그곳을 변수처럼 사용, </li>
+</ul>
+</li>
+<li><p>Pipe </p>
+<ul>
+<li>fork()로 부모/자식 생성하여 활용, 단방향</li>
+</ul>
+</li>
+<li><p>Signal</p>
+<ul>
+<li>다른 프로세스에 어떤 이벤트가 발생되었는지 지정 시그널 활용</li>
+</ul>
+</li>
+<li><p>Semaphore</p>
+</li>
+<li><p>Socket</p>
+<ul>
+<li>각각 Port를 담당하는 소켓을 만들어 프로세스가 맡아 파이프처럼 데이트 송수신</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/KDT-WORKSHEET/" rel="tag"># KDT_WORKSHEET</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/16/20210916-KDT-WORKSHEET/" rel="prev" title="CS 운영체제 입문 1">
+                  <i class="fa fa-chevron-left"></i> CS 운영체제 입문 1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/17/20210917-KDT-WORKSHEET3/" rel="next" title="20210917-KDT-WORKSHEET3">
+                  20210917-KDT-WORKSHEET3 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jspgmp</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"https-jspgmp-github-io","count":true,"lazyload":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
