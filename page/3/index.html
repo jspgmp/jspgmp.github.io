@@ -157,13 +157,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/09/17/20210917-KDT-WORKSHEET/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/20/20211020-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/17/20210917-KDT-WORKSHEET/" class="post-title-link" itemprop="url">CS 운영체제 입문 2 스케줄러 / 인터럽트 / 프로세스</a>
+          <a href="/2021/10/20/20211020-KDT-Worksheet/" class="post-title-link" itemprop="url">Untitled</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,19 +230,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-09-17 13:38:01 / Modified: 14:50:32" itemprop="dateCreated datePublished" datetime="2021-09-17T13:38:01+09:00">2021-09-17</time>
+      <time title="Created: 2021-10-20 20:29:04" itemprop="dateCreated datePublished" datetime="2021-10-20T20:29:04+09:00">2021-10-20</time>
     </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/COMPUTER-SCIENCE/" itemprop="url" rel="index"><span itemprop="name">COMPUTER SCIENCE</span></a>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
         </span>
-    </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-10-22 11:25:59" itemprop="dateModified" datetime="2021-10-22T11:25:59+09:00">2021-10-22</time>
+      </span>
 
   
   
@@ -253,8 +250,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/09/17/20210917-KDT-WORKSHEET/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/17/20210917-KDT-WORKSHEET/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/10/20/20211020-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/20/20211020-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,15 +265,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p> 기간: 20210917 컴퓨터공학 5H</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/17/20210917-KDT-WORKSHEET/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20211020202929193.png" alt="image-20211020202929193"></p>
+<p>알리아스를 적용하여 컬럼 제목 변경 가능</p>
+<p>쌍파이프|| 삽입시 한 칸으로 합쳐짐</p>
+<p>문자열을 중간에 넣고싶다면 -&gt; 컬럼||’넣고싶은 문자열’||컬럼</p>
+<p>where 으로 조건을 지정한다 (sal&gt;=3000)</p>
+<p>select 사번, 이름, 급여<br>from emp<br>where 급여 &gt;=3000</p>
+<p>select 사번, 이름, 급여<br>from emp<br>where 급여 = select 급여 from emp where 이름 = ward;</p>
+<p>select 사번, 이름, 부서번호<br>from emp<br>where 부서번호 = select 부서번호 from emp where 이름 = ward;</p>
+<p>select 사번, 이름, 부서번호<br>from emp<br>where 부서번호 = 10 or 부서번호 = 30;<br>= where 부서번호 in(10, 30);</p>
+<p>직무에 er이 포함된 </p>
+<p>where job like’%er%’</p>
+<p>이름이 s로 시작하는</p>
+<p>where name like ‘s%’</p>
+<p>직무에 er포함, 이름이 s로 시작하는</p>
+<p>where job like ‘%er%’ and name like ‘s%’</p>
+<p>81년도에 입사한사람</p>
+<p>where hiredate like ‘__81%’</p>
+<p>order by 는 정렬</p>
+<p>order by hiredate desc(asc)</p>
+<p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20211020220318653.png" alt="image-20211020220318653"></p>
+<p>where 와 having 을 주의할것</p>
+<p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20211020220404301.png" alt="image-20211020220404301"></p>
+<p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20211021190152469.png" alt="image-20211021190152469"></p>
+<p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20211021214527024.png" alt="image-20211021214527024"></p>
+
       
     </div>
 
@@ -295,7 +308,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
