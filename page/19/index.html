@@ -157,13 +157,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/24/20210824-javaclasswon/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/27/20210827-JAVA-absClassInterface-example/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/24/20210824-javaclasswon/" class="post-title-link" itemprop="url">JAVA 강의노트</a>
+          <a href="/2021/08/27/20210827-JAVA-absClassInterface-example/" class="post-title-link" itemprop="url">JAVA 추상클래스와 인터페이스 예제</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,14 +231,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-08-24 19:03:01" itemprop="dateCreated datePublished" datetime="2021-08-24T19:03:01+09:00">2021-08-24</time>
+      <time title="Created: 2021-08-27 14:50:16" itemprop="dateCreated datePublished" datetime="2021-08-27T14:50:16+09:00">2021-08-27</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-17 13:34:27" itemprop="dateModified" datetime="2021-09-17T13:34:27+09:00">2021-09-17</time>
+        <time title="Modified: 2021-09-17 13:34:52" itemprop="dateModified" datetime="2021-09-17T13:34:52+09:00">2021-09-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -259,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/24/20210824-javaclasswon/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/24/20210824-javaclasswon/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/27/20210827-JAVA-absClassInterface-example/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/27/20210827-JAVA-absClassInterface-example/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,49 +274,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>8월 24일 강의에서 놓친 내용들이다…내용을 채워넣자</p>
-<p>jvm 메모리 이해</p>
-<p>함수형 프로그램</p>
-<p>코틀린?</p>
-<p>metaspace</p>
-<p>perm gen</p>
-<p>static 메서드와 일반 메서드 호출의 차이</p>
-<p>Static 메서드는 인스턴스 생성과 상관없이 호출할 수 있고 </p>
-<p>일반 메서드는 인스턴스 초기화 후 호출할 수 있다. </p>
-<p>멤버변수는 함수가 호출될 때 생성되고 함수가 끝나면 소멸한다. F  소멸하는건 지역변수</p>
-<p>클래스 내부에서 사용하고 private이 아니면 참조변수로 다른 클래스에서 사용가능한 변수 유형은 static변수이다. f -&gt;인스턴스 변수</p>
-<p>멤버 변수는 힙 영역에 생성된다. t</p>
-<table>
-<thead>
-<tr>
-<th align="center">변수명</th>
-<th align="center">생성장소</th>
-<th align="center">생성시기</th>
-<th align="center">메모리</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">클래스 변수 <br /> (Static 변수)</td>
-<td align="center">클래스 내부</td>
-<td align="center">프로그램 실행시</td>
-<td align="center">스택</td>
-</tr>
-<tr>
-<td align="center">인스턴스 변수</td>
-<td align="center">클래스 내부</td>
-<td align="center">인스턴스 생성 시</td>
-<td align="center">힙</td>
-</tr>
-<tr>
-<td align="center">지역변수</td>
-<td align="center">메소드 내부</td>
-<td align="center">변수 선언 시</td>
-<td align="center">힙</td>
-</tr>
-</tbody></table>
-<p>equals()로 동일여부를 체크하면 주소값을 체크한다.</p>
-<p>불변객체 가변객체</p>
-
+          <p>추상클래스와 인터페이스 그리고 업/다운캐스팅 예제를 보면서 어떤 차이가 있고 활용 예가 어떻게 달라지는지 알아보기위해 같은 문제를 추상클래스 버전과 인터페이스 버전으로 만들어보았다. </p>
+<h4 id="문제"><a href="#문제" class="headerlink" title="문제:"></a>문제:</h4><h4 id="고객이-있다-기본-실버등급이며-할인0프로-골드는-5프로-할인-vip는-10프로-할인이다-고객의-등급을-바꾸어-할인율이-달라지게-해야한다"><a href="#고객이-있다-기본-실버등급이며-할인0프로-골드는-5프로-할인-vip는-10프로-할인이다-고객의-등급을-바꾸어-할인율이-달라지게-해야한다" class="headerlink" title="고객이 있다. 기본 실버등급이며 할인0프로, 골드는 5프로 할인, vip는 10프로 할인이다. 고객의 등급을 바꾸어 할인율이 달라지게 해야한다."></a>고객이 있다. 기본 실버등급이며 할인0프로, 골드는 5프로 할인, vip는 10프로 할인이다. 고객의 등급을 바꾸어 할인율이 달라지게 해야한다.</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/27/20210827-JAVA-absClassInterface-example/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -335,7 +302,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
