@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/22/20211022-KDT-Worksheet-4/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/27/20211027-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/22/20211022-KDT-Worksheet-4/" class="post-title-link" itemprop="url">20211022-KDT-Worksheet-4</a>
+          <a href="/2021/10/27/20211027-KDT-Worksheet/" class="post-title-link" itemprop="url">20211027-KDT-Worksheet</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,17 +230,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-10-22 19:53:20 / Modified: 21:58:32" itemprop="dateCreated datePublished" datetime="2021-10-22T19:53:20+09:00">2021-10-22</time>
+      <time title="Created: 2021-10-27 17:05:58" itemprop="dateCreated datePublished" datetime="2021-10-27T17:05:58+09:00">2021-10-27</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-10-29 12:55:38" itemprop="dateModified" datetime="2021-10-29T12:55:38+09:00">2021-10-29</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a>
+          <a href="/categories/SPRING/" itemprop="url" rel="index"><span itemprop="name">SPRING</span></a>
         </span>
     </span>
 
@@ -253,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/10/22/20211022-KDT-Worksheet-4/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/22/20211022-KDT-Worksheet-4/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/10/27/20211027-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/27/20211027-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,19 +274,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>JDBC = Java Database Connectivity</p>
-<p>JDBC API = java.sql 패키지</p>
-<p>DBMS로 SQL을 보내니 위해 자바로 DB 연결하여 데이터 연동</p>
-<p>JDBC 프로그램은 인터페이스를 이용해서 작성된다. (다형성 기반 기술)</p>
-<p>인터페이스는 리모콘이라는 점 </p>
-<p>h2.jar파일은 누가 만들었나? - h2 데이터베이스 만든애들</p>
-<p>유틸리티 클래스를 만들어 중복되는 클래스 제거 </p>
-<p>순서</p>
-<p>JDBC 드라이버 로드 - Connection 객체 생성 - Statement 객체 생성 - SQL 실행 - 역순 종료</p>
-<p>정적 sql, 동적 sql</p>
-<p>PreparedStatement : </p>
-<p>정적 sql과 달리 동적 sql는 dbms메모리에 sql이 저장되어 테이블 확인 및 문법 체크를 안하고 실행되어 속도가 빠르다.</p>
-<p>update board client 만들어서 제목과 내용을 수정하는 클래스 만들어보기 </p>
+          <p> IoC (Invention of Control)</p>
+<p>개발자에서 프레임워크로 객체관리, 제어의 권한을 넘긴다. =&gt; 제어의 역전</p>
+<p>DI (Dependency Injection)</p>
+<p>장점</p>
+<ul>
+<li>의존성으로부터 격리, 코드 테스트에 용이</li>
+<li>불가능한 상황도 안정적으로 테스트(외부와의 통신 등)</li>
+<li>코드 확장 및 변경 시 영향 최소화(추상화)</li>
+<li>순환참조 막을 수 있다. (내가 나를 참조하는 경우 등)</li>
+</ul>
+<p>예시</p>
+<p>Base64 / Url 인코더 리모컨</p>
+<p>Base64 / Url  클래스 모두 encode 기능이 들어간다.</p>
+<p>encode 기능을 갖는 인터페이스를 만든다.</p>
+<p>Base64 / Url 클래스를 컨트롤 할 수 있는 Encoder 클래스를 만든다.</p>
+<p>Encoder 클래스도 encode 기능을 갖는다. </p>
+<p>Encoder 클래스에선 인터페이스를 우선 갖고, 입력받는 매개변수에 따라 </p>
+<p>그 먼저 가진 인터페이스가 Base64가 될수 도 있고 Url 인코더가 될 수 도 있다. </p>
+<p>new Base64Encoder / new UrlEncoder</p>
+<p>인터페이스명.encode(메세지) 하면 각각 인코더에 맞는 encode메서드가 실행된다. </p>
 
       
     </div>
@@ -300,7 +313,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

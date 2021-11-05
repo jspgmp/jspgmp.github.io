@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/27/20211027-KDT-Worksheet/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/29/20211029-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/27/20211027-KDT-Worksheet/" class="post-title-link" itemprop="url">20211027-KDT-Worksheet</a>
+          <a href="/2021/10/29/20211029-KDT-Worksheet/" class="post-title-link" itemprop="url">20211029-KDT-Worksheet</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,24 +231,15 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-10-27 17:05:58" itemprop="dateCreated datePublished" datetime="2021-10-27T17:05:58+09:00">2021-10-27</time>
+      <time title="Created: 2021-10-29 13:11:35" itemprop="dateCreated datePublished" datetime="2021-10-29T13:11:35+09:00">2021-10-29</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-10-29 12:55:38" itemprop="dateModified" datetime="2021-10-29T12:55:38+09:00">2021-10-29</time>
+        <time title="Modified: 2021-11-04 19:10:07" itemprop="dateModified" datetime="2021-11-04T19:10:07+09:00">2021-11-04</time>
       </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/SPRING/" itemprop="url" rel="index"><span itemprop="name">SPRING</span></a>
-        </span>
-    </span>
 
   
   
@@ -259,8 +250,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/10/27/20211027-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/27/20211027-KDT-Worksheet/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/10/29/20211029-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/29/20211029-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,26 +265,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p> IoC (Invention of Control)</p>
-<p>개발자에서 프레임워크로 객체관리, 제어의 권한을 넘긴다. =&gt; 제어의 역전</p>
-<p>DI (Dependency Injection)</p>
-<p>장점</p>
-<ul>
-<li>의존성으로부터 격리, 코드 테스트에 용이</li>
-<li>불가능한 상황도 안정적으로 테스트(외부와의 통신 등)</li>
-<li>코드 확장 및 변경 시 영향 최소화(추상화)</li>
-<li>순환참조 막을 수 있다. (내가 나를 참조하는 경우 등)</li>
+          <p>web-inf 폴더 내는 브라우저가 접근하는것을 서버가 허용하지 않는다.</p>
+<p>web.xml 파일이 안에 있다면</p>
+<p>다이나믹 웹 모듈 버전 2.5이 아니면 web.xml이 안만들어져서 직접 만들어야한다.</p>
+<p>html 템플릿 만들때 4.01transitional 로 하는 이유는 속성 지원을 안하기때문css 파일에서 지원</p>
+<p>get 방식은 사용자 정보가 uri 에 딸려가고 post는 딸려가지 않아 안전하다.</p>
+<p>요청프로토콜 - 브라우저가 만들고 응답프로토콜 - 서버가 만든다.</p>
+<p>서블릿은 클래스이다. : 플랫폼이 독릭접, 동일한 실행결과. OS에 종속되지않는다.</p>
+<p>서버 독립성: 한 서버에서 실행된건 다른데서도 실행된다. = 이식성이 뛰어나다</p>
+<p>다양한 벤더에서 제공하는 클래스를 쓸수있다. : 확장성</p>
+<p>서블릿은 멀티 쓰레드로 동작하여 효율적이다. </p>
+<p>톰캣의 구조</p>
+<p>정적인부분 담당의 웹 부분과</p>
+<p>동적인부분 담당의 엔진</p>
+<p> 멀티쓰레드 - 서블렛 효율적, 메모리 재사용, 객체 하나로 수백의 객체를 재사용</p>
+<p>서블릿 엔진 : 톰캣으로 서버 구현시 생성</p>
+<p>컬렉션 안에 쓰레드 3개 생성 가정시 </p>
+<p>디폴트 생성자: 멤버 변수를 디폴트값 밖으로밖에 초기화할 수 없으니</p>
+<p>인잇을 만들어 멤버 변수를 초기화</p>
+<p>쓰레드의 런 메서드가 구동되어 서비스 호출</p>
+<p>쓰레드 풀은 몬가?</p>
+<p>외장 jar은 webapp-webinf-lib에 넣어두면자동으로 설정</p>
+<p>서블릿 클래스를 만들때 4가지 규칙</p>
+<ol>
+<li>퍼블릭으로 할것</li>
+<li>httpservlet을 상속해야한다.</li>
+<li>디폴트생성자가 반드시 필요하다</li>
+<li>메서드 오버라이드 할것(겟, 포스트, 디스트로이, 인잇 등) = 콜백 메서드<ul>
+<li>서버 엔진이 알아서 호출해준다. </li>
 </ul>
-<p>예시</p>
-<p>Base64 / Url 인코더 리모컨</p>
-<p>Base64 / Url  클래스 모두 encode 기능이 들어간다.</p>
-<p>encode 기능을 갖는 인터페이스를 만든다.</p>
-<p>Base64 / Url 클래스를 컨트롤 할 수 있는 Encoder 클래스를 만든다.</p>
-<p>Encoder 클래스도 encode 기능을 갖는다. </p>
-<p>Encoder 클래스에선 인터페이스를 우선 갖고, 입력받는 매개변수에 따라 </p>
-<p>그 먼저 가진 인터페이스가 Base64가 될수 도 있고 Url 인코더가 될 수 도 있다. </p>
-<p>new Base64Encoder / new UrlEncoder</p>
-<p>인터페이스명.encode(메세지) 하면 각각 인코더에 맞는 encode메서드가 실행된다. </p>
+</li>
+<li></li>
+</ol>
 
       
     </div>
@@ -313,7 +316,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
