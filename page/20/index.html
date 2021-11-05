@@ -157,13 +157,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/27/20210827-JAVA-absClassInterface-example/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/09/01/20210901-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/27/20210827-JAVA-absClassInterface-example/" class="post-title-link" itemprop="url">JAVA 추상클래스와 인터페이스 예제</a>
+          <a href="/2021/09/01/20210901-KDT-Worksheet/" class="post-title-link" itemprop="url">자바 연결리스트 구현 예</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,14 +231,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-08-27 14:50:16" itemprop="dateCreated datePublished" datetime="2021-08-27T14:50:16+09:00">2021-08-27</time>
+      <time title="Created: 2021-09-01 21:21:12" itemprop="dateCreated datePublished" datetime="2021-09-01T21:21:12+09:00">2021-09-01</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-17 13:34:52" itemprop="dateModified" datetime="2021-09-17T13:34:52+09:00">2021-09-17</time>
+        <time title="Modified: 2021-09-17 13:35:54" itemprop="dateModified" datetime="2021-09-17T13:35:54+09:00">2021-09-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -259,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/27/20210827-JAVA-absClassInterface-example/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/27/20210827-JAVA-absClassInterface-example/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/09/01/20210901-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/01/20210901-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,16 +274,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>추상클래스와 인터페이스 그리고 업/다운캐스팅 예제를 보면서 어떤 차이가 있고 활용 예가 어떻게 달라지는지 알아보기위해 같은 문제를 추상클래스 버전과 인터페이스 버전으로 만들어보았다. </p>
-<h4 id="문제"><a href="#문제" class="headerlink" title="문제:"></a>문제:</h4><h4 id="고객이-있다-기본-실버등급이며-할인0프로-골드는-5프로-할인-vip는-10프로-할인이다-고객의-등급을-바꾸어-할인율이-달라지게-해야한다"><a href="#고객이-있다-기본-실버등급이며-할인0프로-골드는-5프로-할인-vip는-10프로-할인이다-고객의-등급을-바꾸어-할인율이-달라지게-해야한다" class="headerlink" title="고객이 있다. 기본 실버등급이며 할인0프로, 골드는 5프로 할인, vip는 10프로 할인이다. 고객의 등급을 바꾸어 할인율이 달라지게 해야한다."></a>고객이 있다. 기본 실버등급이며 할인0프로, 골드는 5프로 할인, vip는 10프로 할인이다. 고객의 등급을 바꾸어 할인율이 달라지게 해야한다.</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/27/20210827-JAVA-absClassInterface-example/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h3 id="구현-Java"><a href="#구현-Java" class="headerlink" title="구현(Java)"></a>구현(Java)</h3><p>배열 구현</p>
+<p>연결리스트 구현6</p>
+<p>Stack 구현</p>
+<p>Queue 구현</p>
+<p>제네릭 프로그래밍</p>
+<ul>
+<li><p>클래스에서 사용하는 변수의 자료형이 여러개 일 수 있고, 그 기능(메서드)은 동일한 경우 클래스의 자료형을 특정하지 않고 추후 해당 클래스를 사용할 때 지정할 수 있도록 선언</p>
+</li>
+<li><p>실제 사용되는 자료형의 변환은 컴파일러에 의해 검증-&gt;안정적 프로그래밍 방식</p>
+</li>
+<li><p>컬렉션 프레임워크에서 많이 사용</p>
+</li>
+<li><p>제네릭 타입을 사용하지 않는 경우의 예</p>
+</li>
+</ul>
+
       
     </div>
 
@@ -302,7 +308,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

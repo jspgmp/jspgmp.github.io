@@ -157,13 +157,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/29/20211029-KDT-Worksheet/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/11/04/20211104-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/29/20211029-KDT-Worksheet/" class="post-title-link" itemprop="url">20211029-KDT-Worksheet</a>
+          <a href="/2021/11/04/20211104-KDT-Worksheet/" class="post-title-link" itemprop="url">20211104-KDT-Worksheet</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,15 +231,24 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-10-29 13:11:35" itemprop="dateCreated datePublished" datetime="2021-10-29T13:11:35+09:00">2021-10-29</time>
+      <time title="Created: 2021-11-04 19:09:16" itemprop="dateCreated datePublished" datetime="2021-11-04T19:09:16+09:00">2021-11-04</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-11-04 19:10:07" itemprop="dateModified" datetime="2021-11-04T19:10:07+09:00">2021-11-04</time>
+        <time title="Modified: 2021-11-05 12:05:59" itemprop="dateModified" datetime="2021-11-05T12:05:59+09:00">2021-11-05</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ALGORITHM/" itemprop="url" rel="index"><span itemprop="name">ALGORITHM</span></a>
+        </span>
+    </span>
 
   
   
@@ -250,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/10/29/20211029-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/29/20211029-KDT-Worksheet/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/11/04/20211104-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/04/20211104-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -265,38 +274,62 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>web-inf 폴더 내는 브라우저가 접근하는것을 서버가 허용하지 않는다.</p>
-<p>web.xml 파일이 안에 있다면</p>
-<p>다이나믹 웹 모듈 버전 2.5이 아니면 web.xml이 안만들어져서 직접 만들어야한다.</p>
-<p>html 템플릿 만들때 4.01transitional 로 하는 이유는 속성 지원을 안하기때문css 파일에서 지원</p>
-<p>get 방식은 사용자 정보가 uri 에 딸려가고 post는 딸려가지 않아 안전하다.</p>
-<p>요청프로토콜 - 브라우저가 만들고 응답프로토콜 - 서버가 만든다.</p>
-<p>서블릿은 클래스이다. : 플랫폼이 독릭접, 동일한 실행결과. OS에 종속되지않는다.</p>
-<p>서버 독립성: 한 서버에서 실행된건 다른데서도 실행된다. = 이식성이 뛰어나다</p>
-<p>다양한 벤더에서 제공하는 클래스를 쓸수있다. : 확장성</p>
-<p>서블릿은 멀티 쓰레드로 동작하여 효율적이다. </p>
-<p>톰캣의 구조</p>
-<p>정적인부분 담당의 웹 부분과</p>
-<p>동적인부분 담당의 엔진</p>
-<p> 멀티쓰레드 - 서블렛 효율적, 메모리 재사용, 객체 하나로 수백의 객체를 재사용</p>
-<p>서블릿 엔진 : 톰캣으로 서버 구현시 생성</p>
-<p>컬렉션 안에 쓰레드 3개 생성 가정시 </p>
-<p>디폴트 생성자: 멤버 변수를 디폴트값 밖으로밖에 초기화할 수 없으니</p>
-<p>인잇을 만들어 멤버 변수를 초기화</p>
-<p>쓰레드의 런 메서드가 구동되어 서비스 호출</p>
-<p>쓰레드 풀은 몬가?</p>
-<p>외장 jar은 webapp-webinf-lib에 넣어두면자동으로 설정</p>
-<p>서블릿 클래스를 만들때 4가지 규칙</p>
-<ol>
-<li>퍼블릭으로 할것</li>
-<li>httpservlet을 상속해야한다.</li>
-<li>디폴트생성자가 반드시 필요하다</li>
-<li>메서드 오버라이드 할것(겟, 포스트, 디스트로이, 인잇 등) = 콜백 메서드<ul>
-<li>서버 엔진이 알아서 호출해준다. </li>
-</ul>
+          <h2 id="병합정렬"><a href="#병합정렬" class="headerlink" title="병합정렬"></a>병합정렬</h2><p>가. Split 단계</p>
+<ul>
+<li><p>나눌 수 없을 때까지 나눈다</p>
 </li>
+<li><p>```java<br>ppublic ArrayList<Integer> mergeSplitFunc(ArrayList<Integer> dataList) {</p>
+<pre><code>    if (dataList.size() &lt;= 1) &#123;
+        return dataList;
+    &#125;
+    int medium = dataList.size() / 2;  
+
+    ArrayList&lt;Integer&gt; leftArr = new ArrayList&lt;Integer&gt;();
+    ArrayList&lt;Integer&gt; rightArr = new ArrayList&lt;Integer&gt;();
+
+    //이부분에서 재귀 하여 나누게 된다. 
+    leftArr = this.mergeSplitFunc(new ArrayList&lt;Integer&gt;(dataList.subList(0, medium))); 
+    rightArr = this.mergeSplitFunc(new ArrayList&lt;Integer&gt;(dataList.subList(medium, dataList.size()))); 
+
+    return this.mergeFunc(leftArr, rightArr);
+</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">나. Merge 단계</span><br><span class="line"></span><br><span class="line">- 두개 합칠 때 작은것을 앞에, 큰것을 뒤에 </span><br><span class="line"></span><br><span class="line">- 2+2 에선 1:3-1:4-2:4 순으로 비교해서 순서 정렬</span><br><span class="line"></span><br><span class="line">- ```java</span><br><span class="line">  public ArrayList&lt;Integer&gt; mergeFunc(ArrayList&lt;Integer&gt; leftList, ArrayList&lt;Integer&gt; rightList) &#123;</span><br><span class="line">          ArrayList&lt;Integer&gt; mergedList = new ArrayList&lt;Integer&gt;();</span><br><span class="line">          int leftPoint = 0;</span><br><span class="line">          int rightPoint = 0;</span><br><span class="line">  </span><br><span class="line">           // CASE1: left/right 둘 다 있을 때</span><br><span class="line">          while (leftList.size() &gt; leftPoint &amp;&amp; rightList.size() &gt; rightPoint) &#123;</span><br><span class="line">              if (leftList.get(leftPoint) &gt; rightList.get(rightPoint)) &#123;</span><br><span class="line">                  mergedList.add(rightList.get(rightPoint));</span><br><span class="line">                  rightPoint += 1;</span><br><span class="line">              &#125; else &#123;</span><br><span class="line">                  mergedList.add(leftList.get(leftPoint));</span><br><span class="line">                  leftPoint += 1;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">          // CASE2: right 데이터가 없을 때</span><br><span class="line">          while (leftList.size() &gt; leftPoint) &#123;</span><br><span class="line">              mergedList.add(leftList.get(leftPoint));</span><br><span class="line">              leftPoint += 1;</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">          // CASE3: left 데이터가 없을 때</span><br><span class="line">          while (rightList.size() &gt; rightPoint) &#123;</span><br><span class="line">              mergedList.add(rightList.get(rightPoint));</span><br><span class="line">              rightPoint += 1;</span><br><span class="line">          &#125;</span><br><span class="line">  </span><br><span class="line">          return mergedList;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="퀵정렬"><a href="#퀵정렬" class="headerlink" title="퀵정렬"></a>퀵정렬</h2><p>가. 기준점 선택(0번 데이터)</p>
+<p>나. 분류(작은데이터, 기준, 큰 데이터)</p>
+<p>다. 기준점 재선택 및 분류 (데이터 단위가 1개가 될때까지, 재귀)</p>
+<ul>
+<li><p>```java<br>public ArrayList<Integer> sort(ArrayList<Integer> dataList) {</p>
+<pre><code>    if (dataList.size() &lt;= 1) &#123;
+        return dataList;
+    &#125;
+    //가. 기준점 선택
+    int pivot = dataList.get(0);
+    
+    ArrayList&lt;Integer&gt; leftArr = new ArrayList&lt;Integer&gt;();
+    ArrayList&lt;Integer&gt; rightArr = new ArrayList&lt;Integer&gt;();        
+    
+    //데이터 나누는 부분
+    for (int index = 1; index &lt; dataList.size(); index++) &#123;
+        if (dataList.get(index) &gt; pivot) &#123;
+            rightArr.add(dataList.get(index));
+        &#125; else &#123;
+            leftArr.add(dataList.get(index));
+        &#125;
+    &#125;
+    ArrayList&lt;Integer&gt; mergedArr = new ArrayList&lt;Integer&gt;();
+
+    //이부분에서 재귀적으로 정렬해서 추가 및 전부 합치기
+    mergedArr.addAll(this.sort(leftArr));
+    mergedArr.addAll(Arrays.asList(pivot));
+    mergedArr.addAll(this.sort(rightArr));
+
+    return mergedArr;        
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">라. 전부 합치기</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">기준점(0번)의 최종 배열순서에 따라 속도가 빠를수도있고 느릴수도있다. </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 순차탐색</span><br><span class="line"></span><br><span class="line">가. 배열 사이즈의 절반지점 데이터 와 탐색 목표를 비교</span><br><span class="line"></span><br><span class="line">나. 찾으려는값이 중간 기준보다 크면 절반의 큰 배열로, 아니면 반대로 넘긴다</span><br><span class="line"></span><br><span class="line">- ```java</span><br><span class="line">  public boolean searchFunc(ArrayList&lt;Integer&gt; dataList, Integer searchItem) &#123;</span><br><span class="line">          if (dataList.size() == 1 &amp;&amp; searchItem == dataList.get(0)) &#123;</span><br><span class="line">              return true;</span><br><span class="line">          &#125; </span><br><span class="line">          if (dataList.size() == 1 &amp;&amp; searchItem != dataList.get(0)) &#123;</span><br><span class="line">              return false;</span><br><span class="line">          &#125;</span><br><span class="line">          if (dataList.size() == 0) &#123;</span><br><span class="line">              return false;</span><br><span class="line">          &#125;</span><br><span class="line">          </span><br><span class="line">          int medium = dataList.size() / 2; </span><br><span class="line">          </span><br><span class="line">          if (searchItem == dataList.get(medium)) &#123;</span><br><span class="line">              return true;</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">              //이부분에서 재귀적으로 값을 다시 찾는다. </span><br><span class="line">              if (searchItem &lt; dataList.get(medium)) &#123;</span><br><span class="line">                  return this.searchFunc(new ArrayList&lt;Integer&gt;(dataList.subList(0, medium)), searchItem);</span><br><span class="line">              &#125; else &#123;</span><br><span class="line">                   return this.searchFunc(new ArrayList&lt;Integer&gt;(dataList.subList(medium, dataList.size())), searchItem);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;public boolean searchFunc(ArrayList&lt;Integer&gt; dataList, Integer searchItem) &#123;</span><br><span class="line">          if (dataList.size() == 1 &amp;&amp; searchItem == dataList.get(0)) &#123;</span><br><span class="line">              return true;</span><br><span class="line">          &#125; </span><br><span class="line">          if (dataList.size() == 1 &amp;&amp; searchItem != dataList.get(0)) &#123;</span><br><span class="line">              return false;</span><br><span class="line">          &#125;</span><br><span class="line">          if (dataList.size() == 0) &#123;</span><br><span class="line">              return false;</span><br><span class="line">          &#125;</span><br><span class="line">          </span><br><span class="line">          int medium = dataList.size() / 2; </span><br><span class="line">          </span><br><span class="line">          if (searchItem == dataList.get(medium)) &#123;</span><br><span class="line">              return true;</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">              //이부분에서 재귀적으로 값을 다시 찾는다. </span><br><span class="line">              if (searchItem &lt; dataList.get(medium)) &#123;</span><br><span class="line">                  return this.searchFunc(new ArrayList&lt;Integer&gt;(dataList.subList(0, medium)), searchItem);</span><br><span class="line">              &#125; else &#123;</span><br><span class="line">                   return this.searchFunc(new ArrayList&lt;Integer&gt;(dataList.subList(medium, dataList.size())), searchItem);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
 <li></li>
-</ol>
+</ul>
 
       
     </div>
@@ -316,7 +349,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
