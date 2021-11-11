@@ -20,25 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"jspgmp.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="개발블로그">
-<meta property="og:type" content="website">
-<meta property="og:title" content="땡땡 블로그">
-<meta property="og:url" content="http://jspgmp.github.io/page/33/index.html">
+<meta name="description" content="Inversion of Control   객체를 스프링 컨테이너가 만들게끔 하는 방식 별도 xml 설정 필요   Aspect Oriented Programming   비즈니스 로직인 핵심 관심과, 그 전후 Advice인 횡단 관심을 결합하는 것 &#x3D;  Weaving 핵심 관심에 Pointcut을 지정하고 이것을 Advice와 연결하는 형태 &#x3D; Aspect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20211111-KDT-Worksheet">
+<meta property="og:url" content="http://jspgmp.github.io/2021/11/11/20211111-KDT-Worksheet/index.html">
 <meta property="og:site_name" content="땡땡 블로그">
-<meta property="og:description" content="개발블로그">
+<meta property="og:description" content="Inversion of Control   객체를 스프링 컨테이너가 만들게끔 하는 방식 별도 xml 설정 필요   Aspect Oriented Programming   비즈니스 로직인 핵심 관심과, 그 전후 Advice인 횡단 관심을 결합하는 것 &#x3D;  Weaving 핵심 관심에 Pointcut을 지정하고 이것을 Advice와 연결하는 형태 &#x3D; Aspect">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-11T11:28:25.000Z">
+<meta property="article:modified_time" content="2021-11-11T13:10:25.649Z">
 <meta property="article:author" content="jspgmp">
+<meta property="article:tag" content="KDT_WORKSHEET">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://jspgmp.github.io/page/33/">
+<link rel="canonical" href="http://jspgmp.github.io/2021/11/11/20211111-KDT-Worksheet/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/33/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://jspgmp.github.io/2021/11/11/20211111-KDT-Worksheet/","path":"2021/11/11/20211111-KDT-Worksheet/","title":"20211111-KDT-Worksheet"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>땡땡 블로그</title>
+<title>20211111-KDT-Worksheet | 땡땡 블로그</title>
   
 
 
@@ -131,7 +134,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -144,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inversion-of-Control"><span class="nav-number">1.</span> <span class="nav-text">Inversion of Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aspect-Oriented-Programming"><span class="nav-number">2.</span> <span class="nav-text">Aspect Oriented Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%84%A4%EC%A0%95"><span class="nav-number">2.1.</span> <span class="nav-text">설정</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B5%AC%EC%A1%B0-%EA%B2%8C%EC%8B%9C%ED%8C%90"><span class="nav-number">2.1.1.</span> <span class="nav-text">서비스 구조(게시판)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Advice-%EA%B5%AC%EC%A1%B0"><span class="nav-number">2.1.2.</span> <span class="nav-text">Advice 구조</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -197,17 +201,18 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-C-basic/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/11/11/20211111-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -219,9 +224,9 @@
       <meta itemprop="name" content="땡땡 블로그">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/06/2021-08-06-C-basic/" class="post-title-link" itemprop="url">C언어 입문 1</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          20211111-KDT-Worksheet
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -230,23 +235,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-08-06 20:44:35" itemprop="dateCreated datePublished" datetime="2021-08-06T20:44:35+09:00">2021-08-06</time>
+      <time title="Created: 2021-11-11 20:28:25 / Modified: 22:10:25" itemprop="dateCreated datePublished" datetime="2021-11-11T20:28:25+09:00">2021-11-11</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-17 13:30:25" itemprop="dateModified" datetime="2021-09-17T13:30:25+09:00">2021-09-17</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+          <a href="/categories/SPRING/" itemprop="url" rel="index"><span itemprop="name">SPRING</span></a>
         </span>
     </span>
 
@@ -259,8 +258,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/06/2021-08-06-C-basic/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-C-basic/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/11/11/20211111-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/11/20211111-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,16 +273,102 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>C언어는 배우고있긴 한데 이해하는데 상당히 기력을 소하더라구요. </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/06/2021-08-06-C-basic/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <ol>
+<li><h2 id="Inversion-of-Control"><a href="#Inversion-of-Control" class="headerlink" title="Inversion of Control"></a>Inversion of Control</h2></li>
+</ol>
+<ul>
+<li>객체를 스프링 컨테이너가 만들게끔 하는 방식</li>
+<li>별도 xml 설정 필요</li>
+</ul>
+<ol start="2">
+<li><h2 id="Aspect-Oriented-Programming"><a href="#Aspect-Oriented-Programming" class="headerlink" title="Aspect Oriented Programming"></a>Aspect Oriented Programming</h2></li>
+</ol>
+<ul>
+<li>비즈니스 로직인 핵심 관심과, 그 전후 Advice인 횡단 관심을 결합하는 것 =  Weaving</li>
+<li>핵심 관심에 Pointcut을 지정하고 이것을 Advice와 연결하는 형태 = Aspect</li>
+<li>Advice 의 동작 시점은 크게 3가지로 구분된다.<ul>
+<li>Before : 실행 전</li>
+<li>After<ul>
+<li>After Returning : 성공적 실행 후</li>
+<li>After Throwing : 예외 발생 시</li>
+<li>After : 무조건 실행</li>
+</ul>
+</li>
+<li>Around : 실행 전/후</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><h3 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h3></li>
+</ol>
+<p>유지보수 과정에서 객체가 자주 변경된다면 <Bean> 등록을, </p>
+<p>자주 변경되지 않는다면 Annotation으로 처리한다. </p>
+<ol start="4">
+<li><h4 id="서비스-구조-게시판"><a href="#서비스-구조-게시판" class="headerlink" title="서비스 구조(게시판)"></a>서비스 구조(게시판)</h4></li>
+</ol>
+<p>Annotation 을 사용할 경우, Component-scan 을 xml 에 등록하여 각 java파일에서 @가 스캔될 수 있도록 한다. </p>
+<hr>
+<ul>
+<li><p>Board Value Object : 하나의 게시글에 대한 틀과 기본 요소</p>
+</li>
+<li><p>Board Data Acess Object Interface : <strong>구현방식</strong> 변경을 위한 인터페이스</p>
+<p>​       @Repository 등록을 하거나 <bean> 등록</p>
+<ul>
+<li>Board Data Acess Object (JDBC) : JDBC 방식으로 구현한 클래스(세부내용)</li>
+<li>Board Data Acess Object (SPRING) : SPRING 방식으로 구현한 클래스(세부내용)<ul>
+<li>Board Row Mapper : SPRING 방식이 사용하는 방식에서 필요한 클래스</li>
+<li>SPRING 방식을 이용할 경우 dataSource 및 Transation 설정을 xml 에 등록해야한다. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Board Service Interface : <strong>비즈니스 로직 변경</strong>을 위한 인터페이스</p>
+<p>​       @Service(“boardService”) //다른 로직으로 변경할경우 이 서비스 부분을 옮긴다. </p>
+<ul>
+<li>Board Service Impl : 컨테이너와 닿는부분이며, 실제 비즈니스로직의 실행을 안내한다. </li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol start="5">
+<li><h4 id="Advice-구조"><a href="#Advice-구조" class="headerlink" title="Advice 구조"></a>Advice 구조</h4></li>
+</ol>
+<p>Advice 들은 파일 위치보다는 Annotation을 따라가므로 알아서 분류를 한다.</p>
+<p>Advices 라는 파일에 전부 모여있다고 가정을 하면</p>
+<p>​       @Aspect </p>
+<ul>
+<li><p>BoardPointcut : 핵심관심에 Point를 달아줘야 Advice가 붙을 수 있다. </p>
+<p>​       @Pointcut(주소)</p>
+<ul>
+<li>Public void allPoint 또는 getPoint</li>
+</ul>
+</li>
+<li><p>Advices : Advice들의 모음</p>
+<p>Pointcut 등록은 </p>
+<p>​       @Before(“BoardPointcut.allPointcut()”)</p>
+<ul>
+<li><p>BeforeAdvice method</p>
+<p>@AfterReturning(상동.getPointcut())</p>
+</li>
+<li><p>AfterReturningAdivice method</p>
+<p>@AfterThrowing(상동)</p>
+</li>
+<li><p>AfterThrowingAdvice method</p>
+<p>@After(상동)</p>
+</li>
+<li><p>After method</p>
+<p>@Around(상동)</p>
+</li>
+<li><p>aroundLog method</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>실제 비즈니스 로직의 구동방식 변경, 로직 모델 변경을 위해 2개의 인터페이스를 쓰고있다는 점과</p>
+<p>Advice들을 실제 비즈니스 로직의 사이에 Aspect 를 붙여 연결하여</p>
+<p>중요한 메서드 실행 전/후 처리를 이해한다. </p>
+
     </div>
 
     
@@ -291,8 +376,21 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/KDT-WORKSHEET/" rel="tag"># KDT_WORKSHEET</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/04/20211104-KDT-Worksheet/" rel="prev" title="20211104-KDT-Worksheet">
+                  <i class="fa fa-chevron-left"></i> 20211104-KDT-Worksheet
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -300,10 +398,13 @@
 
 
 
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/32/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/34/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
 </div>
   </main>
 
