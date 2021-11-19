@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/11/11/20211111-KDT-Worksheet/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/11/19/20211119-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/11/20211111-KDT-Worksheet/" class="post-title-link" itemprop="url">20211111-KDT-Worksheet</a>
+          <a href="/2021/11/19/20211119-KDT-Worksheet/" class="post-title-link" itemprop="url">20211119-KDT-Worksheet</a>
         </h2>
 
         <div class="post-meta-container">
@@ -232,7 +232,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-11 20:28:25 / Modified: 22:10:25" itemprop="dateCreated datePublished" datetime="2021-11-11T20:28:25+09:00">2021-11-11</time>
+      <time title="Created: 2021-11-19 11:57:04 / Modified: 12:37:36" itemprop="dateCreated datePublished" datetime="2021-11-19T11:57:04+09:00">2021-11-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -253,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/11/11/20211111-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/11/20211111-KDT-Worksheet/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/11/19/20211119-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/19/20211119-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,101 +268,154 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <ol>
-<li><h2 id="Inversion-of-Control"><a href="#Inversion-of-Control" class="headerlink" title="Inversion of Control"></a>Inversion of Control</h2></li>
+          <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>Model + Controller + View </p>
+<p>Model : 비즈니스 모델 = &gt;  (DAO, VO)</p>
+<p>Controller : 비즈니스 모델을 컨트롤하는 역할</p>
+<ul>
+<li>컨트롤러는 뷰에서 자바 코드만 빼서 어떤 모델을 어떤 컨트롤러가 처리할지 매핑</li>
+<li>컨트롤러는(자바개발자 또는 MVC 프레임워크 사용)</li>
+<li>처리하고나면 뷰로 String 매핑과정에서 서블릿은 DispatcherServlet 하나</li>
+</ul>
+<p>View: 실제 보여지는 화면에 분배</p>
+<p>자바 소스와 디자인을 수정하기 어려워서(화면 HTML과 자바 소스가 뒤섞임) 나오게 된 것으로 dispatcherservlet 을 이용해서 서블렛과 디자인을 분리시킴</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>EL / JSPL 소개와 적용</p>
+<p>EL : ${} 로 구성되어 HTML사이에 자바 요소를 인식할 수 있게 해준다.</p>
+<p>JSPL : &lt;%= %&gt;로 구성되어 HTML 사이에 자바 수식을 인식할 수 있게 해준다(이것은 컨트롤러로 넘어가게 됌)</p>
+<h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><ul>
+<li><p>등록가능: 서블릿, 필터, 리스너 </p>
+</li>
+<li><p>레이어를 두개로 분리 (presentation, business)</p>
+</li>
+</ul>
+<h3 id="작동-순서"><a href="#작동-순서" class="headerlink" title="작동 순서"></a>작동 순서</h3><p>톰캣이 서블릿 컨테이너 생성</p>
+<p>디스패처 서블릿이 스프링 컨테이너 생성</p>
+<p>구성: 서블릿 컨테이너 하나+스프링 컨테이너 2개</p>
+<ol>
+<li><p>ContextLoader 프리로딩</p>
+</li>
+<li><p>첫번째 컨테이너 생성</p>
+</li>
+<li><p>business layer 로드</p>
+</li>
+<li><p>서비스 임플, dao 로딩</p>
+</li>
+<li><p>클라이언트가 .do 요청 후</p>
+</li>
+<li><p>dispatcher가 레이지 로딩</p>
+</li>
+<li><p>xmlwebapp 두번째 객체를 presentation-layer를 로딩해서 business Layer 를 참조함</p>
+</li>
 </ol>
+<p><img src="C:/Users/Jisoo/Documents/dev/blog/source/img/image-20211112153237506.png" alt="image-20211112153237506"></p>
+<p>예전에는 컨트롤러까지 전부 개발해서 썼지만 요즘에는 외부 컨트롤러를 사용하는 경우가 많다.</p>
+<h2 id="Spring-Boot-Starter"><a href="#Spring-Boot-Starter" class="headerlink" title="Spring Boot: Starter"></a>Spring Boot: Starter</h2><p>메이븐: 프로젝트 라이브러리 관리 툴</p>
+<ol>
+<li><p>@Bean  사용법</p>
 <ul>
-<li>객체를 스프링 컨테이너가 만들게끔 하는 방식</li>
-<li>별도 xml 설정 필요</li>
+<li>@Bean 이 설정된 메서드는 자동으로 호출된다.</li>
+<li>@Bean에 의해 생성된 객체의 아이디는 메서드 이름이 자동으로 설정</li>
+<li>예: 컨테이너 실행시 Bean 이 붙은 메서드 호출</li>
+<li>스프링부트는 스프링에서 제한한 자바코드 수정 규칙을 깸으로 얻는 장점이 있다. </li>
 </ul>
-<ol start="2">
-<li><h2 id="Aspect-Oriented-Programming"><a href="#Aspect-Oriented-Programming" class="headerlink" title="Aspect Oriented Programming"></a>Aspect Oriented Programming</h2></li>
+</li>
+<li><p>@Configuration 사용법</p>
+<ul>
+<li>@Bean 이 붙은 Class에 붙여서 사용</li>
+</ul>
+</li>
+<li><p>AnnotationConfigApplicationContext 사용법</p>
+<ul>
+<li><p>XML을 사용하지 않고 설정 클래스를 사용한다.</p>
+</li>
+<li><p>매개변수로 지정한 패키지를 기준으로 @Configuration이 붙은 클래스를 모두 로딩한다.</p>
+</li>
+<li><p>XML로 비교하면 </p>
+<p>AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext(“com.fastcampus.tv”); 이 코드는 </p>
+<p>XML에서의 &lt;context:component-scan base-package=”com.fastcampus.tv”/&gt; 과 같다.</p>
+</li>
+<li><p>스캔:  @Configuration, @Service, @Repository, @Controller, @Component</p>
+</li>
+</ul>
+</li>
+<li><p>@ComponentScan</p>
+<ul>
+<li>@ComponentScan(basePackages = {“com.test”, “com.fastcampus.tv”})</li>
+</ul>
+</li>
+<li><p>@Service</p>
+<ul>
+<li>@Service(“tv”) / @Service(“sony”) 등으로 </li>
+</ul>
+</li>
+<li><p>자바소스 설정보다 application.properties 설정이 우선순위가 높다.</p>
+<ul>
+<li>위치: src/main/resources/application.properties</li>
+<li>설정 내용: 서블릿 실행 유무, 포트, 배너, Bean 오버라이딩, 테스트 설정, DataSource 설정</li>
+</ul>
+</li>
+<li><p>JSON</p>
+</li>
+<li><p>@RestController</p>
+<ul>
+<li>컨트롤러 설정에 붙는다</li>
+<li>컨트롤러 안에있는 인터페이스에 @Autowired가 붙고</li>
+<li>컨트롤러 안의 메서드들에 RequestMapping(“/메서드이름”)등으로 매핑한다.</li>
+</ul>
+</li>
+<li><p>라이브러리는 Starter(관련된 자료파일 묶음) 를 통해 정의한다. (pom.xml)</p>
+<ul>
+<li>dependencies 에는 컨트롤 스페이스로 Starter를 삽입할 수 있다. </li>
+</ul>
+</li>
+<li><p>메이븐 프로젝트를 만들어서 starer만들기(사용자 정의 starter)</p>
+<ul>
+<li>내가 원하는 스타터를 모아서 메이븐 프로젝트로 만들어 사용할 수 있다. </li>
+<li>자동설정 스타터는 원하는 프로젝트 pom.xml에 dependency로 삽입할 수 있다. </li>
+<li>삽입한 starter가 있다고 하더라도, 오버라이딩 할 수 있다. </li>
+</ul>
+</li>
 </ol>
+<h2 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h2><p>Java Persistence API 로 여러 API를 통합한 API를 이용하면 훨씬 간편하게 프로젝트를 구성할 수 있다.</p>
+<h4 id="설정-순서"><a href="#설정-순서" class="headerlink" title="설정 순서"></a>설정 순서</h4><ol>
+<li><p>META-INF에 persistence.xml 설정</p>
 <ul>
-<li>비즈니스 로직인 핵심 관심과, 그 전후 Advice인 횡단 관심을 결합하는 것 =  Weaving</li>
-<li>핵심 관심에 Pointcut을 지정하고 이것을 Advice와 연결하는 형태 = Aspect</li>
-<li>Advice 의 동작 시점은 크게 3가지로 구분된다.<ul>
-<li>Before : 실행 전</li>
-<li>After<ul>
-<li>After Returning : 성공적 실행 후</li>
-<li>After Throwing : 예외 발생 시</li>
-<li>After : 무조건 실행</li>
+<li>Datasource와 JPA 구현체(Hibernate)관련 설정 세팅</li>
 </ul>
 </li>
-<li>Around : 실행 전/후</li>
+<li><p>application.properties 설정</p>
+<ul>
+<li>메인모드, 서블릿 구동유무 설정</li>
 </ul>
 </li>
+<li><p>pom.xml 설정</p>
+<ul>
+<li>롬복, h2데이터베이스 등 설정 dependency 추가</li>
 </ul>
-<ol start="3">
-<li><h3 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h3></li>
+</li>
+<li><p>@Entity =&gt; @Id, @GeneratedValue 설정</p>
+<ul>
+<li>비즈니스모델 단위객체 생성 구성요소 (BoardVO)</li>
+</ul>
+</li>
+<li><p>@Service =&gt; @Override</p>
+<ul>
+<li>구동할 코드 Overide (INSERT, UPDATE, SELECT, DELETE)</li>
+<li>SELECT만 제외하고 모두 EntityTransaction 을 사용해야한다. </li>
+<li>팩토리생성-&gt;컨테이너생성-&gt;게시글조회-&gt;트랜잭션시작-&gt;작업실행 후 </li>
+<li>트랜잭션 종료-&gt;컨테이너 종료-&gt;팩토리 종료 순서테스트 관련 3가지</li>
+</ul>
+</li>
+<li><p>톰캣 서버 구동 없이 비즈니스 객체 모킹 해서 테스트</p>
+<ul>
+<li>??</li>
+</ul>
+</li>
+<li><p>jar 파일 패키징</p>
+<ul>
+<li>JPA 프로젝트 우클릭-&gt;run as maven install하면 jar파일이 생성된다. </li>
+</ul>
+</li>
 </ol>
-<p>유지보수 과정에서 객체가 자주 변경된다면 <Bean> 등록을, </p>
-<p>자주 변경되지 않는다면 Annotation으로 처리한다. </p>
-<ol start="4">
-<li><h4 id="서비스-구조-게시판"><a href="#서비스-구조-게시판" class="headerlink" title="서비스 구조(게시판)"></a>서비스 구조(게시판)</h4></li>
-</ol>
-<p>Annotation 을 사용할 경우, Component-scan 을 xml 에 등록하여 각 java파일에서 @가 스캔될 수 있도록 한다. </p>
-<hr>
-<ul>
-<li><p>Board Value Object : 하나의 게시글에 대한 틀과 기본 요소</p>
-</li>
-<li><p>Board Data Acess Object Interface : <strong>구현방식</strong> 변경을 위한 인터페이스</p>
-<p>​       @Repository 등록을 하거나 <bean> 등록</p>
-<ul>
-<li>Board Data Acess Object (JDBC) : JDBC 방식으로 구현한 클래스(세부내용)</li>
-<li>Board Data Acess Object (SPRING) : SPRING 방식으로 구현한 클래스(세부내용)<ul>
-<li>Board Row Mapper : SPRING 방식이 사용하는 방식에서 필요한 클래스</li>
-<li>SPRING 방식을 이용할 경우 dataSource 및 Transation 설정을 xml 에 등록해야한다. </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Board Service Interface : <strong>비즈니스 로직 변경</strong>을 위한 인터페이스</p>
-<p>​       @Service(“boardService”) //다른 로직으로 변경할경우 이 서비스 부분을 옮긴다. </p>
-<ul>
-<li>Board Service Impl : 컨테이너와 닿는부분이며, 실제 비즈니스로직의 실행을 안내한다. </li>
-</ul>
-</li>
-</ul>
-<hr>
-<ol start="5">
-<li><h4 id="Advice-구조"><a href="#Advice-구조" class="headerlink" title="Advice 구조"></a>Advice 구조</h4></li>
-</ol>
-<p>Advice 들은 파일 위치보다는 Annotation을 따라가므로 알아서 분류를 한다.</p>
-<p>Advices 라는 파일에 전부 모여있다고 가정을 하면</p>
-<p>​       @Aspect </p>
-<ul>
-<li><p>BoardPointcut : 핵심관심에 Point를 달아줘야 Advice가 붙을 수 있다. </p>
-<p>​       @Pointcut(주소)</p>
-<ul>
-<li>Public void allPoint 또는 getPoint</li>
-</ul>
-</li>
-<li><p>Advices : Advice들의 모음</p>
-<p>Pointcut 등록은 </p>
-<p>​       @Before(“BoardPointcut.allPointcut()”)</p>
-<ul>
-<li><p>BeforeAdvice method</p>
-<p>@AfterReturning(상동.getPointcut())</p>
-</li>
-<li><p>AfterReturningAdivice method</p>
-<p>@AfterThrowing(상동)</p>
-</li>
-<li><p>AfterThrowingAdvice method</p>
-<p>@After(상동)</p>
-</li>
-<li><p>After method</p>
-<p>@Around(상동)</p>
-</li>
-<li><p>aroundLog method</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>실제 비즈니스 로직의 구동방식 변경, 로직 모델 변경을 위해 2개의 인터페이스를 쓰고있다는 점과</p>
-<p>Advice들을 실제 비즈니스 로직의 사이에 Aspect 를 붙여 연결하여</p>
-<p>중요한 메서드 실행 전/후 처리를 이해한다. </p>
 
       
     </div>
@@ -382,7 +435,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

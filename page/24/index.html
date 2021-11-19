@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/27/20210827-JAVACLASSSTREAM/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/27/20210827-JAVA-absClassInterface-example/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/27/20210827-JAVACLASSSTREAM/" class="post-title-link" itemprop="url">자바 강의노트 2</a>
+          <a href="/2021/08/27/20210827-JAVA-absClassInterface-example/" class="post-title-link" itemprop="url">JAVA 추상클래스와 인터페이스 예제</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,14 +231,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-08-27 13:29:42" itemprop="dateCreated datePublished" datetime="2021-08-27T13:29:42+09:00">2021-08-27</time>
+      <time title="Created: 2021-08-27 14:50:16" itemprop="dateCreated datePublished" datetime="2021-08-27T14:50:16+09:00">2021-08-27</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-17 13:35:17" itemprop="dateModified" datetime="2021-09-17T13:35:17+09:00">2021-09-17</time>
+        <time title="Modified: 2021-09-17 13:34:52" itemprop="dateModified" datetime="2021-09-17T13:34:52+09:00">2021-09-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -259,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/27/20210827-JAVACLASSSTREAM/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/27/20210827-JAVACLASSSTREAM/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/27/20210827-JAVA-absClassInterface-example/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/27/20210827-JAVA-absClassInterface-example/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,60 +274,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>클래스 업/다운캐스팅 왜쓰는가?</p>
-<p>다형성을 쓰는 이유</p>
-<p>다형성: polymorphism 폴리모프</p>
-<p>오버라이딩 vs 오버로딩</p>
-<p>다형성의 예시</p>
-<p>인터페이스 항상 public</p>
-<p>인터페이스는 왜 쓰는가? - 디커필링과 다형성을위해</p>
-<p>디커플링을 최소화하는이유</p>
-<p>결합도를 낮추는 이유</p>
-<p>-&gt; 확장성을 높이기 위해서</p>
-<p>추상클래스를 상속받은 명령어들</p>
-<p>AbstractMap ?clonable treemap</p>
-<p>추상 메서드나 </p>
-<p>훅 메서드 abstractMap 클래스의 get()메서드</p>
-<p>HashMap클래스의 get()메서드</p>
-<p>Treemap 클래스의 get()메서드</p>
-<p>추상메서드 인터페이스 차이</p>
-<p>공통: 구현부가 있는 메서드와 업는 메서드 모두 가질 수 있음  </p>
-<table>
-<thead>
-<tr>
-<th>추상클래스</th>
-<th>인터페이스</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>생성자를 갖는다.</td>
-<td>생성자를 가질 수 없음</td>
-</tr>
-<tr>
-<td>다중상속 불가</td>
-<td>다중 상속 가능</td>
-</tr>
-<tr>
-<td>여러 접근제어자</td>
-<td>항상 public</td>
-</tr>
-<tr>
-<td>is a kind of</td>
-<td>be able to</td>
-</tr>
-<tr>
-<td>Chickenn is a kind of Bird</td>
-<td>Chicken is able to fly</td>
-</tr>
-<tr>
-<td>Owl is a kind of Bird</td>
-<td>Owl is able to fly</td>
-</tr>
-</tbody></table>
-<p>object클래스</p>
-<p>@Override의 기능, 종류</p>
-<p>collections &amp; collecti</p>
-
+          <p>추상클래스와 인터페이스 그리고 업/다운캐스팅 예제를 보면서 어떤 차이가 있고 활용 예가 어떻게 달라지는지 알아보기위해 같은 문제를 추상클래스 버전과 인터페이스 버전으로 만들어보았다. </p>
+<h4 id="문제"><a href="#문제" class="headerlink" title="문제:"></a>문제:</h4><h4 id="고객이-있다-기본-실버등급이며-할인0프로-골드는-5프로-할인-vip는-10프로-할인이다-고객의-등급을-바꾸어-할인율이-달라지게-해야한다"><a href="#고객이-있다-기본-실버등급이며-할인0프로-골드는-5프로-할인-vip는-10프로-할인이다-고객의-등급을-바꾸어-할인율이-달라지게-해야한다" class="headerlink" title="고객이 있다. 기본 실버등급이며 할인0프로, 골드는 5프로 할인, vip는 10프로 할인이다. 고객의 등급을 바꾸어 할인율이 달라지게 해야한다."></a>고객이 있다. 기본 실버등급이며 할인0프로, 골드는 5프로 할인, vip는 10프로 할인이다. 고객의 등급을 바꾸어 할인율이 달라지게 해야한다.</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/27/20210827-JAVA-absClassInterface-example/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -346,7 +302,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/23/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/25/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/23/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/25/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

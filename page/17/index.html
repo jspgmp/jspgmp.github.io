@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/09/08/20210908-KDT-WORKSHEET/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/09/15/20210915-KDT-WORKSHEET/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/08/20210908-KDT-WORKSHEET/" class="post-title-link" itemprop="url">JAVA I/O스트림</a>
+          <a href="/2021/09/15/20210915-KDT-WORKSHEET/" class="post-title-link" itemprop="url">JAVA Spring 입문 1</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,14 +231,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-09-08 16:17:23" itemprop="dateCreated datePublished" datetime="2021-09-08T16:17:23+09:00">2021-09-08</time>
+      <time title="Created: 2021-09-15 13:08:50" itemprop="dateCreated datePublished" datetime="2021-09-15T13:08:50+09:00">2021-09-15</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-17 13:37:29" itemprop="dateModified" datetime="2021-09-17T13:37:29+09:00">2021-09-17</time>
+        <time title="Modified: 2021-09-17 13:37:33" itemprop="dateModified" datetime="2021-09-17T13:37:33+09:00">2021-09-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+          <a href="/categories/JAVA-SPRING/" itemprop="url" rel="index"><span itemprop="name">JAVA SPRING</span></a>
         </span>
     </span>
 
@@ -259,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/09/08/20210908-KDT-WORKSHEET/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/08/20210908-KDT-WORKSHEET/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/09/15/20210915-KDT-WORKSHEET/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/15/20210915-KDT-WORKSHEET/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,58 +274,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<h2 id="자바-입출력을-위한-I-O-스트림"><a href="#자바-입출력을-위한-I-O-스트림" class="headerlink" title="자바 입출력을 위한 I/O 스트림"></a>자바 입출력을 위한 I/O 스트림</h2><p>자바 프로그램에서 자료에 쓰는것 : 출력 스트림</p>
-<p>자바 프로그램으로 읽어오는것 : 입력 스트림</p>
-<h4 id="종류"><a href="#종류" class="headerlink" title="종류"></a>종류</h4><p>입력스트림 : FileInputStream, FileReader, BufferedInputStream, BufferedReader 등</p>
-<p>출력스트림 : FileOutputStream, FileWriter, BufferedOutputStream, BufferedWriter 등</p>
-<hr>
-<p>바이트스트림 : FileInputStream, FileOutputStream, BufferedInputStream, BufferedOutputStream 등</p>
-<p>문자스트림 : FileReader, FileWriter, BufferedReader, BufferedWriter 등</p>
-<hr>
-<p>기반스트림 : FileInputStream, FileOutputStream, FileReader, FileWriter 등</p>
-<ul>
-<li>대상에 직접 자료를 읽고 쓴다.</li>
-</ul>
-<p>보조스트림 : InputStreamReader, OutputStreamWriter, BufferedInputStream, BufferedOutputStream 등</p>
-<ul>
-<li>직접 읽고 쓰지는 않고 추가적인 기능을 더해준다.</li>
-</ul>
-<h3 id="읽기"><a href="#읽기" class="headerlink" title="읽기"></a>읽기</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileInputStreamTest3</span>  </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">&quot;input2.txt&quot;</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">byte</span>[] bs = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">10</span>];</span><br><span class="line"><span class="comment">//for 문으로 차례대로 읽을 경우</span></span><br><span class="line"><span class="comment">//            while ( (i = fis.read(bs)) != -1 ) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//                for (int j=0 ; j &lt; i ; j++ ) &#123;</span></span><br><span class="line"><span class="comment">//                    System.out.print((char) bs[j]);</span></span><br><span class="line"><span class="comment">//                &#125;</span></span><br><span class="line"><span class="comment">//                System.out.println(&quot; : &quot; + i + &quot;바이트 읽음&quot;);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//fis를 bs에 맞게 읽는데, 1의 offset을 주고 그뒤로 9개 넣은것을 i로 하고 맨마지막까지 읽는다. </span></span><br><span class="line">            <span class="keyword">while</span> ( (i = fis.read(bs, <span class="number">1</span>, <span class="number">9</span>)) != -<span class="number">1</span> ) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span> ; j &lt; i ; j++ ) &#123;</span><br><span class="line">                    System.out.print((<span class="keyword">char</span>) bs[j]);</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">&quot; : &quot;</span> + i + <span class="string">&quot;바이트 읽음&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="OutputStream-예제-JAVA-9-이상"><a href="#OutputStream-예제-JAVA-9-이상" class="headerlink" title="OutputStream 예제(JAVA 9 이상)"></a>OutputStream 예제(JAVA 9 이상)</h3><h4 id="byte-자료형을-쓰는-방법"><a href="#byte-자료형을-쓰는-방법" class="headerlink" title="byte 자료형을 쓰는 방법"></a>byte 자료형을 쓰는 방법</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileOutputStreamTest</span>  </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">&quot;output2.txt&quot;</span>, <span class="keyword">true</span>) ;</span><br><span class="line">        <span class="keyword">try</span>(fos) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">byte</span>[] bs = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">26</span>];</span><br><span class="line">            <span class="keyword">byte</span> data = <span class="number">65</span>; <span class="comment">//&#x27;A&#x27;의 아스키값</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bs.length; i++) &#123;</span><br><span class="line">                bs[i] = data;</span><br><span class="line">                data ++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fos.write(bs);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(e);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;end&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p> output2.txt 파일에 ABCDEFGHIJKLMNOPQRSTUVWXYZ 출력</p>
-</blockquote>
-<h4 id="FileReader와-FileWriter"><a href="#FileReader와-FileWriter" class="headerlink" title="FileReader와 FileWriter"></a>FileReader와 FileWriter</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileReaderTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> (FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">&quot;reader.txt&quot;</span>)) &#123;</span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span>( (i = fr.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">                System.out.println((<span class="keyword">char</span>) i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">            System.out.println(e);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;read&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>(FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">&quot;writer.txt&quot;</span>)) &#123;</span><br><span class="line">            fw.write(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">            <span class="keyword">char</span> buf[] = &#123;<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line">            fw.write(buf);</span><br><span class="line">            fw.write(<span class="string">&quot;안녕하세요. 잘 써지네요. &quot;</span>); <span class="comment">//String 쓰기</span></span><br><span class="line">            fw.write(buf, <span class="number">1</span>, <span class="number">2</span>); <span class="comment">//buf 배열을 1오프셋으로부터 2개 쓰기</span></span><br><span class="line">            fw.write(<span class="string">&quot;65&quot;</span>); <span class="comment">//숫자도 String 형태로 출력</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;write&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="보조-스트림"><a href="#보조-스트림" class="headerlink" title="보조 스트림"></a>보조 스트림</h3><h4 id="InputStreamReader-OutputStreamWriter"><a href="#InputStreamReader-OutputStreamWriter" class="headerlink" title="InputStreamReader | OutputStreamWriter"></a>InputStreamReader | OutputStreamWriter</h4><ul>
-<li>바이트 단위로 읽거나 쓰는 자료를 문자로 변환해주는 보조 스트림</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputStreamReaderTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//new 는 FileInputStream 이고 형식은 InputStreamReader이다. </span></span><br><span class="line">        <span class="keyword">try</span>(InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(<span class="keyword">new</span> FileInputStream(<span class="string">&quot;reader.txt&quot;</span>)))&#123;</span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line">            <span class="keyword">while</span>( (i = isr.read()) != -<span class="number">1</span>)&#123;  <span class="comment">//보조 스트림으로 읽습니다.</span></span><br><span class="line">                System.out.print((<span class="keyword">char</span>)i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="BufferedInputStream-BufferedOutputStream"><a href="#BufferedInputStream-BufferedOutputStream" class="headerlink" title="BufferedInputStream | BufferedOutputStream"></a>BufferedInputStream | BufferedOutputStream</h4><ul>
-<li><p>8k 배열 공간이 제공되어 입출력을 빠르게 하는 기능을 제공하는 보조스트림</p>
-</li>
-<li><p>BufferedReader와 BufferedWriter 는 문자용 입출력 보조스트림</p>
-</li>
-<li><p>BufferedInputStream과 BufferedOutputStream 예</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferedStreamTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> millisecond = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>(</span><br><span class="line">            <span class="comment">//기반스트림</span></span><br><span class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">&quot;a.zip&quot;</span>);</span><br><span class="line">            FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">&quot;copy.zip&quot;</span>);</span><br><span class="line">            <span class="comment">//보조스트림</span></span><br><span class="line">            BufferedInputStream bis = <span class="keyword">new</span> BufferedInputStream(fis);</span><br><span class="line">            BufferedOutputStream bos = <span class="keyword">new</span> BufferedOutputStream(fos))&#123;</span><br><span class="line"></span><br><span class="line">            millisecond = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line">            <span class="comment">//i 가 읽어들일 파일이 없을때까지 </span></span><br><span class="line">            <span class="keyword">while</span>( ( i = bis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="comment">//bos를 사용해서 copy.zip에 복사한다. </span></span><br><span class="line">                bos.write(i);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            millisecond = System.currentTimeMillis() - millisecond;</span><br><span class="line">        &#125;<span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;파일 복사 하는 데 &quot;</span> + millisecond + <span class="string">&quot; milliseconds 소요되었습니다.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="DataInputStream-DataOutputStream-생략"><a href="#DataInputStream-DataOutputStream-생략" class="headerlink" title="DataInputStream | DataOutputStream (생략)"></a>DataInputStream | DataOutputStream (생략)</h4><ul>
-<li>자료가 메모리에 저장된 상태 그대로 읽거나 쓴다. </li>
-<li>input 메서드 자료형 read자료형()</li>
-<li>output 메서드 void write자료형(자료형 변수명)</li>
-</ul>
-
+          <p>기간: </p>
+<p>9.13 월 Spring Boot 8H</p>
+<p>9.14 화 컴퓨터공학 5H</p>
+<p>9.15 수 컴퓨터공학 8H</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/15/20210915-KDT-WORKSHEET/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -344,7 +304,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
