@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/11/11/20211111-KDT-Worksheet/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/12/15/20211215-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/11/20211111-KDT-Worksheet/" class="post-title-link" itemprop="url">20211111-KDT-Worksheet</a>
+          <a href="/2021/12/15/20211215-KDT-Worksheet/" class="post-title-link" itemprop="url">20211215-KDT-Worksheet</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,23 +230,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-11-11 20:28:25" itemprop="dateCreated datePublished" datetime="2021-11-11T20:28:25+09:00">2021-11-11</time>
+      <time title="Created: 2021-12-15 14:37:49 / Modified: 22:39:40" itemprop="dateCreated datePublished" datetime="2021-12-15T14:37:49+09:00">2021-12-15</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-11-19 11:56:28" itemprop="dateModified" datetime="2021-11-19T11:56:28+09:00">2021-11-19</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/SPRING/" itemprop="url" rel="index"><span itemprop="name">SPRING</span></a>
+          <a href="/categories/JAVA-SPRING/" itemprop="url" rel="index"><span itemprop="name">JAVA SPRING</span></a>
         </span>
     </span>
 
@@ -259,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/11/11/20211111-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/11/20211111-KDT-Worksheet/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/12/15/20211215-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/12/15/20211215-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,101 +268,60 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <ol>
-<li><h2 id="Inversion-of-Control"><a href="#Inversion-of-Control" class="headerlink" title="Inversion of Control"></a>Inversion of Control</h2></li>
+          <p> 스프링 부트로 MyBatis 이용하기</p>
+<h2 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h2><p>JDBC 연결로 설정된 DAO를 MyBatis로 전환하기 위한 방법이다. </p>
+<ol>
+<li>DAOMyBatis를 설정하기<ul>
+<li>클래스에 @Repository를 붙여 Bean 등록하여 검색되도록 한다. </li>
+<li>변수에 @Autowired를 달고 private SqlSessionTemplate mybatis 추가</li>
+<li>CRUD 메서드 설정</li>
+<li>연결된 Service 및 ServiceImpl 에 참조된 변수를 DAOMyBatis로 변경한다. </li>
+</ul>
+</li>
+<li>mapping.xml 설정하기<ul>
+<li>mapper 설정</li>
+<li>결과를 담을 resultMap 설정</li>
+<li>SQL을 담는 select 설정 (id, parameterType, resultMap을 포함한다. )</li>
+<li>select id 는 각각의 CRUD 메서드 에서 가르키게 된다. </li>
+</ul>
+</li>
+<li>application.properties 설정<ul>
+<li>Alias에 해당하는(VO) 클래스가 들어있는 패키지 지정(VO를 한곳에 모아야 한다.)<ul>
+<li>mybatis.type-aliases-package=</li>
+</ul>
+</li>
+<li>MyBatis가 사용할 mapper XML 파일들의 위치 지정(resource가 기본 경로인듯하다. )<ul>
+<li>mybatis.mapper-locations=</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>JDBC로 진행하며 초기 DB 테이블에 모자란 컬럼을 억지로 조인트하여 결국</p>
+<p>JDBC DAO 설정 시 매개변수를 억지로 지정하는 바람에 MyBatis 사용 시 어려움이 있었다. </p>
+<p>MyBatis에서는 하나의 매개변수만 받는 듯 하다. </p>
+<p>예: mybatis.insert(“insert”, AVO, BVO) 이런식은 안됌.</p>
+<p>그래서 테이블 자체를 수정하여 테이블간 조인트를 줄이는 방법으로 수정했다. </p>
 <ul>
-<li>객체를 스프링 컨테이너가 만들게끔 하는 방식</li>
-<li>별도 xml 설정 필요</li>
+<li><p>Mapper Interface</p>
+<p>@Mapper를 달고 @Select (SQL문)을 달고</p>
+<p>어떤 매개변수를 담을지 어떤 자료형을 반환할지 까지 지정한다.</p>
+</li>
 </ul>
-<ol start="2">
-<li><h2 id="Aspect-Oriented-Programming"><a href="#Aspect-Oriented-Programming" class="headerlink" title="Aspect Oriented Programming"></a>Aspect Oriented Programming</h2></li>
+<ol>
+<li><p>변형</p>
+<ul>
+<li><p>Mapper 자바 파일에서 SQL을 전부 뺴기위해서 application.properties에 Alias와 MyBatis 위치를 지정하고 Mapper interface를 지운다.</p>
+</li>
+<li><p>매핑 xml 작성시 </p>
+<p>mapper namespace=Mapper 주소</p>
+<p>resultMap type = VO클래스명</p>
+<p>id = 메서드명</p>
+<p>parameterType = VO클래스명을 잘 지켜야 오류가 안난다.</p>
+</li>
+</ul>
+</li>
 </ol>
-<ul>
-<li>비즈니스 로직인 핵심 관심과, 그 전후 Advice인 횡단 관심을 결합하는 것 =  Weaving</li>
-<li>핵심 관심에 Pointcut을 지정하고 이것을 Advice와 연결하는 형태 = Aspect</li>
-<li>Advice 의 동작 시점은 크게 3가지로 구분된다.<ul>
-<li>Before : 실행 전</li>
-<li>After<ul>
-<li>After Returning : 성공적 실행 후</li>
-<li>After Throwing : 예외 발생 시</li>
-<li>After : 무조건 실행</li>
-</ul>
-</li>
-<li>Around : 실행 전/후</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li><h3 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h3></li>
-</ol>
-<p>유지보수 과정에서 객체가 자주 변경된다면 <Bean> 등록을, </p>
-<p>자주 변경되지 않는다면 Annotation으로 처리한다. </p>
-<ol start="4">
-<li><h4 id="서비스-구조-게시판"><a href="#서비스-구조-게시판" class="headerlink" title="서비스 구조(게시판)"></a>서비스 구조(게시판)</h4></li>
-</ol>
-<p>Annotation 을 사용할 경우, Component-scan 을 xml 에 등록하여 각 java파일에서 @가 스캔될 수 있도록 한다. </p>
-<hr>
-<ul>
-<li><p>Board Value Object : 하나의 게시글에 대한 틀과 기본 요소</p>
-</li>
-<li><p>Board Data Acess Object Interface : <strong>구현방식</strong> 변경을 위한 인터페이스</p>
-<p>​       @Repository 등록을 하거나 <bean> 등록</p>
-<ul>
-<li>Board Data Acess Object (JDBC) : JDBC 방식으로 구현한 클래스(세부내용)</li>
-<li>Board Data Acess Object (SPRING) : SPRING 방식으로 구현한 클래스(세부내용)<ul>
-<li>Board Row Mapper : SPRING 방식이 사용하는 방식에서 필요한 클래스</li>
-<li>SPRING 방식을 이용할 경우 dataSource 및 Transation 설정을 xml 에 등록해야한다. </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Board Service Interface : <strong>비즈니스 로직 변경</strong>을 위한 인터페이스</p>
-<p>​       @Service(“boardService”) //다른 로직으로 변경할경우 이 서비스 부분을 옮긴다. </p>
-<ul>
-<li>Board Service Impl : 컨테이너와 닿는부분이며, 실제 비즈니스로직의 실행을 안내한다. </li>
-</ul>
-</li>
-</ul>
-<hr>
-<ol start="5">
-<li><h4 id="Advice-구조"><a href="#Advice-구조" class="headerlink" title="Advice 구조"></a>Advice 구조</h4></li>
-</ol>
-<p>Advice 들은 파일 위치보다는 Annotation을 따라가므로 알아서 분류를 한다.</p>
-<p>Advices 라는 파일에 전부 모여있다고 가정을 하면</p>
-<p>​       @Aspect </p>
-<ul>
-<li><p>BoardPointcut : 핵심관심에 Point를 달아줘야 Advice가 붙을 수 있다. </p>
-<p>​       @Pointcut(주소)</p>
-<ul>
-<li>Public void allPoint 또는 getPoint</li>
-</ul>
-</li>
-<li><p>Advices : Advice들의 모음</p>
-<p>Pointcut 등록은 </p>
-<p>​       @Before(“BoardPointcut.allPointcut()”)</p>
-<ul>
-<li><p>BeforeAdvice method</p>
-<p>@AfterReturning(상동.getPointcut())</p>
-</li>
-<li><p>AfterReturningAdivice method</p>
-<p>@AfterThrowing(상동)</p>
-</li>
-<li><p>AfterThrowingAdvice method</p>
-<p>@After(상동)</p>
-</li>
-<li><p>After method</p>
-<p>@Around(상동)</p>
-</li>
-<li><p>aroundLog method</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>실제 비즈니스 로직의 구동방식 변경, 로직 모델 변경을 위해 2개의 인터페이스를 쓰고있다는 점과</p>
-<p>Advice들을 실제 비즈니스 로직의 사이에 Aspect 를 붙여 연결하여</p>
-<p>중요한 메서드 실행 전/후 처리를 이해한다. </p>
 
       
     </div>
@@ -388,7 +341,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

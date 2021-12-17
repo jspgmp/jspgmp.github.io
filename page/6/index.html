@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/22/20211022-KDT-Worksheet-4/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/29/20211029-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/22/20211022-KDT-Worksheet-4/" class="post-title-link" itemprop="url">20211022-KDT-Worksheet-4</a>
+          <a href="/2021/10/29/20211029-KDT-Worksheet/" class="post-title-link" itemprop="url">20211029-KDT-Worksheet</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,19 +230,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-10-22 19:53:20 / Modified: 21:58:32" itemprop="dateCreated datePublished" datetime="2021-10-22T19:53:20+09:00">2021-10-22</time>
+      <time title="Created: 2021-10-29 13:11:35" itemprop="dateCreated datePublished" datetime="2021-10-29T13:11:35+09:00">2021-10-29</time>
     </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
         </span>
-    </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-11-04 19:10:07" itemprop="dateModified" datetime="2021-11-04T19:10:07+09:00">2021-11-04</time>
+      </span>
 
   
   
@@ -253,8 +250,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/10/22/20211022-KDT-Worksheet-4/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/22/20211022-KDT-Worksheet-4/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/10/29/20211029-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/29/20211029-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,19 +265,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>JDBC = Java Database Connectivity</p>
-<p>JDBC API = java.sql 패키지</p>
-<p>DBMS로 SQL을 보내니 위해 자바로 DB 연결하여 데이터 연동</p>
-<p>JDBC 프로그램은 인터페이스를 이용해서 작성된다. (다형성 기반 기술)</p>
-<p>인터페이스는 리모콘이라는 점 </p>
-<p>h2.jar파일은 누가 만들었나? - h2 데이터베이스 만든애들</p>
-<p>유틸리티 클래스를 만들어 중복되는 클래스 제거 </p>
-<p>순서</p>
-<p>JDBC 드라이버 로드 - Connection 객체 생성 - Statement 객체 생성 - SQL 실행 - 역순 종료</p>
-<p>정적 sql, 동적 sql</p>
-<p>PreparedStatement : </p>
-<p>정적 sql과 달리 동적 sql는 dbms메모리에 sql이 저장되어 테이블 확인 및 문법 체크를 안하고 실행되어 속도가 빠르다.</p>
-<p>update board client 만들어서 제목과 내용을 수정하는 클래스 만들어보기 </p>
+          <p>web-inf 폴더 내는 브라우저가 접근하는것을 서버가 허용하지 않는다.</p>
+<p>web.xml 파일이 안에 있다면</p>
+<p>다이나믹 웹 모듈 버전 2.5이 아니면 web.xml이 안만들어져서 직접 만들어야한다.</p>
+<p>html 템플릿 만들때 4.01transitional 로 하는 이유는 속성 지원을 안하기때문css 파일에서 지원</p>
+<p>get 방식은 사용자 정보가 uri 에 딸려가고 post는 딸려가지 않아 안전하다.</p>
+<p>요청프로토콜 - 브라우저가 만들고 응답프로토콜 - 서버가 만든다.</p>
+<p>서블릿은 클래스이다. : 플랫폼이 독릭접, 동일한 실행결과. OS에 종속되지않는다.</p>
+<p>서버 독립성: 한 서버에서 실행된건 다른데서도 실행된다. = 이식성이 뛰어나다</p>
+<p>다양한 벤더에서 제공하는 클래스를 쓸수있다. : 확장성</p>
+<p>서블릿은 멀티 쓰레드로 동작하여 효율적이다. </p>
+<p>톰캣의 구조</p>
+<p>정적인부분 담당의 웹 부분과</p>
+<p>동적인부분 담당의 엔진</p>
+<p> 멀티쓰레드 - 서블렛 효율적, 메모리 재사용, 객체 하나로 수백의 객체를 재사용</p>
+<p>서블릿 엔진 : 톰캣으로 서버 구현시 생성</p>
+<p>컬렉션 안에 쓰레드 3개 생성 가정시 </p>
+<p>디폴트 생성자: 멤버 변수를 디폴트값 밖으로밖에 초기화할 수 없으니</p>
+<p>인잇을 만들어 멤버 변수를 초기화</p>
+<p>쓰레드의 런 메서드가 구동되어 서비스 호출</p>
+<p>쓰레드 풀은 몬가?</p>
+<p>외장 jar은 webapp-webinf-lib에 넣어두면자동으로 설정</p>
+<p>서블릿 클래스를 만들때 4가지 규칙</p>
+<ol>
+<li>퍼블릭으로 할것</li>
+<li>httpservlet을 상속해야한다.</li>
+<li>디폴트생성자가 반드시 필요하다</li>
+<li>메서드 오버라이드 할것(겟, 포스트, 디스트로이, 인잇 등) = 콜백 메서드<ul>
+<li>서버 엔진이 알아서 호출해준다. </li>
+</ul>
+</li>
+<li></li>
+</ol>
 
       
     </div>
@@ -300,7 +316,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

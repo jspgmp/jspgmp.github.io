@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/06/2021-08-06-Javascript_getItem/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/06/2021-08-06-Javascript_getItem/" class="post-title-link" itemprop="url">자바스크립트 가격 한도 최대 비싼 아이템 추천!</a>
+          <a href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/" class="post-title-link" itemprop="url">JAVA Static 변수와 메소드</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,14 +231,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-08-06 20:53:53" itemprop="dateCreated datePublished" datetime="2021-08-06T20:53:53+09:00">2021-08-06</time>
+      <time title="Created: 2021-08-20 21:53:57" itemprop="dateCreated datePublished" datetime="2021-08-20T21:53:57+09:00">2021-08-20</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-17 13:31:30" itemprop="dateModified" datetime="2021-09-17T13:31:30+09:00">2021-09-17</time>
+        <time title="Modified: 2021-09-17 13:31:56" itemprop="dateModified" datetime="2021-09-17T13:31:56+09:00">2021-09-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
         </span>
     </span>
 
@@ -259,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/08/06/2021-08-06-Javascript_getItem/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/06/2021-08-06-Javascript_getItem/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/20/2021-08-20-JAVA-Static변수와 Singleton패턴/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,11 +274,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>드디어 포스트다운 포스트를 써볼까 합니다.</p>
-<p>가격을 입력하면 상품 리스트에서 살수있는 가장 비싼 상품의 종류와 이름을 알려주는 스크립트입니다.</p>
+          <p> 아직 기본 개념이 모호한데 진도를 계속 나가봅니다. </p>
+<p>Static 이라는 것은 정적이라는 뜻을 갖고있는데, 고정되어있다 이런 느낌입니다.</p>
+<p>다른 변수들이 생기고 사라지고 할 때, Static은 자리를 지키면서 프로그램이 종료될때까지 유지됩니다.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/08/06/2021-08-06-Javascript_getItem/#more" rel="contents">
+              <a class="btn" href="/2021/08/20/2021-08-20-JAVA-Static%EB%B3%80%EC%88%98%EC%99%80%20Singleton%ED%8C%A8%ED%84%B4/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -302,7 +303,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/32/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/34/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/32/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/34/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

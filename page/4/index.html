@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/10/29/20211029-KDT-Worksheet/">
+    <link itemprop="mainEntityOfPage" href="http://jspgmp.github.io/2021/11/11/20211111-KDT-Worksheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/29/20211029-KDT-Worksheet/" class="post-title-link" itemprop="url">20211029-KDT-Worksheet</a>
+          <a href="/2021/11/11/20211111-KDT-Worksheet/" class="post-title-link" itemprop="url">20211111-KDT-Worksheet</a>
         </h2>
 
         <div class="post-meta-container">
@@ -231,15 +231,24 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-10-29 13:11:35" itemprop="dateCreated datePublished" datetime="2021-10-29T13:11:35+09:00">2021-10-29</time>
+      <time title="Created: 2021-11-11 20:28:25" itemprop="dateCreated datePublished" datetime="2021-11-11T20:28:25+09:00">2021-11-11</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-11-04 19:10:07" itemprop="dateModified" datetime="2021-11-04T19:10:07+09:00">2021-11-04</time>
+        <time title="Modified: 2021-11-19 11:56:28" itemprop="dateModified" datetime="2021-11-19T11:56:28+09:00">2021-11-19</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/SPRING/" itemprop="url" rel="index"><span itemprop="name">SPRING</span></a>
+        </span>
+    </span>
 
   
   
@@ -250,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/10/29/20211029-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/29/20211029-KDT-Worksheet/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/11/11/20211111-KDT-Worksheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/11/20211111-KDT-Worksheet/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -265,38 +274,101 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>web-inf 폴더 내는 브라우저가 접근하는것을 서버가 허용하지 않는다.</p>
-<p>web.xml 파일이 안에 있다면</p>
-<p>다이나믹 웹 모듈 버전 2.5이 아니면 web.xml이 안만들어져서 직접 만들어야한다.</p>
-<p>html 템플릿 만들때 4.01transitional 로 하는 이유는 속성 지원을 안하기때문css 파일에서 지원</p>
-<p>get 방식은 사용자 정보가 uri 에 딸려가고 post는 딸려가지 않아 안전하다.</p>
-<p>요청프로토콜 - 브라우저가 만들고 응답프로토콜 - 서버가 만든다.</p>
-<p>서블릿은 클래스이다. : 플랫폼이 독릭접, 동일한 실행결과. OS에 종속되지않는다.</p>
-<p>서버 독립성: 한 서버에서 실행된건 다른데서도 실행된다. = 이식성이 뛰어나다</p>
-<p>다양한 벤더에서 제공하는 클래스를 쓸수있다. : 확장성</p>
-<p>서블릿은 멀티 쓰레드로 동작하여 효율적이다. </p>
-<p>톰캣의 구조</p>
-<p>정적인부분 담당의 웹 부분과</p>
-<p>동적인부분 담당의 엔진</p>
-<p> 멀티쓰레드 - 서블렛 효율적, 메모리 재사용, 객체 하나로 수백의 객체를 재사용</p>
-<p>서블릿 엔진 : 톰캣으로 서버 구현시 생성</p>
-<p>컬렉션 안에 쓰레드 3개 생성 가정시 </p>
-<p>디폴트 생성자: 멤버 변수를 디폴트값 밖으로밖에 초기화할 수 없으니</p>
-<p>인잇을 만들어 멤버 변수를 초기화</p>
-<p>쓰레드의 런 메서드가 구동되어 서비스 호출</p>
-<p>쓰레드 풀은 몬가?</p>
-<p>외장 jar은 webapp-webinf-lib에 넣어두면자동으로 설정</p>
-<p>서블릿 클래스를 만들때 4가지 규칙</p>
-<ol>
-<li>퍼블릭으로 할것</li>
-<li>httpservlet을 상속해야한다.</li>
-<li>디폴트생성자가 반드시 필요하다</li>
-<li>메서드 오버라이드 할것(겟, 포스트, 디스트로이, 인잇 등) = 콜백 메서드<ul>
-<li>서버 엔진이 알아서 호출해준다. </li>
+          <ol>
+<li><h2 id="Inversion-of-Control"><a href="#Inversion-of-Control" class="headerlink" title="Inversion of Control"></a>Inversion of Control</h2></li>
+</ol>
+<ul>
+<li>객체를 스프링 컨테이너가 만들게끔 하는 방식</li>
+<li>별도 xml 설정 필요</li>
+</ul>
+<ol start="2">
+<li><h2 id="Aspect-Oriented-Programming"><a href="#Aspect-Oriented-Programming" class="headerlink" title="Aspect Oriented Programming"></a>Aspect Oriented Programming</h2></li>
+</ol>
+<ul>
+<li>비즈니스 로직인 핵심 관심과, 그 전후 Advice인 횡단 관심을 결합하는 것 =  Weaving</li>
+<li>핵심 관심에 Pointcut을 지정하고 이것을 Advice와 연결하는 형태 = Aspect</li>
+<li>Advice 의 동작 시점은 크게 3가지로 구분된다.<ul>
+<li>Before : 실행 전</li>
+<li>After<ul>
+<li>After Returning : 성공적 실행 후</li>
+<li>After Throwing : 예외 발생 시</li>
+<li>After : 무조건 실행</li>
 </ul>
 </li>
-<li></li>
+<li>Around : 실행 전/후</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><h3 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h3></li>
 </ol>
+<p>유지보수 과정에서 객체가 자주 변경된다면 <Bean> 등록을, </p>
+<p>자주 변경되지 않는다면 Annotation으로 처리한다. </p>
+<ol start="4">
+<li><h4 id="서비스-구조-게시판"><a href="#서비스-구조-게시판" class="headerlink" title="서비스 구조(게시판)"></a>서비스 구조(게시판)</h4></li>
+</ol>
+<p>Annotation 을 사용할 경우, Component-scan 을 xml 에 등록하여 각 java파일에서 @가 스캔될 수 있도록 한다. </p>
+<hr>
+<ul>
+<li><p>Board Value Object : 하나의 게시글에 대한 틀과 기본 요소</p>
+</li>
+<li><p>Board Data Acess Object Interface : <strong>구현방식</strong> 변경을 위한 인터페이스</p>
+<p>​       @Repository 등록을 하거나 <bean> 등록</p>
+<ul>
+<li>Board Data Acess Object (JDBC) : JDBC 방식으로 구현한 클래스(세부내용)</li>
+<li>Board Data Acess Object (SPRING) : SPRING 방식으로 구현한 클래스(세부내용)<ul>
+<li>Board Row Mapper : SPRING 방식이 사용하는 방식에서 필요한 클래스</li>
+<li>SPRING 방식을 이용할 경우 dataSource 및 Transation 설정을 xml 에 등록해야한다. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Board Service Interface : <strong>비즈니스 로직 변경</strong>을 위한 인터페이스</p>
+<p>​       @Service(“boardService”) //다른 로직으로 변경할경우 이 서비스 부분을 옮긴다. </p>
+<ul>
+<li>Board Service Impl : 컨테이너와 닿는부분이며, 실제 비즈니스로직의 실행을 안내한다. </li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol start="5">
+<li><h4 id="Advice-구조"><a href="#Advice-구조" class="headerlink" title="Advice 구조"></a>Advice 구조</h4></li>
+</ol>
+<p>Advice 들은 파일 위치보다는 Annotation을 따라가므로 알아서 분류를 한다.</p>
+<p>Advices 라는 파일에 전부 모여있다고 가정을 하면</p>
+<p>​       @Aspect </p>
+<ul>
+<li><p>BoardPointcut : 핵심관심에 Point를 달아줘야 Advice가 붙을 수 있다. </p>
+<p>​       @Pointcut(주소)</p>
+<ul>
+<li>Public void allPoint 또는 getPoint</li>
+</ul>
+</li>
+<li><p>Advices : Advice들의 모음</p>
+<p>Pointcut 등록은 </p>
+<p>​       @Before(“BoardPointcut.allPointcut()”)</p>
+<ul>
+<li><p>BeforeAdvice method</p>
+<p>@AfterReturning(상동.getPointcut())</p>
+</li>
+<li><p>AfterReturningAdivice method</p>
+<p>@AfterThrowing(상동)</p>
+</li>
+<li><p>AfterThrowingAdvice method</p>
+<p>@After(상동)</p>
+</li>
+<li><p>After method</p>
+<p>@Around(상동)</p>
+</li>
+<li><p>aroundLog method</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>실제 비즈니스 로직의 구동방식 변경, 로직 모델 변경을 위해 2개의 인터페이스를 쓰고있다는 점과</p>
+<p>Advice들을 실제 비즈니스 로직의 사이에 Aspect 를 붙여 연결하여</p>
+<p>중요한 메서드 실행 전/후 처리를 이해한다. </p>
 
       
     </div>
@@ -316,7 +388,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
