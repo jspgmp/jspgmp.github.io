@@ -2580,6 +2580,7 @@ send_mail(이름, 수신이메일, subject, contents, attachment)
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Role</span> </span>&#123;</span><br><span class="line">    ADMIN, MANAGER, MEMBER</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
+<p>123</p>
 ]]></content>
       <categories>
         <category>JAVA SPRING</category>
